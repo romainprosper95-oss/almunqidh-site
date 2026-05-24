@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Almunqidh — Prototype</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header class="header">
+  <div class="container header-inner">
+    <div class="brand">ALMUNQIDH</div>
+    <nav class="desktop-nav">
+      <a href="#accueil">Accueil</a>
+      <a href="#formations">Formations</a>
+      <a href="#materiel">Matériel</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <button class="menu-btn" id="menuBtn" aria-label="Ouvrir le menu">☰</button>
+  </div>
+</header>
+
+<nav class="mobile-nav" id="mobileNav" aria-hidden="true">
+  <div class="mobile-panel">
+    <button class="close-btn" id="closeBtn" aria-label="Fermer">×</button>
+    <a href="#accueil">Accueil</a>
+    <a href="#formations">Formations</a>
+    <a href="#materiel">Matériel</a>
+    <a href="#contact">Contact</a>
+  </div>
+</nav>
+
+<main>
+<section class="hero" id="accueil">
+  <div class="container hero-grid">
+    <div class="hero-copy fade-in">
+      <div class="eyebrow">Suisse · Premiers secours</div>
+      <h1>Pour agir avant l’arrivée des secours.</h1>
+      <p>Une vitrine plus claire, plus moderne et plus élégante, basée sur les informations déjà présentes sur le site existant.</p>
+      <div class="actions">
+        <a class="btn btn-primary" href="#formations">Découvrir les formations</a>
+        <a class="btn btn-outline" href="#contact">Nous contacter</a>
+      </div>
+    </div>
+    <div class="hero-card fade-in">
+      <div class="preview-title">Homepage preview</div>
+      <div class="preview-box">
+        <div class="preview-line big">Design plus propre.</div>
+        <div class="preview-line">Vidéo conservée</div>
+        <div class="preview-line">Formations mises en avant</div>
+        <div class="preview-line">Matériel mieux structuré</div>
+        <div class="preview-line">Contact plus visible</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="video">
+  <div class="container card fade-in">
+    <h2>Vidéo de présentation</h2>
+    <div class="video-placeholder">Espace réservé à la vidéo</div>
+  </div>
+</section>
+
+<section class="section alt" id="formations">
+  <div class="container cards-grid">
+    <article class="card fade-in">
+      <h2>Formations</h2>
+      <p>Bloc plus lisible pour la partie formations déjà présente sur le site.</p>
+    </article>
+    <article class="card fade-in" id="materiel">
+      <h2>Matériel</h2>
+      <p>Section conservée mais présentée de façon plus élégante.</p>
+    </article>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container card fade-in">
+    <h2>Espace chatbot</h2>
+    <p>Emplacement réservé pour l’intégration future du bot, laissé inactif pour le moment.</p>
+  </div>
+</section>
+
+<section class="section" id="contact">
+  <div class="container card fade-in">
+    <h2>Contact</h2>
+    <p>Page contact plus claire et plus directe.</p>
+    <a class="btn btn-primary" href="#accueil">Nous contacter</a>
+  </div>
+</section>
+</main>
+
+<button class="backtop" id="backTop" aria-label="Remonter en haut">↑</button>
+<script src="script.js"></script>
+</body>
+</html>
