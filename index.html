@@ -1,97 +1,128 @@
 <!doctype html>
 <html lang="fr">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Almunqidh — Prototype</title>
-<link rel="stylesheet" href="styles.css">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Almunqidh — Premiers secours en Suisse</title>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-<header class="header">
-  <div class="container header-inner">
-    <div class="brand">ALMUNQIDH</div>
-    <nav class="desktop-nav">
+  <header class="header">
+    <div class="container header-inner">
+      <div class="brand">ALMUNQIDH</div>
+      <nav class="desktop-nav">
+        <a href="#accueil">Accueil</a>
+        <a href="#formations">Formations</a>
+        <a href="#materiel">Matériel</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <button class="menu-btn" id="menuBtn" aria-label="Ouvrir le menu">☰</button>
+    </div>
+  </header>
+
+  <nav class="mobile-nav" id="mobileNav" aria-hidden="true">
+    <div class="mobile-panel">
+      <button class="close-btn" id="closeBtn" aria-label="Fermer">×</button>
       <a href="#accueil">Accueil</a>
       <a href="#formations">Formations</a>
       <a href="#materiel">Matériel</a>
       <a href="#contact">Contact</a>
-    </nav>
-    <button class="menu-btn" id="menuBtn" aria-label="Ouvrir le menu">☰</button>
-  </div>
-</header>
-
-<nav class="mobile-nav" id="mobileNav" aria-hidden="true">
-  <div class="mobile-panel">
-    <button class="close-btn" id="closeBtn" aria-label="Fermer">×</button>
-    <a href="#accueil">Accueil</a>
-    <a href="#formations">Formations</a>
-    <a href="#materiel">Matériel</a>
-    <a href="#contact">Contact</a>
-  </div>
-</nav>
-
-<main>
-<section class="hero" id="accueil">
-  <div class="container hero-grid">
-    <div class="hero-copy fade-in">
-      <div class="eyebrow">Suisse · Premiers secours</div>
-      <h1>Pour agir avant l’arrivée des secours.</h1>
-      <p>Une vitrine plus claire, plus moderne et plus élégante, basée sur les informations déjà présentes sur le site existant.</p>
-      <div class="actions">
-        <a class="btn btn-primary" href="#formations">Découvrir les formations</a>
-        <a class="btn btn-outline" href="#contact">Nous contacter</a>
-      </div>
     </div>
-    <div class="hero-card fade-in">
-      <div class="preview-title">Homepage preview</div>
-      <div class="preview-box">
-        <div class="preview-line big">Design plus propre.</div>
-        <div class="preview-line">Vidéo conservée</div>
-        <div class="preview-line">Formations mises en avant</div>
-        <div class="preview-line">Matériel mieux structuré</div>
-        <div class="preview-line">Contact plus visible</div>
+  </nav>
+
+  <main>
+    <section class="hero" id="accueil">
+      <div class="container hero-grid">
+        <div class="hero-copy fade-in">
+          <div class="eyebrow">Suisse · Premiers secours</div>
+          <h1>Former pour agir vite avant l’arrivée des secours.</h1>
+          <p>
+            Almunqidh propose des formations en premiers secours pour les entreprises,
+            les associations et les particuliers, avec une approche simple, pratique et utile.
+          </p>
+          <div class="actions">
+            <a class="btn btn-primary" href="#formations">Découvrir les formations</a>
+            <a class="btn btn-outline" href="#contact">Nous contacter</a>
+          </div>
+        </div>
+        <div class="hero-card fade-in">
+          <div class="preview-title">Notre mission</div>
+          <div class="preview-box">
+            <div class="preview-line big">Apprendre les bons gestes.</div>
+            <div class="preview-line">Réagir avec méthode</div>
+            <div class="preview-line">Protéger la victime et soi-même</div>
+            <div class="preview-line">Préparer l’intervention avant les secours</div>
+          </div>
+        </div>
       </div>
-    </div>
-  </div>
-</section>
+    </section>
 
-<section class="section" id="video">
-  <div class="container card fade-in">
-    <h2>Vidéo de présentation</h2>
-    <div class="video-placeholder">Espace réservé à la vidéo</div>
-  </div>
-</section>
+    <section class="section">
+      <div class="container card fade-in">
+        <h2>Qui sommes-nous ?</h2>
+        <p>
+          Almunqidh accompagne les structures qui souhaitent renforcer leur culture de prévention
+          et mieux préparer leurs équipes face aux situations d’urgence.
+          Nos contenus sont pensés pour être clairs, concrets et accessibles.
+        </p>
+      </div>
+    </section>
 
-<section class="section alt" id="formations">
-  <div class="container cards-grid">
-    <article class="card fade-in">
-      <h2>Formations</h2>
-      <p>Bloc plus lisible pour la partie formations déjà présente sur le site.</p>
-    </article>
-    <article class="card fade-in" id="materiel">
-      <h2>Matériel</h2>
-      <p>Section conservée mais présentée de façon plus élégante.</p>
-    </article>
-  </div>
-</section>
+    <section class="section alt" id="formations">
+      <div class="container cards-grid">
+        <article class="card fade-in">
+          <h2>Formations</h2>
+          <p>
+            Nous proposons des formations de premiers secours adaptées aux besoins du terrain,
+            avec des exercices pratiques et des scénarios réalistes.
+          </p>
+        </article>
+        <article class="card fade-in">
+          <h2>Déroulement</h2>
+          <p>
+            Chaque formation vise à transmettre les gestes essentiels, la bonne conduite à tenir
+            et les réflexes utiles en attendant les secours.
+          </p>
+        </article>
+      </div>
+    </section>
 
-<section class="section">
-  <div class="container card fade-in">
-    <h2>Espace chatbot</h2>
-    <p>Emplacement réservé pour l’intégration future du bot, laissé inactif pour le moment.</p>
-  </div>
-</section>
+    <section class="section" id="materiel">
+      <div class="container card fade-in">
+        <h2>Matériel</h2>
+        <p>
+          Nous présentons également du matériel de premiers secours et des solutions pratiques
+          pour aider les entreprises et les équipes à s’équiper correctement.
+        </p>
+        <p>
+          Une démonstration gratuite de 30 minutes peut être réalisée, sans engagement et dans vos locaux.
+        </p>
+      </div>
+    </section>
 
-<section class="section" id="contact">
-  <div class="container card fade-in">
-    <h2>Contact</h2>
-    <p>Page contact plus claire et plus directe.</p>
-    <a class="btn btn-primary" href="#accueil">Nous contacter</a>
-  </div>
-</section>
-</main>
+    <section class="section">
+      <div class="container card fade-in">
+        <h2>Pourquoi c’est utile</h2>
+        <p>
+          Apprendre les premiers secours permet de gagner du temps, de mieux protéger la victime
+          et d’agir de façon plus calme et plus efficace dans les premières minutes.
+        </p>
+      </div>
+    </section>
 
-<button class="backtop" id="backTop" aria-label="Remonter en haut">↑</button>
-<script src="script.js"></script>
+    <section class="section" id="contact">
+      <div class="container card fade-in">
+        <h2>Contact</h2>
+        <p>
+          Pour une formation, une démonstration ou une simple demande d’information,
+          contactez-nous via le site.
+        </p>
+        <a class="btn btn-primary" href="#accueil">Demander une information</a>
+      </div>
+    </section>
+  </main>
+
+  <button class="backtop" id="backTop" aria-label="Remonter en haut">↑</button>
+  <script src="script.js"></script>
 </body>
 </html>
