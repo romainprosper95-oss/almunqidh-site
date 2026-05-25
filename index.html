@@ -10,7 +10,7 @@
   <header class="header">
     <div class="container header-inner">
       <div class="brand-wrap">
-        <img class="brand-logo" src="logo.png" alt="Logo Almunqidh">
+        <img class="brand-logo" src="./logo.png" alt="Logo Almunqidh" onerror="this.style.display='none'">
         <div class="brand">ALMUNQIDH</div>
       </div>
       <nav class="desktop-nav">
@@ -37,7 +37,7 @@
 
   <main>
     <section class="hero" id="accueil">
-      <div class="container">
+      <div class="container hero-grid">
         <div class="hero-copy fade-in">
           <div class="eyebrow">Suisse · Premiers secours</div>
           <h1>Former pour agir vite avant l’arrivée des secours.</h1>
@@ -52,6 +52,7 @@
         </div>
 
         <div class="hero-card fade-in hero-card-stack">
+          <img class="hero-image" src="./logo.png" alt="Logo Almunqidh" onerror="this.style.display='none'">
           <div class="preview-title">Notre mission</div>
           <div class="preview-box">
             <div class="preview-line big">Apprendre les bons gestes.</div>
@@ -127,7 +128,7 @@
     </section>
   </main>
 
-  <button class="backtop" id="backTop" aria-label="Remonter en haut">↑</button>
+  <button class="backtop" id="backTop" aria-label="Remonter en haut"><span>↑</span></button>
   <script src="script.js"></script>
 </body>
 </html>
