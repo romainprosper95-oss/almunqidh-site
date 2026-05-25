@@ -1,1 +1,100 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Galerie | Almunqidh</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="header">
+    <div class="container nav-wrap">
+      <a href="index.html" class="brand" aria-label="Accueil">
+        <img src="logo.png" alt="Almunqidh" class="brand-logo">
+        <div class="brand-text">
+          <span class="brand-name">Almunqidh</span>
+          <span class="brand-tag">Premiers secours en Suisse</span>
+        </div>
+      </a>
 
+      <button class="menu-toggle" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="mobileNav">
+        <span></span><span></span><span></span>
+      </button>
+
+      <nav class="nav desktop-nav" aria-label="Navigation principale">
+        <a href="index.html">Accueil</a>
+        <a href="formations.html">Formations</a>
+        <a href="materiel.html">Matériel</a>
+        <a href="defibrillateurs.html">Défibrillateurs</a>
+        <a href="galerie.html">Galerie</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+    </div>
+
+    <div class="mobile-panel" id="mobileNav" aria-hidden="true">
+      <a href="index.html">Accueil</a>
+      <a href="formations.html">Formations</a>
+      <a href="materiel.html">Matériel</a>
+      <a href="defibrillateurs.html">Défibrillateurs</a>
+      <a href="galerie.html">Galerie</a>
+      <a href="contact.html">Contact</a>
+    </div>
+  </header>
+
+  <main>
+    <section class="page-hero">
+      <div class="container">
+        <p class="eyebrow">Galerie</p>
+        <h1>Des images pour illustrer l’univers du projet.</h1>
+        <p class="hero-text">
+          Cette page servira à montrer des visuels de formation, de matériel, d’équipe ou de mise en situation, une fois que vous voudrez l’enrichir.
+        </p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="section-head">
+          <p class="eyebrow">Espace visuel</p>
+          <h2>Une galerie propre, sobre et prête à évoluer.</h2>
+        </div>
+
+        <div class="feature-grid">
+          <div class="gallery-empty"><p>Image 1</p></div>
+          <div class="gallery-empty"><p>Image 2</p></div>
+          <div class="gallery-empty"><p>Image 3</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-alt">
+      <div class="container">
+        <div class="section-head">
+          <p class="eyebrow">Utilité</p>
+          <h2>Montrer les preuves visuelles sans perdre la sobriété.</h2>
+        </div>
+
+        <div class="testimonial-grid">
+          <article class="testimonial-card">
+            <p>Des images de qualité renforcent immédiatement le sérieux perçu.</p>
+            <span>Crédibilité</span>
+          </article>
+
+          <article class="testimonial-card">
+            <p>Une galerie bien organisée donne une impression de maîtrise et de méthode.</p>
+            <span>Professionnalisme</span>
+          </article>
+
+          <article class="testimonial-card">
+            <p>Le site reste élégant tout en devenant plus vivant et plus concret.</p>
+            <span>Esthétique premium</span>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <a href="#top" class="to-top" aria-label="Remonter en haut">↑</a>
+  <script src="script.js"></script>
+</body>
+</html>
