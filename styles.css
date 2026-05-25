@@ -2,7 +2,6 @@
   --bg:#f4f1eb;
   --bg2:#eef2f7;
   --surface:rgba(255,255,255,.78);
-  --surface-strong:#ffffff;
   --text:#102033;
   --muted:#5b6777;
   --line:rgba(16,32,51,.12);
@@ -61,7 +60,6 @@ img{max-width:100%;display:block}
   display:block;
   height:54px;
   width:auto;
-  animation:logoIntro 1.35s cubic-bezier(.2,.8,.2,1) both;
 }
 
 .brand-text{
@@ -84,12 +82,6 @@ img{max-width:100%;display:block}
   color:var(--muted);
   margin-top:3px;
   white-space:nowrap;
-}
-
-@keyframes logoIntro{
-  0%{opacity:0;transform:translateY(10px) scale(.88);filter:blur(10px);clip-path:inset(0 100% 0 0)}
-  55%{opacity:1;filter:blur(5px);clip-path:inset(0 25% 0 0)}
-  100%{opacity:1;transform:translateY(0) scale(1);filter:blur(0);clip-path:inset(0 0 0 0)}
 }
 
 .desktop-nav{
@@ -160,6 +152,10 @@ img{max-width:100%;display:block}
   letter-spacing:-.04em;
 }
 
+.highlight{
+  color: var(--blue);
+}
+
 .hero-text{
   margin-top:18px;
   color:var(--muted);
@@ -226,9 +222,9 @@ h2{
 
 .feature-card,
 .contact-card,
-.defib-visual,
 .gallery-empty,
-.video-box{
+.client-card,
+.testimonial-card{
   background:var(--surface);
   border:1px solid var(--line);
   border-radius:var(--radius);
@@ -239,6 +235,8 @@ h2{
 .feature-card{
   padding:26px;
   transition:transform .25s ease, box-shadow .25s ease;
+  text-decoration:none;
+  color:inherit;
 }
 
 .feature-card:hover{
@@ -246,52 +244,61 @@ h2{
   box-shadow:0 28px 70px rgba(16,32,51,.14);
 }
 
-.feature-card h3,
-.timeline-item h3,
-.defib-content h3{margin-bottom:10px}
+.feature-card h3{margin-bottom:10px}
 
-.timeline{
-  display:grid;
-  gap:16px;
+.trust-band{
+  background:#ff6f61;
+  color:#fff;
+  padding:34px 0;
+  text-align:center;
 }
 
-.timeline-item{
+.trust-band p{
+  font-size:1.05rem;
+  margin-bottom:8px;
+}
+
+.trust-band strong{
+  font-size:1rem;
+  font-weight:700;
+}
+
+.client-grid,
+.testimonial-grid{
   display:grid;
-  grid-template-columns:68px 1fr;
+  grid-template-columns:repeat(3,1fr);
   gap:18px;
-  padding:22px 24px;
-  align-items:start;
-  background:var(--surface);
-  border:1px solid var(--line);
-  border-radius:var(--radius);
-  box-shadow:var(--shadow);
-  backdrop-filter:blur(16px);
 }
 
-.timeline-item span{
-  width:52px;
-  height:52px;
-  border-radius:18px;
-  display:grid;
-  place-items:center;
-  font-weight:800;
-  color:var(--blue2);
-  background:rgba(31,95,174,.10);
+.client-card{
+  padding:24px;
+  text-align:center;
+  font-weight:700;
 }
 
-.video-box{
-  position:relative;
-  padding-top:56.25%;
-  overflow:hidden;
-  background:#000;
+.testimonial-card{
+  padding:24px;
 }
 
-.video-box iframe{
-  position:absolute;
-  inset:0;
-  width:100%;
-  height:100%;
-  border:0;
+.testimonial-card p{
+  font-size:1rem;
+  color:var(--text);
+}
+
+.testimonial-card span{
+  display:block;
+  margin-top:12px;
+  color:var(--muted);
+  font-size:.92rem;
+}
+
+.link-card{
+  text-decoration:none;
+  color:inherit;
+}
+
+.link-card:hover{
+  transform:translateY(-4px);
 }
 
 .gallery-empty{
@@ -303,8 +310,7 @@ h2{
   color:var(--muted);
 }
 
-.contact-layout,
-.defib-layout{
+.contact-layout{
   display:grid;
   grid-template-columns:1fr 1fr;
   gap:22px;
@@ -317,39 +323,6 @@ h2{
 
 .contact-card p + p{margin-top:16px}
 .contact-card span{display:block;margin-top:6px;color:var(--muted)}
-
-.defib-visual{
-  padding:22px;
-}
-
-.defib-visual img{
-  width:100%;
-  border-radius:18px;
-  object-fit:cover;
-}
-
-.defib-content{
-  display:grid;
-  gap:16px;
-}
-
-.defib-points{
-  display:grid;
-  gap:12px;
-}
-
-.defib-points div{
-  padding:16px 18px;
-  background:rgba(255,255,255,.72);
-  border:1px solid var(--line);
-  border-radius:18px;
-  box-shadow:var(--shadow);
-}
-
-.defib-points strong{
-  display:block;
-  margin-bottom:6px;
-}
 
 .to-top{
   position:fixed;
@@ -390,8 +363,11 @@ h2{
 @media (max-width:980px){
   .hero-grid,
   .feature-grid,
-  .contact-layout,
-  .defib-layout{grid-template-columns:1fr}
+  .client-grid,
+  .testimonial-grid,
+  .contact-layout{
+    grid-template-columns:1fr
+  }
 
   .desktop-nav{display:none}
   .menu-toggle{display:inline-grid;place-items:center}
