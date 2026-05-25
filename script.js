@@ -16,7 +16,7 @@ function closeMenu() {
 menuBtn.addEventListener('click', openMenu);
 closeBtn.addEventListener('click', closeMenu);
 
-mobileNav.addEventListener('click', e => {
+mobileNav.addEventListener('click', (e) => {
   if (e.target === mobileNav) closeMenu();
 });
 
