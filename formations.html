@@ -9,24 +9,35 @@
 <body>
   <header class="header">
     <div class="container nav-wrap">
-      <a href="index.html" class="brand"><img src="logo.png" alt="Almunqidh" class="brand-logo"></a>
-      <button class="menu-toggle" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="mobileNav"><span></span><span></span><span></span></button>
-      <nav class="nav desktop-nav">
+      <a href="index.html" class="brand" aria-label="Accueil">
+        <img src="logo.png" alt="Almunqidh" class="brand-logo">
+        <div class="brand-text">
+          <span class="brand-name">Almunqidh</span>
+          <span class="brand-tag">Premiers secours en Suisse</span>
+        </div>
+      </a>
+
+      <button class="menu-toggle" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="mobileNav">
+        <span></span><span></span><span></span>
+      </button>
+
+      <nav class="nav desktop-nav" aria-label="Navigation principale">
         <a href="index.html">Accueil</a>
         <a href="formations.html">Formations</a>
         <a href="materiel.html">Matériel</a>
-        <a href="index.html#galerie">Galerie</a>
-        <a href="index.html#video">Vidéo</a>
-        <a href="index.html#contact">Contact</a>
+        <a href="defibrillateurs.html">Défibrillateurs</a>
+        <a href="galerie.html">Galerie</a>
+        <a href="contact.html">Contact</a>
       </nav>
     </div>
+
     <div class="mobile-panel" id="mobileNav" aria-hidden="true">
       <a href="index.html">Accueil</a>
       <a href="formations.html">Formations</a>
       <a href="materiel.html">Matériel</a>
-      <a href="index.html#galerie">Galerie</a>
-      <a href="index.html#video">Vidéo</a>
-      <a href="index.html#contact">Contact</a>
+      <a href="defibrillateurs.html">Défibrillateurs</a>
+      <a href="galerie.html">Galerie</a>
+      <a href="contact.html">Contact</a>
     </div>
   </header>
 
@@ -34,23 +45,76 @@
     <section class="page-hero">
       <div class="container">
         <p class="eyebrow">Formations</p>
-        <h1>Des formations claires, structurées et directement utiles.</h1>
+        <h1>Des formations qui donnent les bons réflexes au bon moment.</h1>
         <p class="hero-text">
-          Les formations sont pensées pour les entreprises, les particuliers et les collectivités afin de donner les bons réflexes au bon moment.
+          Nous proposons des formations en premiers secours pour entreprises, particuliers et collectivités, avec une pédagogie claire, concrète et rassurante.
         </p>
       </div>
     </section>
 
-    <section class="section">
-      <div class="container feature-grid">
-        <article class="feature-card"><h3>Entreprises</h3><p>Des formations adaptées au monde professionnel.</p></article>
-        <article class="feature-card"><h3>Particuliers</h3><p>Des gestes simples à apprendre et retenir.</p></article>
-        <article class="feature-card"><h3>Collectivités</h3><p>Une approche pratique pour les groupes et associations.</p></article>
+    <section class="trust-band">
+      <div class="container trust-band-inner">
+        <p>En Suisse, chaque minute compte lorsqu’une urgence survient.</p>
+        <strong>Se former, c’est augmenter les chances d’agir efficacement avant l’arrivée des secours.</strong>
       </div>
     </section>
-  </main>
 
-  <a href="#top" class="to-top" aria-label="Remonter en haut">↑</a>
-  <script src="script.js"></script>
-</body>
-</html>
+    <section class="section">
+      <div class="container">
+        <div class="section-head">
+          <p class="eyebrow">Ce que vous trouverez</p>
+          <h2>Une approche simple, utile et immédiatement applicable.</h2>
+        </div>
+
+        <div class="feature-grid">
+          <article class="feature-card">
+            <h3>Gestes essentiels</h3>
+            <p>Les bases du secourisme expliquées clairement pour agir sans hésiter face à une urgence.</p>
+          </article>
+
+          <article class="feature-card">
+            <h3>Situation réelle</h3>
+            <p>Des cas concrets pour comprendre comment réagir avec calme et méthode.</p>
+          </article>
+
+          <article class="feature-card">
+            <h3>Public varié</h3>
+            <p>Des contenus pensés pour les entreprises, les familles, les associations et les collectivités.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-alt">
+      <div class="container">
+        <div class="section-head">
+          <p class="eyebrow">Pourquoi se former</p>
+          <h2>Parce qu’une bonne réaction peut tout changer.</h2>
+        </div>
+
+        <div class="testimonial-grid">
+          <article class="testimonial-card">
+            <p>Formation claire et rassurante, avec un vrai souci du terrain.</p>
+            <span>Réaction, analyse, efficacité</span>
+          </article>
+
+          <article class="testimonial-card">
+            <p>Une pédagogie adaptée aux débutants comme aux structures plus exigeantes.</p>
+            <span>Entreprises et particuliers</span>
+          </article>
+
+          <article class="testimonial-card">
+            <p>Des gestes concrets pour intervenir avant l’arrivée des secours.</p>
+            <span>Prévention et sécurité</span>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container contact-layout">
+        <div>
+          <p class="eyebrow">Objectif</p>
+          <h2>Former pour agir, rassurer et protéger.</h2>
+          <p class="contact-text">
+            La page formations met en avant une transmission simple des bons réflexes, afin que chaque partici
