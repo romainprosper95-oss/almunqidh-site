@@ -1,33 +1,24 @@
-const menuBtn = document.getElementById('menuBtn');
-const closeBtn = document.getElementById('closeBtn');
-const mobileNav = document.getElementById('mobileNav');
-const backTop = document.getElementById('backTop');
+const toggle = document.querySelector('.menu-toggle');
+const panel = document.querySelector('.mobile-panel');
+const links = document.querySelectorAll('.mobile-panel a');
+const topBtn = document.querySelector('.to-top');
 
-function openMenu() {
-  mobileNav.style.display = 'flex';
-  mobileNav.setAttribute('aria-hidden', 'false');
-}
+toggle.addEventListener('click', () => {
+  const open = panel.classList.toggle('open');
+  toggle.setAttribute('aria-expanded', open);
+  panel.setAttribute('aria-hidden', !open);
+});
 
-function closeMenu() {
-  mobileNav.style.display = 'none';
-  mobileNav.setAttribute('aria-hidden', 'true');
-}
-
-menuBtn.addEventListener('click', openMenu);
-closeBtn.addEventListener('click', closeMenu);
-
-mobileNav.addEventListener('click', (e) => {
-  if (e.target === mobileNav) closeMenu();
+links.forEach(link => {
+  link.addEventListener('click', () => {
+    panel.classList.remove('open');
+    toggle.setAttribute('aria-expanded', 'false');
+    panel.setAttribute('aria-hidden', 'true');
+  });
 });
 
 window.addEventListener('scroll', () => {
-  backTop.style.display = window.scrollY > 500 ? 'inline-flex' : 'none';
-});
-
-backTop.addEventListener('click', () => {
-  window.scrollTo({ top: 0, behavior: 'smooth' });
-});
-
-document.querySelectorAll('a[href^="#"]').forEach(link => {
-  link.addEventListener('click', closeMenu);
+  const show = window.scrollY > 300;
+  topBtn.style.opacity = show ? '1' : '0.35';
+  topBtn.style.transform = show ? 'translateY(0)' : 'translateY(4px)';
 });
