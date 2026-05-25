@@ -4,7 +4,7 @@ const mobileNav = document.getElementById('mobileNav');
 const backTop = document.getElementById('backTop');
 
 function openMenu() {
-  mobileNav.style.display = 'block';
+  mobileNav.style.display = 'flex';
   mobileNav.setAttribute('aria-hidden', 'false');
 }
 
@@ -16,7 +16,7 @@ function closeMenu() {
 menuBtn.addEventListener('click', openMenu);
 closeBtn.addEventListener('click', closeMenu);
 
-mobileNav.addEventListener('click', (e) => {
+mobileNav.addEventListener('click', e => {
   if (e.target === mobileNav) closeMenu();
 });
 
@@ -29,5 +29,5 @@ backTop.addEventListener('click', () => {
 });
 
 document.querySelectorAll('a[href^="#"]').forEach(link => {
-  link.addEventListener('click', () => closeMenu());
+  link.addEventListener('click', closeMenu);
 });
