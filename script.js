@@ -1,19 +1,37 @@
-const toggle = document.querySelector('.menu-toggle');
-const panel = document.querySelector('.mobile-panel');
-const links = document.querySelectorAll('.mobile-panel a');
+const menuToggle = document.querySelector('.menu-toggle');
+const mobileNav = document.querySelector('#mobileNav');
+const navLinks = mobileNav ? mobileNav.querySelectorAll('a') : [];
 
-if (toggle && panel) {
-  toggle.addEventListener('click', () => {
-    const open = panel.classList.toggle('open');
-    toggle.setAttribute('aria-expanded', open);
-    panel.setAttribute('aria-hidden', !open);
+if (menuToggle && mobileNav) {
+  const closeMenu = () => {
+    mobileNav.classList.remove('open');
+    menuToggle.setAttribute('aria-expanded', 'false');
+    mobileNav.setAttribute('aria-hidden', 'true');
+  };
+
+  const openMenu = () => {
+    mobileNav.classList.add('open');
+    menuToggle.setAttribute('aria-expanded', 'true');
+    mobileNav.setAttribute('aria-hidden', 'false');
+  };
+
+  menuToggle.addEventListener('click', () => {
+    const isOpen = mobileNav.classList.contains('open');
+    if (isOpen) closeMenu();
+    else openMenu();
   });
 
-  links.forEach(link => {
-    link.addEventListener('click', () => {
-      panel.classList.remove('open');
-      toggle.setAttribute('aria-expanded', 'false');
-      panel.setAttribute('aria-hidden', 'true');
-    });
+  navLinks.forEach(link => {
+    link.addEventListener('click', closeMenu);
+  });
+
+  document.addEventListener('click', (e) => {
+    if (!mobileNav.contains(e.target) && !menuToggle.contains(e.target)) {
+      closeMenu();
+    }
+  });
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') closeMenu();
   });
 }
