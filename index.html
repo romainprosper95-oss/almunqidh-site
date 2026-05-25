@@ -9,7 +9,7 @@
 <body>
   <header class="header">
     <div class="container nav-wrap">
-      <a href="#accueil" class="brand" aria-label="Accueil">
+      <a href="index.html" class="brand" aria-label="Accueil">
         <img src="logo.png" alt="Almunqidh" class="brand-logo">
       </a>
 
@@ -18,27 +18,27 @@
       </button>
 
       <nav class="nav desktop-nav" aria-label="Navigation principale">
-        <a href="#accueil">Accueil</a>
-        <a href="#valeurs">Valeurs</a>
-        <a href="#formations">Formations</a>
-        <a href="#defibrillateurs">Défibrillateurs</a>
+        <a href="index.html">Accueil</a>
+        <a href="formations.html">Formations</a>
+        <a href="materiel.html">Matériel</a>
         <a href="#galerie">Galerie</a>
+        <a href="#video">Vidéo</a>
         <a href="#contact">Contact</a>
       </nav>
     </div>
 
     <div class="mobile-panel" id="mobileNav" aria-hidden="true">
-      <a href="#accueil">Accueil</a>
-      <a href="#valeurs">Valeurs</a>
-      <a href="#formations">Formations</a>
-      <a href="#defibrillateurs">Défibrillateurs</a>
+      <a href="index.html">Accueil</a>
+      <a href="formations.html">Formations</a>
+      <a href="materiel.html">Matériel</a>
       <a href="#galerie">Galerie</a>
+      <a href="#video">Vidéo</a>
       <a href="#contact">Contact</a>
     </div>
   </header>
 
   <main>
-    <section id="accueil" class="hero">
+    <section class="hero">
       <div class="container hero-grid">
         <div class="hero-copy">
           <p class="eyebrow">Premiers secours en Suisse</p>
@@ -47,158 +47,87 @@
             Almunqidh accompagne les entreprises, les familles et les collectivités avec une approche claire, sérieuse et orientée action.
           </p>
           <div class="hero-actions">
-            <a href="#formations" class="btn btn-primary">Découvrir les formations</a>
-            <a href="#contact" class="btn btn-ghost">Nous contacter</a>
-          </div>
-          <div class="hero-meta">
-            <div><strong>Rapidité</strong><span>Réflexes utiles en situation réelle</span></div>
-            <div><strong>Sérénité</strong><span>Une pédagogie claire et rassurante</span></div>
-            <div><strong>Qualité</strong><span>Un contenu sérieux, structuré et utile</span></div>
+            <a href="formations.html" class="btn btn-primary">Découvrir les formations</a>
+            <a href="materiel.html" class="btn btn-ghost">Voir le matériel</a>
           </div>
         </div>
 
         <div class="hero-visual">
           <div class="logo-stage">
-            <div class="logo-grid">
-              <span></span><span></span><span></span><span></span><span></span><span></span>
-              <span></span><span></span><span></span><span></span><span></span><span></span>
-            </div>
             <img src="logo.png" alt="Logo Almunqidh" class="logo-animated">
           </div>
         </div>
       </div>
     </section>
 
-    <section id="valeurs" class="section">
+    <section class="section section-alt">
       <div class="container">
         <div class="section-head">
-          <p class="eyebrow">Valeurs</p>
-          <h2>Une présence rassurante, claire et professionnelle.</h2>
+          <p class="eyebrow">Présentation</p>
+          <h2>Une image plus claire, plus professionnelle et plus crédible.</h2>
         </div>
-
         <div class="feature-grid">
           <article class="feature-card">
-            <h3>Professionnalisme</h3>
-            <p>Un cadre sérieux, une image propre et une présentation claire pour inspirer confiance.</p>
-          </article>
-          <article class="feature-card">
             <h3>Réactivité</h3>
-            <p>Des formations pensées pour agir vite et garder les bons réflexes en situation réelle.</p>
+            <p>Apprendre à réagir rapidement et avec méthode.</p>
           </article>
           <article class="feature-card">
             <h3>Clarté</h3>
-            <p>Un contenu lisible, hiérarchisé et facile à comprendre dès la première visite.</p>
+            <p>Une présentation simple et lisible dès le premier regard.</p>
+          </article>
+          <article class="feature-card">
+            <h3>Qualité</h3>
+            <p>Un contenu utile, sérieux et orienté terrain.</p>
           </article>
         </div>
       </div>
     </section>
 
-    <section id="formations" class="section section-alt">
+    <section id="video" class="section">
       <div class="container">
         <div class="section-head">
-          <p class="eyebrow">Formations</p>
-          <h2>Des contenus organisés pour une lecture immédiate.</h2>
+          <p class="eyebrow">Vidéo</p>
+          <h2>Une vidéo de présentation intégrée au site.</h2>
         </div>
-
-        <div class="timeline">
-          <div class="timeline-item">
-            <span>01</span>
-            <div>
-              <h3>Analyser rapidement</h3>
-              <p>Reconnaître une urgence, identifier les priorités et garder le contrôle.</p>
-            </div>
-          </div>
-          <div class="timeline-item">
-            <span>02</span>
-            <div>
-              <h3>Appliquer les gestes utiles</h3>
-              <p>Une approche concrète, claire et facile à retenir pour chaque participant.</p>
-            </div>
-          </div>
-          <div class="timeline-item">
-            <span>03</span>
-            <div>
-              <h3>Intervenir avec assurance</h3>
-              <p>Faire la différence avant l’arrivée des secours grâce aux bons réflexes.</p>
-            </div>
-          </div>
+        <div class="video-box">
+          <iframe 
+            src="https://www.youtube.com/embed/DZasgn1DgGE"
+            title="Vidéo de présentation"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen></iframe>
         </div>
       </div>
     </section>
 
-    <section id="defibrillateurs" class="section section-alt">
-      <div class="container">
-        <div class="section-head">
-          <p class="eyebrow">Défibrillateurs</p>
-          <h2>Un équipement essentiel pour agir rapidement.</h2>
-        </div>
-
-        <div class="defib-layout">
-          <div class="defib-visual">
-            <img src="Default_secouriste_0-2-2048x1128.jpg" alt="Défibrillateur en situation">
-          </div>
-
-          <div class="defib-content">
-            <h3>Zoll AED Plus</h3>
-            <p>
-              Le site présente le Zoll AED Plus comme un défibrillateur de secourisme conçu pour accompagner l’intervention rapide en cas d’arrêt cardiaque.
-            </p>
-
-            <div class="defib-points">
-              <div><strong>Rapide</strong><span>Permet d’agir sans perdre de temps.</span></div>
-              <div><strong>Simple</strong><span>Interface pensée pour aider le secouriste.</span></div>
-              <div><strong>Essentiel</strong><span>Complète la chaîne des secours avant l’arrivée des pros.</span></div>
-            </div>
-
-            <a href="#contact" class="btn btn-primary">Demander plus d’infos</a>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="galerie" class="section">
+    <section id="galerie" class="section section-alt">
       <div class="container">
         <div class="section-head">
           <p class="eyebrow">Galerie</p>
-          <h2>Des images qui illustrent vraiment l’action.</h2>
+          <h2>Galerie réservée pour plus tard.</h2>
         </div>
-
-        <div class="gallery">
-          <figure class="photo">
-            <img src="WhatsApp-Image-2024-03-18-at-11.28.09-2.png" alt="Exercice de réanimation">
-          </figure>
-          <figure class="photo">
-            <img src="doctor-holds-life-buoy-2-2048x1677.jpg" alt="Matériel de premiers secours">
-          </figure>
-          <figure class="photo">
-            <img src="Default_secouriste_0-2-2048x1128.jpg" alt="Défibrillateur en situation">
-          </figure>
+        <div class="gallery-empty">
+          <p>Cette zone reste vide pour l’instant, prête à accueillir tes prochaines images.</p>
         </div>
       </div>
     </section>
 
-    <section id="contact" class="section contact">
-      <div class="container">
-        <div class="contact-layout">
-          <div>
-            <p class="eyebrow">Contact</p>
-            <h2>Parlons de votre besoin.</h2>
-            <p class="contact-text">
-              Pour une demande de formation, une question ou un projet, voici les coordonnées du site.
-            </p>
-          </div>
+    <section id="contact" class="section">
+      <div class="container contact-layout">
+        <div>
+          <p class="eyebrow">Contact</p>
+          <h2>Parlons de votre besoin.</h2>
+        </div>
 
-          <div class="contact-card">
-            <p><strong>Email</strong><span>OVDS@almunqidhswiss.org</span></p>
-            <p><strong>Téléphone</strong><span>+41 76 560 54 00</span></p>
-            <p><strong>Adresse</strong><span>Route du lynx numéro 33, 1663 Gruyère, Suisse</span></p>
-          </div>
+        <div class="contact-card">
+          <p><strong>Email</strong><span>OVDS@almunqidhswiss.org</span></p>
+          <p><strong>Téléphone</strong><span>+41 76 560 54 00</span></p>
+          <p><strong>Adresse</strong><span>Route du lynx numéro 33, 1663 Gruyère, Suisse</span></p>
         </div>
       </div>
     </section>
   </main>
 
-  <a href="#accueil" class="to-top" aria-label="Remonter en haut">↑</a>
+  <a href="#top" class="to-top" aria-label="Remonter en haut">↑</a>
   <script src="script.js"></script>
 </body>
 </html>
