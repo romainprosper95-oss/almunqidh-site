@@ -1,90 +1,64 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="fr" class="scroll-smooth">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Contact | Almunqidh</title>
-  <link rel="stylesheet" href="styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact | Almunqidh</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 </head>
-<body>
-  <header class="header">
-    <div class="container nav-wrap">
-      <a href="index.html" class="brand" aria-label="Accueil">
-        <img src="logo.png" alt="Almunqidh" class="brand-logo">
-        <div class="brand-text">
-          <span class="brand-name">Almunqidh</span>
-          <span class="brand-tag">Premiers secours en Suisse</span>
+<body class="bg-gray-50 text-gray-900 font-sans">
+
+  <main class="max-w-5xl mx-auto px-6 py-20">
+    
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+        
+        <!-- Colonne Texte -->
+        <div data-aos="fade-right">
+            <h1 class="text-5xl font-extrabold tracking-tight mb-8">Parlons de votre projet.</h1>
+            <p class="text-lg text-gray-600 mb-12 leading-relaxed">
+                Une question sur une formation, besoin d'équiper vos locaux ou simplement envie d'en savoir plus sur nos méthodes ? Notre équipe vous répond sous 24 heures.
+            </p>
+            
+            <div class="space-y-8">
+                <div>
+                    <h3 class="text-sm font-bold text-gray-400 uppercase tracking-widest mb-2">Email direct</h3>
+                    <a href="mailto:OVDS@almunqidhswiss.org" class="text-2xl font-bold hover:text-red-600 transition-colors">OVDS@almunqidhswiss.org</a>
+                </div>
+                <div>
+                    <h3 class="text-sm font-bold text-gray-400 uppercase tracking-widest mb-2">Téléphone</h3>
+                    <a href="tel:+41765605400" class="text-2xl font-bold hover:text-red-600 transition-colors">+41 76 560 54 00</a>
+                </div>
+                <div>
+                    <h3 class="text-sm font-bold text-gray-400 uppercase tracking-widest mb-2">Adresse</h3>
+                    <p class="text-lg font-medium">Route du lynx numéro 33<br>1663 Gruyère, Suisse</p>
+                </div>
+            </div>
         </div>
-      </a>
 
-      <button class="menu-toggle" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="mobileNav">
-        <span></span><span></span><span></span>
-      </button>
-
-      <nav class="nav desktop-nav" aria-label="Navigation principale">
-        <a href="index.html">Accueil</a>
-        <a href="formations.html">Formations</a>
-        <a href="materiel.html">Matériel</a>
-        <a href="defibrillateurs.html">Défibrillateurs</a>
-        <a href="galerie.html">Galerie</a>
-        <a href="contact.html">Contact</a>
-      </nav>
+        <!-- Colonne Formulaire / Carte -->
+        <div class="bg-white p-10 rounded-3xl shadow-sm border border-gray-100" data-aos="fade-left">
+            <h2 class="text-2xl font-bold mb-8">Envoyez-nous un message</h2>
+            <form action="https://formspree.io/f/mqazkdwg" method="POST" class="space-y-6">
+                <div>
+                    <label class="block text-sm font-bold mb-2">Nom / Entreprise</label>
+                    <input type="text" name="name" required class="w-full p-4 bg-gray-50 rounded-xl border border-gray-200 focus:ring-2 focus:ring-red-500 outline-none transition-all">
+                </div>
+                <div>
+                    <label class="block text-sm font-bold mb-2">Votre Email</label>
+                    <input type="email" name="email" required class="w-full p-4 bg-gray-50 rounded-xl border border-gray-200 focus:ring-2 focus:ring-red-500 outline-none transition-all">
+                </div>
+                <div>
+                    <label class="block text-sm font-bold mb-2">Message</label>
+                    <textarea name="message" rows="4" required class="w-full p-4 bg-gray-50 rounded-xl border border-gray-200 focus:ring-2 focus:ring-red-500 outline-none transition-all"></textarea>
+                </div>
+                <button type="submit" class="w-full bg-red-600 text-white py-4 rounded-xl font-bold hover:bg-red-700 transition-all shadow-lg shadow-red-600/20">Envoyer le message</button>
+            </form>
+        </div>
     </div>
-
-    <div class="mobile-panel" id="mobileNav" aria-hidden="true">
-      <a href="index.html">Accueil</a>
-      <a href="formations.html">Formations</a>
-      <a href="materiel.html">Matériel</a>
-      <a href="defibrillateurs.html">Défibrillateurs</a>
-      <a href="galerie.html">Galerie</a>
-      <a href="contact.html">Contact</a>
-    </div>
-  </header>
-
-  <main>
-    <section class="page-hero">
-      <div class="container">
-        <p class="eyebrow">Contact</p>
-        <h1>Une prise de contact simple, directe et professionnelle.</h1>
-        <p class="hero-text">
-          Pour une demande de formation, une question sur le matériel ou un projet plus précis, voici les moyens de nous joindre.
-        </p>
-      </div>
-    </section>
-
-    <section class="section">
-      <div class="container contact-layout">
-        <div>
-          <p class="eyebrow">Coordonnées</p>
-          <h2>Écrivez-nous ou appelez-nous.</h2>
-          <p class="contact-text">
-            Nous répondrons avec clarté pour vous aider à avancer rapidement sur votre besoin.
-          </p>
-        </div>
-
-        <div class="contact-card">
-          <p><strong>Email</strong><span>OVDS@almunqidhswiss.org</span></p>
-          <p><strong>Téléphone</strong><span>+41 76 560 54 00</span></p>
-          <p><strong>Adresse</strong><span>Route du lynx numéro 33, 1663 Gruyère, Suisse</span></p>
-        </div>
-      </div>
-    </section>
-
-    <section class="section section-alt">
-      <div class="container">
-        <div class="section-head">
-          <p class="eyebrow">Suite du projet</p>
-          <h2>Un espace prêt pour évoluer vers un chatbot plus tard.</h2>
-        </div>
-
-        <div class="gallery-empty">
-          <p>Ici, on pourra plus tard intégrer un formulaire, un chatbot ou une demande guidée.</p>
-        </div>
-      </div>
-    </section>
   </main>
 
-  <a href="#top" class="to-top" aria-label="Remonter en haut">↑</a>
-  <script src="script.js"></script>
+  <script>AOS.init({ once: true });</script>
 </body>
 </html>
