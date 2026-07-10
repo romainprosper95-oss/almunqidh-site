@@ -1,64 +1,82 @@
 <!DOCTYPE html>
-<html lang="fr" class="scroll-smooth">
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact | Almunqidh</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .layout-contact { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; margin-top: 60px; align-items: start; }
+        .nav-header { display: flex; justify-content: space-between; align-items: center; padding: 24px 0; border-bottom: 1px solid var(--line); }
+        .nav-links a { margin-left: 24px; font-weight: 500; transition: color 0.3s; }
+        .nav-links a:hover { color: var(--suisse-red); }
+        .form-group { margin-bottom: 20px; }
+        .form-group label { display: block; font-size: 0.85rem; font-weight: 600; margin-bottom: 6px; }
+        .form-group input, .form-group textarea { width: 100%; padding: 14px; border-radius: 10px; border: 1px solid var(--line); background: var(--suisse-light); font-family: inherit; outline: none; transition: border 0.3s; }
+        .form-group input:focus, .form-group textarea:focus { border-color: var(--suisse-red); }
+        @media (max-width: 768px) { .layout-contact { grid-template-columns: 1fr; gap: 32px; } }
+    </style>
 </head>
-<body class="bg-gray-50 text-gray-900 font-sans">
+<body>
 
-  <main class="max-w-5xl mx-auto px-6 py-20">
-    
-    <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-        
-        <!-- Colonne Texte -->
-        <div data-aos="fade-right">
-            <h1 class="text-5xl font-extrabold tracking-tight mb-8">Parlons de votre projet.</h1>
-            <p class="text-lg text-gray-600 mb-12 leading-relaxed">
-                Une question sur une formation, besoin d'équiper vos locaux ou simplement envie d'en savoir plus sur nos méthodes ? Notre équipe vous répond sous 24 heures.
-            </p>
+    <header class="container">
+        <div class="nav-header">
+            <a href="index.html" style="font-weight: 800; font-size: 1.3rem;">ALMUNQIDH</a>
+            <nav class="nav-links">
+                <a href="index.html">Accueil</a>
+                <a href="formations.html">Formations</a>
+                <a href="materiel.html">Matériel</a>
+                <a href="contact.html" style="color: var(--suisse-red);">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container" style="padding: 60px 0;">
+        <div class="layout-contact">
             
-            <div class="space-y-8">
-                <div>
-                    <h3 class="text-sm font-bold text-gray-400 uppercase tracking-widest mb-2">Email direct</h3>
-                    <a href="mailto:OVDS@almunqidhswiss.org" class="text-2xl font-bold hover:text-red-600 transition-colors">OVDS@almunqidhswiss.org</a>
-                </div>
-                <div>
-                    <h3 class="text-sm font-bold text-gray-400 uppercase tracking-widest mb-2">Téléphone</h3>
-                    <a href="tel:+41765605400" class="text-2xl font-bold hover:text-red-600 transition-colors">+41 76 560 54 00</a>
-                </div>
-                <div>
-                    <h3 class="text-sm font-bold text-gray-400 uppercase tracking-widest mb-2">Adresse</h3>
-                    <p class="text-lg font-medium">Route du lynx numéro 33<br>1663 Gruyère, Suisse</p>
+            <!-- Infos Directes -->
+            <div>
+                <h1 style="font-size: 2.8rem; font-weight: 800; tracking: -0.5px; line-height: 1.1; margin-bottom: 24px;">Parlons de votre projet de sécurité.</h1>
+                <p style="color: #666; line-height: 1.7; margin-bottom: 40px;">Pour planifier une formation sur-mesure ou équiper vos locaux, notre équipe en Gruyère est à votre disposition.</p>
+                
+                <div style="display: grid; gap: 24px;">
+                    <div>
+                        <span style="font-size: 0.75rem; font-weight: 700; color: #888; text-transform: uppercase;">Email</span>
+                        <p style="font-size: 1.2rem; font-weight: 700; margin-top: 2px;">OVDS@almunqidhswiss.org</p>
+                    </div>
+                    <div>
+                        <span style="font-size: 0.75rem; font-weight: 700; color: #888; text-transform: uppercase;">Téléphone</span>
+                        <p style="font-size: 1.2rem; font-weight: 700; margin-top: 2px;">+41 76 560 54 00</p>
+                    </div>
+                    <div>
+                        <span style="font-size: 0.75rem; font-weight: 700; color: #888; text-transform: uppercase;">Adresse</span>
+                        <p style="font-size: 1.1rem; font-weight: 500; margin-top: 2px; color: #444;">Route du lynx numéro 33,<br>1663 Gruyère, Suisse</p>
+                    </div>
                 </div>
             </div>
-        </div>
 
-        <!-- Colonne Formulaire / Carte -->
-        <div class="bg-white p-10 rounded-3xl shadow-sm border border-gray-100" data-aos="fade-left">
-            <h2 class="text-2xl font-bold mb-8">Envoyez-nous un message</h2>
-            <form action="https://formspree.io/f/mqazkdwg" method="POST" class="space-y-6">
-                <div>
-                    <label class="block text-sm font-bold mb-2">Nom / Entreprise</label>
-                    <input type="text" name="name" required class="w-full p-4 bg-gray-50 rounded-xl border border-gray-200 focus:ring-2 focus:ring-red-500 outline-none transition-all">
-                </div>
-                <div>
-                    <label class="block text-sm font-bold mb-2">Votre Email</label>
-                    <input type="email" name="email" required class="w-full p-4 bg-gray-50 rounded-xl border border-gray-200 focus:ring-2 focus:ring-red-500 outline-none transition-all">
-                </div>
-                <div>
-                    <label class="block text-sm font-bold mb-2">Message</label>
-                    <textarea name="message" rows="4" required class="w-full p-4 bg-gray-50 rounded-xl border border-gray-200 focus:ring-2 focus:ring-red-500 outline-none transition-all"></textarea>
-                </div>
-                <button type="submit" class="w-full bg-red-600 text-white py-4 rounded-xl font-bold hover:bg-red-700 transition-all shadow-lg shadow-red-600/20">Envoyer le message</button>
-            </form>
-        </div>
-    </div>
-  </main>
+            <!-- Formulaire -->
+            <div class="card-premium" style="background: white;">
+                <h2 style="font-size: 1.4rem; font-weight: 700; margin-bottom: 24px;">Formulaire de contact</h2>
+                <form action="https://formspree.io/f/mqazkdwg" method="POST">
+                    <div class="form-group">
+                        <label>Nom ou Entreprise</label>
+                        <input type="text" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Votre adresse e-mail</label>
+                        <input type="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Votre Message</label>
+                        <textarea name="message" rows="4" required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary" style="width: 100%; margin-top: 10px;">Envoyer la demande</button>
+                </form>
+            </div>
 
-  <script>AOS.init({ once: true });</script>
+        </div>
+    </main>
+
 </body>
 </html>
