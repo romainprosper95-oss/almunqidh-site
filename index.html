@@ -8,7 +8,7 @@
         @import url('https://fonts.googleapis.com/css2?family=Archivo:wght@700;900&family=Inter:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500;600&display=swap');
         
         :root { 
-            --suisse-red: #D52B1E; 
+            --suisse-red: #D52B1E; /* Le Rouge Officiel Suisse */
             --dark: #151515; 
             --bg-light: #FAFAF8; 
             --bg-card: #FFFFFF;
@@ -20,7 +20,6 @@
         * { box-sizing: border-box; margin: 0; padding: 0; }
         html { scroll-behavior: smooth; }
         
-        /* Retour à un fond clair et épuré pour reposer les yeux */
         body { 
             font-family: 'Inter', sans-serif; 
             color: var(--dark); 
@@ -39,25 +38,27 @@
         .cross::before { left: 44%; top: 10%; width: 12%; height: 80%; }
         .cross::after { top: 44%; left: 10%; height: 12%; width: 80%; }
 
-        /* 1. Bande Défilante Adoucie (Fond blanc, texte rouge) */
+        /* 1. BANDE DE NEWS AGRANDIE ET TEXTE BLANC SUR VRAI ROUGE SUISSE */
         .news-banner { 
-            background: var(--bg-card);
-            color: var(--suisse-red); 
-            padding: 16px 0; 
+            background: var(--suisse-red);
+            color: var(--white); 
+            color: #FFFFFF;
+            padding: 22px 0; 
             overflow: hidden; 
             white-space: nowrap; 
-            font-weight: 800; 
-            font-size: 1rem; 
+            font-weight: 900; 
+            font-size: 1.1rem; 
             text-transform: uppercase;
-            letter-spacing: 1px;
-            border-bottom: 1px solid var(--line);
+            letter-spacing: 2px;
+            border-bottom: 2px solid #A11F14;
             position: relative;
             z-index: 1000;
+            box-shadow: 0 4px 15px rgba(213, 43, 30, 0.25);
         }
         .marquee { display: inline-block; animation: marquee 35s linear infinite; }
         @keyframes marquee { 0% { transform: translate(0, 0); } 100% { transform: translate(-50%, 0); } }
 
-        /* 2. Barre de Navigation Épurée */
+        /* 2. Barre de Navigation */
         .header { 
             background: rgba(250, 250, 248, 0.95); 
             backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); 
@@ -103,11 +104,11 @@
         .stat-num { font-family: 'Archivo'; font-weight: 900; font-size: 48px; line-height: 1; color: var(--dark); }
         .stat-label { font-family: 'IBM Plex Mono'; font-size: 12px; color: var(--steel); text-transform: uppercase; margin-top: 8px; }
 
-        /* REMISSION DES COULEURS SUR LES IMAGES (Plus de noir et blanc triste) */
+        /* Images en vraies couleurs */
         .hero-media { position: relative; margin-top: 50px; border-radius: var(--radius); overflow: hidden; }
         .hero-media img { width: 100%; height: 500px; object-fit: cover; display: block; }
 
-        /* 4. Tableau de bord Data à 4 Grilles (Style Claude mais aéré) */
+        /* 4. Strip des 4 statistiques clés */
         .data-strip { background: #F1F0EA; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); padding: 60px 0; }
         .data-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 40px; }
         .data-card { border-left: 1px solid var(--line); padding-left: 30px; }
@@ -142,7 +143,7 @@
         .f-duration { font-family: 'IBM Plex Mono'; font-size: 13px; border: 1px solid var(--line); padding: 8px 12px; text-align: center; background: white; }
         .f-desc { color: var(--steel); font-size: 14.5px; }
 
-        /* Matériel en couleur */
+        /* Matériel */
         .materiel-grid { display: grid; grid-template-columns: 1fr 1fr; border: 1px solid var(--line); border-radius: var(--radius); overflow: hidden; background: var(--bg-card); }
         .materiel-media img { width: 100%; height: 100%; object-fit: cover; display: block; }
         .materiel-copy { padding: 60px; display: flex; flex-direction: column; justify-content: center; }
@@ -150,7 +151,7 @@
         .materiel-copy h3 { font-family: 'Archivo'; font-size: 32px; text-transform: uppercase; margin-bottom: 16px; }
         .materiel-copy p { color: var(--steel); margin-bottom: 16px; }
 
-        /* Références Galerie en couleur */
+        /* Références Galerie */
         .sites-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 16px; margin-top: 20px; }
         .site { background: var(--bg-card); border: 1px solid var(--line); border-radius: 12px; overflow: hidden; }
         .site-img { height: 180px; overflow: hidden; }
@@ -160,7 +161,7 @@
         .site-info .place { font-family: 'Archivo'; font-weight: 700; text-transform: uppercase; }
         .site-info .canton { font-family: 'IBM Plex Mono'; font-size: 11px; color: var(--steel); margin-top: 4px; }
 
-        /* 6. Bouton de contact élégant */
+        /* Section de contact */
         .cta-band { background: var(--suisse-red); color: white; padding: 100px 0; text-align: center; }
         .btn-solid { 
             background: var(--dark); color: white; padding: 16px 36px; 
@@ -189,14 +190,14 @@
 </head>
 <body>
 
-    <!-- 1. BANDE DE NEWS DOUCE (Texte rouge sur fond blanc) -->
+    <!-- 1. BANDE DE NEWS PROPRE SUR COMPOSANTE ROUGE INTERNATIONALE SUISSE -->
     <div class="news-banner">
         <div class="marquee">
             &nbsp; • &nbsp; 84 VIES SAUVÉES PAR NOS SECOURISTES EN SUISSE &nbsp; • &nbsp; PLUS DE 1'248 INTERVENTIONS D'URGENCE ENREGISTRÉES &nbsp; • &nbsp; 100% DE NOS FORMATIONS CERTIFIÉES SRC &nbsp; • &nbsp; FORMATIONS ENTREPRISES SUR-MESURE &nbsp; • &nbsp;
         </div>
     </div>
 
-    <!-- 2. HEADER ÉPURÉ CHIC -->
+    <!-- 2. HEADER -->
     <header class="header">
         <div class="nav-container">
             <a href="index.html" class="brand-link">
@@ -244,12 +245,11 @@
                 </div>
             </div>
             <div class="hero-media">
-                <!-- Image nette et en couleur -->
                 <img src="http://almunqidhswiss.org/wp-content/uploads/2024/03/Default_secouriste_0-2-1024x564.jpg" alt="Formation Al Munqidh">
             </div>
         </section>
 
-        <!-- 4. STRIP SCIENTIFIQUE (Gros chiffres rouges, fond sobre) -->
+        <!-- 4. STRIP SCIENTIFIQUE -->
         <div class="data-strip">
             <div class="wrap data-grid">
                 <div class="data-card">
@@ -318,7 +318,7 @@
                     </div>
                     <div class="f-duration">3–4 heures</div>
                     <div class="f-desc">Les aptitudes de base pour agir en cas d'urgence cardiaque : reconnaissance des signes, premières actions.</div>
-                    <a href="#contact" class="btn-solid" style="padding:10px 20px; font-size:12px;">Réserver</a>
+                    <a href="#contact" class="btn-solid" style="padding:10px 20px; font-size:12px; background: var(--suisse-red);">Réserver</a>
                 </div>
                 <div class="formation-row">
                     <div class="f-num">02</div>
@@ -328,12 +328,12 @@
                     </div>
                     <div class="f-duration">7 heures</div>
                     <div class="f-desc">Le contenu du BLS Compact approfondi : reconnaissance de l'infarctus, de l'AVC, PLS et aspects légaux.</div>
-                    <a href="#contact" class="btn-solid" style="padding:10px 20px; font-size:12px;">Réserver</a>
+                    <a href="#contact" class="btn-solid" style="padding:10px 20px; font-size:12px; background: var(--suisse-red);">Réserver</a>
                 </div>
             </div>
         </section>
 
-        <!-- 7. MATÉRIEL EN COULEUR -->
+        <!-- 7. MATÉRIEL -->
         <section id="materiel" class="wrap">
             <div class="materiel-grid">
                 <div class="materiel-media">
@@ -349,7 +349,7 @@
             </div>
         </section>
 
-        <!-- 8. RÉFÉRENCES GALERIE COULEUR -->
+        <!-- 8. RÉFÉRENCES GALERIE -->
         <section id="sites" class="wrap" style="padding-top:0;">
             <div class="section-head">
                 <div>
@@ -402,19 +402,17 @@
             </div>
         </div>
         <div class="wrap" style="text-align:center; padding-top:20px; border-top:1px solid rgba(255,255,255,0.1); font-size:12px;">
-            © 2026 Al Munqidh — Design Épuré Suisse Premium.
+            © 2026 Al Munqidh — Alignement Suisse Édition Premium.
         </div>
     </footer>
 
     <script>
-        // Hamburger Menu Code
         const hBtn = document.getElementById('hamburger-btn');
         const mMenu = document.getElementById('mobile-menu-container');
         hBtn.addEventListener('click', () => {
             hBtn.classList.toggle('open'); mMenu.classList.toggle('open');
         });
 
-        // Numbers Animation
         function anim(id, val) {
             let n = 0; let el = document.getElementById(id);
             let itv = setInterval(() => {
