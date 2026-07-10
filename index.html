@@ -8,29 +8,29 @@
         @import url('https://fonts.googleapis.com/css2?family=Archivo:wght@700;900&family=Inter:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500;600&display=swap');
         
         :root { 
-            --rouge-sang: #BC0000; 
-            --rouge-brillant: #FF1A1A;
-            --bordeaux-profond: #2A0000;
-            --noir-obsidienne: #0B0505; 
-            --blanc: #FFFFFF; 
-            --gris-metal: #F5F5F7;
-            --glass-border: rgba(255, 255, 255, 0.15);
-            --radius: 24px;
+            --suisse-red: #D52B1E; 
+            --dark: #151515; 
+            --bg-light: #FAFAF8; 
+            --bg-card: #FFFFFF;
+            --steel: #6E6E68;
+            --line: #D9D7CE;
+            --radius: 16px;
         }
         
         * { box-sizing: border-box; margin: 0; padding: 0; }
         html { scroll-behavior: smooth; }
         
+        /* Retour à un fond clair et épuré pour reposer les yeux */
         body { 
             font-family: 'Inter', sans-serif; 
-            color: var(--blanc); 
-            background: radial-gradient(circle at 50% 0%, #500000 0%, var(--bordeaux-profond) 60%, var(--noir-obsidienne) 100%);
+            color: var(--dark); 
+            background-color: var(--bg-light);
             line-height: 1.6; 
             min-height: 100vh;
             -webkit-font-smoothing: antialiased;
         }
         
-        a { color: inherit; text-decoration: none; transition: all 0.3s ease; }
+        a { color: inherit; text-decoration: none; transition: all 0.25s ease; }
         .mono { font-family: 'IBM Plex Mono', monospace; }
         .display { font-family: 'Archivo', sans-serif; font-weight: 900; text-transform: uppercase; letter-spacing: -0.02em; }
         
@@ -39,173 +39,169 @@
         .cross::before { left: 44%; top: 10%; width: 12%; height: 80%; }
         .cross::after { top: 44%; left: 10%; height: 12%; width: 80%; }
 
-        /* 1. Grande Bande News Défilante Chrome */
+        /* 1. Bande Défilante Adoucie (Fond blanc, texte rouge) */
         .news-banner { 
-            background: linear-gradient(135deg, #FF0000 0%, var(--rouge-sang) 50%, #FF0000 100%);
-            background-size: 200% auto;
-            animation: shine 4s linear infinite;
-            color: white; 
-            padding: 22px 0; 
+            background: var(--bg-card);
+            color: var(--suisse-red); 
+            padding: 16px 0; 
             overflow: hidden; 
             white-space: nowrap; 
-            font-weight: 900; 
-            font-size: 1.1rem; 
+            font-weight: 800; 
+            font-size: 1rem; 
             text-transform: uppercase;
-            letter-spacing: 2px;
-            border-bottom: 2px solid rgba(255,255,255,0.2);
-            box-shadow: 0 4px 25px rgba(188, 0, 0, 0.5);
+            letter-spacing: 1px;
+            border-bottom: 1px solid var(--line);
             position: relative;
             z-index: 1000;
         }
-        .marquee { display: inline-block; animation: marquee 30s linear infinite; }
+        .marquee { display: inline-block; animation: marquee 35s linear infinite; }
         @keyframes marquee { 0% { transform: translate(0, 0); } 100% { transform: translate(-50%, 0); } }
-        @keyframes shine { 0% { background-position: 0% 50%; } 50% { background-position: 100% 50%; } 100% { background-position: 0% 50%; } }
 
-        /* 2. Barre de Navigation Vitrifiée */
+        /* 2. Barre de Navigation Épurée */
         .header { 
-            background: rgba(11, 5, 5, 0.75); 
-            backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); 
+            background: rgba(250, 250, 248, 0.95); 
+            backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); 
             position: sticky; top: 0; z-index: 999; 
-            border-bottom: 1px solid var(--glass-border); 
+            border-bottom: 1px solid var(--line); 
         }
-        .nav-container { padding: 15px 40px; display: flex; justify-content: space-between; align-items: center; max-width: 1280px; margin: 0 auto; width: 100%; }
+        .nav-container { padding: 18px 40px; display: flex; justify-content: space-between; align-items: center; max-width: 1280px; margin: 0 auto; width: 100%; }
         
         .brand-link { display: flex; align-items: center; gap: 12px; font-family: 'Archivo'; font-weight: 900; font-size: 20px; text-transform: uppercase; }
-        .logo-img { height: 45px; width: auto; filter: drop-shadow(0 0 8px rgba(255,26,26,0.6)); }
-        .brand-link .cross { color: var(--rouge-brillant); font-size: 14px; }
+        .logo-img { height: 40px; width: auto; }
+        .brand-link .cross { color: var(--suisse-red); font-size: 14px; }
         
         .nav-links { display: flex; align-items: center; list-style: none; gap: 32px; }
-        .nav-links a { font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: rgba(255,255,255,0.8); }
-        .nav-links a:hover { color: var(--rouge-brillant); text-shadow: 0 0 10px var(--rouge-brillant); }
-        .nav-cta { background: var(--blanc); color: var(--noir-obsidienne) !important; padding: 10px 20px; border-radius: 4px; }
-        .nav-cta:hover { background: var(--rouge-brillant) !important; color: var(--blanc) !important; }
+        .nav-links a { font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: var(--dark); }
+        .nav-links a:hover { color: var(--suisse-red); }
+        .nav-cta { background: var(--dark); color: var(--bg-light) !important; padding: 10px 20px; border-radius: 4px; }
+        .nav-cta:hover { background: var(--suisse-red) !important; color: white !important; }
 
-        /* Hamburger */
+        /* Hamburger Mobile */
         .hamburger { display: none; background: none; border: none; cursor: pointer; padding: 5px; z-index: 1001; }
-        .hamburger span { display: block; width: 24px; height: 2px; background: var(--blanc); margin: 5px 0; transition: 0.3s; }
+        .hamburger span { display: block; width: 24px; height: 2px; background: var(--dark); margin: 5px 0; transition: 0.3s; }
 
         /* Menu Mobile */
-        .mobile-menu { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100vh; background: linear-gradient(to bottom, var(--bordeaux-profond), var(--noir-obsidienne)); z-index: 998; padding: 140px 40px; flex-direction: column; gap: 28px; opacity: 0; transform: scale(0.95); transition: all 0.4s ease; }
+        .mobile-menu { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100vh; background: var(--bg-light); z-index: 998; padding: 140px 40px; flex-direction: column; gap: 28px; opacity: 0; transform: scale(0.95); transition: all 0.3s ease; }
         .mobile-menu.open { display: flex; opacity: 1; transform: scale(1); }
-        .mobile-menu a { font-size: 1.8rem; font-weight: 800; text-transform: uppercase; }
+        .mobile-menu a { font-size: 1.8rem; font-weight: 800; text-transform: uppercase; color: var(--dark); }
 
         .hamburger.open span:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
         .hamburger.open span:nth-child(2) { opacity: 0; }
         .hamburger.open span:nth-child(3) { transform: rotate(-45deg) translate(5px, -5px); }
         
-        /* 3. Hero Section Split & Éclatant */
+        /* 3. Hero Section */
         .wrap { max-width: 1280px; margin: 0 auto; padding: 0 40px; }
-        .hero { padding: 100px 0 60px 0; }
+        .hero { padding: 80px 0 60px 0; }
         .hero-grid { display: grid; grid-template-columns: 1.5fr 1fr; gap: 60px; align-items: end; }
-        .eyebrow { font-family: 'IBM Plex Mono'; font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--rouge-brillant); display: flex; align-items: center; gap: 8px; margin-bottom: 20px; font-weight: 600; }
-        .hero h1 { font-size: clamp(40px, 6.5vw, 84px); line-height: 0.98; margin-bottom: 26px; }
-        .hero-lede { max-width: 540px; font-size: 18px; color: rgba(255,255,255,0.7); }
+        .eyebrow { font-family: 'IBM Plex Mono'; font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--suisse-red); display: flex; align-items: center; gap: 8px; margin-bottom: 20px; font-weight: 600; }
+        .hero h1 { font-size: clamp(40px, 6.5vw, 84px); line-height: 0.98; margin-bottom: 26px; color: var(--dark); }
+        .hero-lede { max-width: 540px; font-size: 18px; color: var(--steel); }
         
-        .hero-side { border-left: 1px solid rgba(255,255,255,0.15); padding-left: 40px; }
+        .hero-side { border-left: 1px solid var(--line); padding-left: 40px; }
         .stat-block { padding: 20px 0; }
-        .stat-block + .stat-block { border-top: 1px solid rgba(255,255,255,0.15); }
-        .stat-num { font-family: 'Archivo'; font-weight: 900; font-size: 48px; line-height: 1; color: var(--blanc); }
-        .stat-label { font-family: 'IBM Plex Mono'; font-size: 12px; color: rgba(255,255,255,0.5); text-transform: uppercase; margin-top: 8px; }
+        .stat-block + .stat-block { border-top: 1px solid var(--line); }
+        .stat-num { font-family: 'Archivo'; font-weight: 900; font-size: 48px; line-height: 1; color: var(--dark); }
+        .stat-label { font-family: 'IBM Plex Mono'; font-size: 12px; color: var(--steel); text-transform: uppercase; margin-top: 8px; }
 
-        /* Image Hero monochrome à fort contraste */
-        .hero-media { position: relative; margin-top: 50px; }
-        .hero-media img { width: 100%; height: 500px; object-fit: cover; filter: grayscale(100%) contrast(1.15); display: block; }
-        .hero-media::after { content: ''; position: absolute; inset: 0; background: linear-gradient(180deg, transparent 40%, var(--noir-obsidienne) 100%); }
+        /* REMISSION DES COULEURS SUR LES IMAGES (Plus de noir et blanc triste) */
+        .hero-media { position: relative; margin-top: 50px; border-radius: var(--radius); overflow: hidden; }
+        .hero-media img { width: 100%; height: 500px; object-fit: cover; display: block; }
 
-        /* 4. Tableau de bord Data à 4 Grilles (Ton image fétiche) */
-        .data-strip { background: rgba(11, 5, 5, 0.4); border-top: 1px solid var(--glass-border); border-bottom: 1px solid var(--glass-border); padding: 80px 0; }
+        /* 4. Tableau de bord Data à 4 Grilles (Style Claude mais aéré) */
+        .data-strip { background: #F1F0EA; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); padding: 60px 0; }
         .data-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 40px; }
-        .data-card { border-left: 1px solid rgba(255,255,255,0.15); padding-left: 30px; }
+        .data-card { border-left: 1px solid var(--line); padding-left: 30px; }
         .data-card:first-child { border-left: none; padding-left: 0; }
-        .data-num { font-family: 'Archivo'; font-size: 4.5rem; font-weight: 900; color: var(--rouge-brillant); line-height: 1; margin-bottom: 15px; text-shadow: 0 0 20px rgba(255,26,26,0.3); }
-        .data-desc { font-size: 0.85rem; font-weight: 700; color: rgba(255,255,255,0.6); text-transform: uppercase; letter-spacing: 0.05em; }
+        .data-num { font-family: 'Archivo'; font-size: 4rem; font-weight: 900; color: var(--suisse-red); line-height: 1; margin-bottom: 10px; }
+        .data-desc { font-size: 0.85rem; font-weight: 700; color: var(--steel); text-transform: uppercase; letter-spacing: 0.05em; }
 
-        /* 5. Sections Générales Scaffolds */
-        section { padding: 120px 0; }
+        /* 5. Sections Générales */
+        section { padding: 100px 0; }
         .section-head { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; margin-bottom: 64px; }
-        .section-num { font-family: 'IBM Plex Mono'; font-size: 13px; color: var(--rouge-brillant); letter-spacing: 0.08em; margin-bottom: 12px; }
-        .section-desc { color: rgba(255,255,255,0.6); max-width: 460px; }
+        .section-num { font-family: 'IBM Plex Mono'; font-size: 13px; color: var(--suisse-red); letter-spacing: 0.08em; margin-bottom: 12px; }
+        .section-desc { color: var(--steel); max-width: 460px; }
 
         /* Cartes Pourquoi */
         .cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
         .card { 
-            background: rgba(255,255,255,0.03); border: 1px solid var(--glass-border); 
-            border-top: 1px solid rgba(255,255,255,0.3); padding: 40px; border-radius: var(--radius);
-            box-shadow: 0 20px 40px rgba(0,0,0,0.3); transition: 0.3s;
+            background: var(--bg-card); border: 1px solid var(--line); 
+            padding: 40px; border-radius: var(--radius);
+            box-shadow: 0 4px 20px rgba(0,0,0,0.02); transition: 0.3s;
         }
-        .card:hover { transform: translateY(-5px); border-color: var(--rouge-brillant); }
-        .card .cross { color: var(--rouge-brillant); font-size: 20px; margin-bottom: 20px; }
+        .card:hover { transform: translateY(-5px); border-color: var(--suisse-red); }
+        .card .cross { color: var(--suisse-red); font-size: 20px; margin-bottom: 20px; }
         .card h3 { font-family: 'Archivo'; font-size: 20px; text-transform: uppercase; margin-bottom: 12px; }
-        .card p { color: rgba(255,255,255,0.55); font-size: 14.5px; }
+        .card p { color: var(--steel); font-size: 14.5px; }
 
-        /* Formations Mises en bouche structurées */
-        .formation-row { display: grid; grid-template-columns: 50px 1.5fr 120px 2fr 160px; gap: 30px; padding: 40px 0; border-top: 1px solid rgba(255,255,255,0.15); align-items: center; }
-        .formation-row:last-child { border-bottom: 1px solid rgba(255,255,255,0.15); }
-        .f-num { font-family: 'Archivo'; font-weight: 900; font-size: 24px; color: var(--rouge-brillant); }
+        /* Formations */
+        .formation-row { display: grid; grid-template-columns: 50px 1.5fr 120px 2fr 160px; gap: 30px; padding: 40px 0; border-top: 1px solid var(--line); align-items: center; }
+        .formation-row:last-child { border-bottom: 1px solid var(--line); }
+        .f-num { font-family: 'Archivo'; font-weight: 900; font-size: 24px; color: var(--suisse-red); }
         .f-name { font-family: 'Archivo'; font-size: 22px; text-transform: uppercase; margin-bottom: 4px; }
-        .f-audience { font-family: 'IBM Plex Mono'; font-size: 11px; color: rgba(255,255,255,0.5); text-transform: uppercase; }
-        .f-duration { font-family: 'IBM Plex Mono'; font-size: 13px; border: 1px solid rgba(255,255,255,0.2); padding: 8px 12px; text-align: center; }
-        .f-desc { color: rgba(255,255,255,0.6); font-size: 14.5px; }
+        .f-audience { font-family: 'IBM Plex Mono'; font-size: 11px; color: var(--steel); text-transform: uppercase; }
+        .f-duration { font-family: 'IBM Plex Mono'; font-size: 13px; border: 1px solid var(--line); padding: 8px 12px; text-align: center; background: white; }
+        .f-desc { color: var(--steel); font-size: 14.5px; }
 
-        /* Matériel avec brillance */
-        .materiel-grid { display: grid; grid-template-columns: 1fr 1fr; border: 1px solid var(--glass-border); border-radius: var(--radius); overflow: hidden; background: rgba(11,5,5,0.5); }
-        .materiel-media img { width: 100%; height: 100%; object-fit: cover; filter: grayscale(100%) contrast(1.1); }
+        /* Matériel en couleur */
+        .materiel-grid { display: grid; grid-template-columns: 1fr 1fr; border: 1px solid var(--line); border-radius: var(--radius); overflow: hidden; background: var(--bg-card); }
+        .materiel-media img { width: 100%; height: 100%; object-fit: cover; display: block; }
         .materiel-copy { padding: 60px; display: flex; flex-direction: column; justify-content: center; }
-        .tag-red { display: inline-block; background: var(--rouge-sang); padding: 6px 12px; font-family: 'IBM Plex Mono'; font-size: 11px; text-transform: uppercase; margin-bottom: 20px; width: fit-content; font-weight: 600; }
+        .tag-red { display: inline-block; background: var(--suisse-red); color: white; padding: 6px 12px; font-family: 'IBM Plex Mono'; font-size: 11px; text-transform: uppercase; margin-bottom: 20px; width: fit-content; font-weight: 600; }
         .materiel-copy h3 { font-family: 'Archivo'; font-size: 32px; text-transform: uppercase; margin-bottom: 16px; }
-        .materiel-copy p { color: rgba(255,255,255,0.6); margin-bottom: 16px; }
+        .materiel-copy p { color: var(--steel); margin-bottom: 16px; }
 
-        /* Références Galerie */
-        .sites-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1px; background: rgba(255,255,255,0.15); border: 1px solid rgba(255,255,255,0.15); }
-        .site { background: var(--noir-obsidienne); }
+        /* Références Galerie en couleur */
+        .sites-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 16px; margin-top: 20px; }
+        .site { background: var(--bg-card); border: 1px solid var(--line); border-radius: 12px; overflow: hidden; }
         .site-img { height: 180px; overflow: hidden; }
-        .site-img img { width: 100%; height: 100%; object-fit: cover; filter: grayscale(100%); transition: 0.5s; }
-        .site:hover .site-img img { filter: grayscale(0%); transform: scale(1.05); }
+        .site-img img { width: 100%; height: 100%; object-fit: cover; transition: 0.3s; }
+        .site:hover .site-img img { transform: scale(1.05); }
         .site-info { padding: 20px; }
         .site-info .place { font-family: 'Archivo'; font-weight: 700; text-transform: uppercase; }
-        .site-info .canton { font-family: 'IBM Plex Mono'; font-size: 11px; color: rgba(255,255,255,0.5); margin-top: 4px; }
+        .site-info .canton { font-family: 'IBM Plex Mono'; font-size: 11px; color: var(--steel); margin-top: 4px; }
 
-        /* 6. Bouton de contact Chrome */
-        .cta-band { background: linear-gradient(180deg, var(--rouge-sang) 0%, #700000 100%); padding: 100px 0; text-align: center; border-top: 1px solid rgba(255,255,255,0.3); }
+        /* 6. Bouton de contact élégant */
+        .cta-band { background: var(--suisse-red); color: white; padding: 100px 0; text-align: center; }
         .btn-solid { 
-            background: linear-gradient(180deg, #FF3333 0%, #BD0000 100%); color: white; padding: 16px 36px; 
-            border-radius: 8px; font-family: 'IBM Plex Mono'; font-weight: 700; text-transform: uppercase;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.4), inset 0 1px 1px rgba(255,255,255,0.4); border: 1px solid #990000;
+            background: var(--dark); color: white; padding: 16px 36px; 
+            border-radius: 6px; font-family: 'IBM Plex Mono'; font-weight: 700; text-transform: uppercase;
+            border: none; cursor: pointer; transition: 0.2s;
         }
-        .btn-solid:hover { box-shadow: 0 15px 40px rgba(255,26,26,0.6); filter: brightness(1.1); transform: translateY(-2px); }
+        .btn-solid:hover { background: #333; transform: translateY(-2px); }
 
-        footer { background: #050202; padding: 60px 0 30px; border-top: 1px solid var(--glass-border); color: rgba(255,255,255,0.5); font-size: 14px; }
+        footer { background: var(--dark); padding: 60px 0 30px; color: rgba(255,255,255,0.5); font-size: 14px; }
         .footer-grid { display: grid; grid-template-columns: 1.5fr 1fr 1fr; gap: 40px; margin-bottom: 40px; }
         .footer-logo { font-family: 'Archivo'; font-weight: 900; text-transform: uppercase; font-size: 22px; color: white; display: flex; align-items: center; gap: 10px; }
-        .footer-col h5 { font-family: 'IBM Plex Mono'; font-size: 11px; color: var(--rouge-brillant); text-transform: uppercase; margin-bottom: 15px; }
+        .footer-logo .cross { color: var(--suisse-red); }
+        .footer-col h5 { font-family: 'IBM Plex Mono'; font-size: 11px; color: #7B7A72; text-transform: uppercase; margin-bottom: 15px; }
         .footer-col a { display: block; color: rgba(255,255,255,0.7); margin-bottom: 8px; }
-        .footer-col a:hover { color: var(--rouge-brillant); }
+        .footer-col a:hover { color: var(--suisse-red); }
 
         @media (max-width: 900px) {
             .wrap { padding: 0 24px; }
             .nav-links { display: none; } .hamburger { display: block; }
             .hero-grid, .section-head, .formation-row, .materiel-grid, .footer-grid { grid-template-columns: 1fr; gap: 30px; }
-            .hero-side { border-left: none; padding-left: 0; border-top: 1px solid rgba(255,255,255,0.15); padding-top: 20px; }
+            .hero-side { border-left: none; padding-left: 0; border-top: 1px solid var(--line); padding-top: 20px; }
             .data-grid { grid-template-columns: 1fr 1fr; }
-            .data-card { border-left: none; }
+            .data-card { border-left: none; padding-left: 0; }
         }
     </style>
 </head>
 <body>
 
-    <!-- 1. GRANDE BANDE DE NEWS AMÉRICAINE GLOSSY -->
+    <!-- 1. BANDE DE NEWS DOUCE (Texte rouge sur fond blanc) -->
     <div class="news-banner">
         <div class="marquee">
             &nbsp; • &nbsp; 84 VIES SAUVÉES PAR NOS SECOURISTES EN SUISSE &nbsp; • &nbsp; PLUS DE 1'248 INTERVENTIONS D'URGENCE ENREGISTRÉES &nbsp; • &nbsp; 100% DE NOS FORMATIONS CERTIFIÉES SRC &nbsp; • &nbsp; FORMATIONS ENTREPRISES SUR-MESURE &nbsp; • &nbsp;
         </div>
     </div>
 
-    <!-- 2. HEADER AVEC LOGO ET CROIX -->
+    <!-- 2. HEADER ÉPURÉ CHIC -->
     <header class="header">
         <div class="nav-container">
             <a href="index.html" class="brand-link">
                 <img src="logo.png" alt="Logo Al Munqidh" class="logo-img" onerror="this.style.display='none';">
-                <span class="logo-text"><span class="cross"></span>AL MUNQIDH</span>
+                <span class="logo-text" style="color: var(--dark);"><span class="cross"></span>AL MUNQIDH</span>
             </a>
             <ul class="nav-links">
                 <li><a href="#pourquoi">Pourquoi</a></li>
@@ -233,12 +229,12 @@
             <div class="hero-grid">
                 <div>
                     <div class="eyebrow"><span class="cross"></span>Formation premiers secours — Suisse romande</div>
-                    <h1 class="display">Avoir des<br>compétences,<br>c'est pouvoir <span style="color:var(--rouge-brillant)">agir</span></h1>
+                    <h1 class="display">Avoir des<br>compétences,<br>c'est pouvoir <span style="color:var(--suisse-red)">agir</span></h1>
                     <p class="hero-lede">Al Munqidh forme entreprises, particuliers et collectivités aux gestes qui font la différence avant l'arrivée des secours — et équipe vos locaux en défibrillateurs.</p>
                 </div>
                 <div class="hero-side">
                     <div class="stat-block">
-                        <div class="stat-num" id="live-vies" style="color:var(--rouge-brillant)">0</div>
+                        <div class="stat-num" id="live-vies" style="color:var(--suisse-red)">0</div>
                         <div class="stat-label">Vies sauvées en huit ans par nos secouristes formés</div>
                     </div>
                     <div class="stat-block">
@@ -248,11 +244,12 @@
                 </div>
             </div>
             <div class="hero-media">
+                <!-- Image nette et en couleur -->
                 <img src="http://almunqidhswiss.org/wp-content/uploads/2024/03/Default_secouriste_0-2-1024x564.jpg" alt="Formation Al Munqidh">
             </div>
         </section>
 
-        <!-- 4. STRIP SCIENTIFIQUE CHOC (Ton image) -->
+        <!-- 4. STRIP SCIENTIFIQUE (Gros chiffres rouges, fond sobre) -->
         <div class="data-strip">
             <div class="wrap data-grid">
                 <div class="data-card">
@@ -302,14 +299,14 @@
             </div>
         </section>
 
-        <!-- 6. PROGRAMMES FORMATIONS (Aperçu complet) -->
+        <!-- 6. PROGRAMMES FORMATIONS -->
         <section id="formations" class="wrap" style="padding-top:0;">
             <div class="section-head">
                 <div>
                     <div class="section-num">02 — Nos formations</div>
                     <h2 class="display">Trois parcours certifiés</h2>
                 </div>
-                <p class="section-desc">Du geste de base à la certification complète en entreprise — cliquez pour réserver ou en savoir plus.</p>
+                <p class="section-desc">Du geste de base à la certification complète en entreprise — contactez-nous pour réserver ou en savoir plus.</p>
             </div>
             
             <div>
@@ -336,7 +333,7 @@
             </div>
         </section>
 
-        <!-- 7. MATÉRIEL ZOLL AED PLUS -->
+        <!-- 7. MATÉRIEL EN COULEUR -->
         <section id="materiel" class="wrap">
             <div class="materiel-grid">
                 <div class="materiel-media">
@@ -347,12 +344,12 @@
                     <h3>Évaluation du massage en temps réel</h3>
                     <p>Le Zoll AED Plus est le seul défibrillateur muni d'une aide vocale et visuelle pour évaluer instantanément la profondeur et le rythme de vos compressions thoraciques.</p>
                     <p>Choisi et utilisé par la <strong>REGA</strong> pour équiper ses hélicoptères de sauvetage.</p>
-                    <a href="#contact" class="btn-solid" style="margin-top:20px; width:fit-content;">Réserver une démo gratuite (30 min)</a>
+                    <a href="#contact" class="btn-solid" style="margin-top:20px; width:fit-content; background:var(--suisse-red);">Réserver une démo gratuite</a>
                 </div>
             </div>
         </section>
 
-        <!-- 8. RÉFÉRENCES GALERIE -->
+        <!-- 8. RÉFÉRENCES GALERIE COULEUR -->
         <section id="sites" class="wrap" style="padding-top:0;">
             <div class="section-head">
                 <div>
@@ -376,11 +373,11 @@
             </div>
         </section>
 
-        <!-- 9. ZONE DE CONTACT IMPACT -->
+        <!-- 9. CONTACT -->
         <section class="cta-band" id="contact">
             <div class="wrap">
-                <h2 class="display">Parlons de la sécurité<br>de vos équipes</h2>
-                <p style="margin-bottom:30px; opacity:0.8;">Devis de formation ou démonstration — réponse sous 48 heures.</p>
+                <h2 class="display">Parlons de la sécurité de vos équipes</h2>
+                <p style="margin-bottom:30px; opacity:0.9;">Devis de formation ou démonstration — réponse sous 48 heures.</p>
                 <a href="mailto:contact@almunqidhswiss.org" class="btn-solid" style="padding:20px 50px;">Nous écrire par e-mail</a>
             </div>
         </section>
@@ -405,7 +402,7 @@
             </div>
         </div>
         <div class="wrap" style="text-align:center; padding-top:20px; border-top:1px solid rgba(255,255,255,0.1); font-size:12px;">
-            © 2026 Al Munqidh — Rendu Premium Suisse. All Rights Reserved.
+            © 2026 Al Munqidh — Design Épuré Suisse Premium.
         </div>
     </footer>
 
@@ -416,9 +413,6 @@
         hBtn.addEventListener('click', () => {
             hBtn.classList.toggle('open'); mMenu.classList.toggle('open');
         });
-        mMenu.querySelectorAll('a').forEach(l => l.addEventListener('click', () => {
-            hBtn.classList.remove('open'); mMenu.classList.remove('open');
-        }));
 
         // Numbers Animation
         function anim(id, val) {
