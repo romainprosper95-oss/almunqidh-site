@@ -1,160 +1,53 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="fr" class="scroll-smooth">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Matériel | Almunqidh</title>
-  <link rel="stylesheet" href="styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Matériel Médical | Almunqidh</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 </head>
-<body>
-  <header class="header">
-    <div class="container nav-wrap">
-      <a href="index.html" class="brand" aria-label="Accueil">
-        <img src="logo.png" alt="Almunqidh" class="brand-logo">
-        <div class="brand-text">
-          <span class="brand-name">Almunqidh</span>
-          <span class="brand-tag">Premiers secours en Suisse</span>
-        </div>
-      </a>
+<body class="bg-gray-50 text-gray-900 font-sans">
 
-      <button class="menu-toggle" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="mobileNav">
-        <span></span><span></span><span></span>
-      </button>
-
-      <nav class="nav desktop-nav" aria-label="Navigation principale">
-        <a href="index.html">Accueil</a>
-        <a href="formations.html">Formations</a>
-        <a href="materiel.html">Matériel</a>
-        <a href="defibrillateurs.html">Défibrillateurs</a>
-        <a href="galerie.html">Galerie</a>
-        <a href="contact.html">Contact</a>
-      </nav>
+  <main class="max-w-7xl mx-auto px-6 py-20">
+    <div class="text-center mb-20" data-aos="fade-up">
+        <h1 class="text-5xl font-extrabold tracking-tight mb-6">Équipement Professionnel</h1>
+        <p class="text-xl text-gray-500 max-w-2xl mx-auto">Solutions de terrain conçues pour l'efficacité. Tout est fixé, accessible en un instant.</p>
     </div>
 
-    <div class="mobile-panel" id="mobileNav" aria-hidden="true">
-      <a href="index.html">Accueil</a>
-      <a href="formations.html">Formations</a>
-      <a href="materiel.html">Matériel</a>
-      <a href="defibrillateurs.html">Défibrillateurs</a>
-      <a href="galerie.html">Galerie</a>
-      <a href="contact.html">Contact</a>
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+        
+        <!-- Produit 1 : Sacs d'urgence -->
+        <article class="bg-white p-2 rounded-3xl shadow-sm border border-gray-100" data-aos="fade-right">
+            <img src="images/sac-urgence.jpg" alt="Sac d'urgence professionnel" class="w-full h-80 object-cover rounded-2xl bg-gray-200">
+            <div class="p-8">
+                <h2 class="text-3xl font-bold mb-4">Sacs d'intervention Med4care</h2>
+                <p class="text-gray-600 mb-6 leading-relaxed">Notre gamme de sacs pensée pour le terrain. Une visibilité à 90% du contenu pour ne jamais perdre une seconde. Conception modulaire robuste.</p>
+                <a href="contact.html" class="inline-block bg-black text-white px-8 py-3 rounded-xl hover:bg-red-600 transition-all font-semibold">Demander un devis</a>
+            </div>
+        </article>
+
+        <!-- Produit 2 : Défibrillateurs -->
+        <article class="bg-white p-2 rounded-3xl shadow-sm border border-gray-100" data-aos="fade-left">
+            <img src="images/defibrillateur.jpg" alt="Défibrillateur DAE" class="w-full h-80 object-cover rounded-2xl bg-gray-200">
+            <div class="p-8">
+                <h2 class="text-3xl font-bold mb-4">Défibrillateurs (DAE)</h2>
+                <p class="text-gray-600 mb-6 leading-relaxed">Solutions de défibrillation automatique, fiables et simples d'utilisation. Nous gérons l'installation, la maintenance et le suivi réglementaire.</p>
+                <a href="contact.html" class="inline-block bg-black text-white px-8 py-3 rounded-xl hover:bg-red-600 transition-all font-semibold">Voir les modèles</a>
+            </div>
+        </article>
+
     </div>
-  </header>
 
-  <main>
-    <section class="page-hero">
-      <div class="container">
-        <p class="eyebrow">Matériel</p>
-        <h1>Du matériel pensé pour accompagner l’action sur le terrain.</h1>
-        <p class="hero-text">
-          Almunqidh met en avant des solutions utiles, pratiques et bien organisées pour compléter les besoins des secouristes, des entreprises et des structures.
-        </p>
-      </div>
-    </section>
-
-    <section class="trust-band">
-      <div class="container trust-band-inner">
-        <p>Un bon équipement permet d’être plus rapide, plus clair et plus efficace.</p>
-        <strong>Chaque détail compte quand il s’agit d’intervenir sereinement.</strong>
-      </div>
-    </section>
-
-    <section class="section">
-      <div class="container">
-        <div class="section-head">
-          <p class="eyebrow">Ce que nous présentons</p>
-          <h2>Une sélection de solutions utiles et cohérentes.</h2>
-        </div>
-
-        <div class="feature-grid">
-          <article class="feature-card">
-            <h3>Sacs et valises</h3>
-            <p>Des contenants organisés pour transporter le matériel avec ordre, clarté et efficacité.</p>
-          </article>
-
-          <article class="feature-card">
-            <h3>Accessoires</h3>
-            <p>Des compléments utiles pour répondre aux besoins d’une intervention ou d’un poste de secours.</p>
-          </article>
-
-          <article class="feature-card">
-            <h3>Formateur</h3>
-            <p>Du matériel pensé aussi pour soutenir l’apprentissage et la préparation des équipes.</p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section class="section section-alt">
-      <div class="container">
-        <div class="section-head">
-          <p class="eyebrow">Organisation</p>
-          <h2>Des cartes simples pour comprendre vite l’intérêt de chaque catégorie.</h2>
-        </div>
-
-        <div class="testimonial-grid">
-          <article class="testimonial-card">
-            <p>Une présentation propre qui aide à trouver le bon équipement rapidement.</p>
-            <span>Lisibilité et efficacité</span>
-          </article>
-
-          <article class="testimonial-card">
-            <p>Des catégories claires pour un site plus rassurant et plus professionnel.</p>
-            <span>Image premium</span>
-          </article>
-
-          <article class="testimonial-card">
-            <p>Une logique pensée pour guider l’utilisateur sans le perdre dans trop d’informations.</p>
-            <span>Navigation simple</span>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section class="section">
-      <div class="container contact-layout">
-        <div>
-          <p class="eyebrow">But de la page</p>
-          <h2>Montrer l’essentiel sans surcharger.</h2>
-          <p class="contact-text">
-            Cette page met en valeur le matériel utile pour accompagner les formations et les besoins opérationnels, avec une lecture rapide et élégante.
-          </p>
-        </div>
-
-        <div class="gallery-empty">
-          <p>Zone réservée pour plus tard à des photos de matériel, des fiches ou des démonstrations.</p>
-        </div>
-      </div>
-    </section>
-
-    <section class="section section-alt">
-      <div class="container">
-        <div class="section-head">
-          <p class="eyebrow">Suite du site</p>
-          <h2>Découvrez aussi les défibrillateurs et les formations.</h2>
-        </div>
-
-        <div class="feature-grid">
-          <a href="defibrillateurs.html" class="feature-card link-card">
-            <h3>Défibrillateurs</h3>
-            <p>Des équipements essentiels pour intervenir vite dans une situation critique.</p>
-          </a>
-
-          <a href="formations.html" class="feature-card link-card">
-            <h3>Formations</h3>
-            <p>Des contenus pratiques pour apprendre les bons gestes dans un cadre clair.</p>
-          </a>
-
-          <a href="contact.html" class="feature-card link-card">
-            <h3>Contact</h3>
-            <p>Posez vos questions et préparez votre projet en toute simplicité.</p>
-          </a>
-        </div>
-      </div>
-    </section>
+    <!-- Section Démo -->
+    <div class="mt-20 bg-white border border-gray-200 rounded-3xl p-12 text-center" data-aos="fade-up">
+        <h3 class="text-2xl font-bold mb-4">Besoin d'une démonstration ?</h3>
+        <p class="text-gray-600 mb-8">Nous nous déplaçons gratuitement dans vos locaux (30 min) pour vous montrer le matériel en action.</p>
+        <a href="contact.html" class="bg-red-600 text-white px-10 py-4 rounded-xl font-bold hover:bg-red-700 transition-all">Réserver une démo</a>
+    </div>
   </main>
 
-  <a href="#top" class="to-top" aria-label="Remonter en haut">↑</a>
-  <script src="script.js"></script>
+  <script>AOS.init({ once: true });</script>
 </body>
 </html>
