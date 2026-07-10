@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Almunqidh | Urgences & Premiers Secours Suisse</title>
+    <title>AL MUNQIDH — Urgences & Premiers Secours Suisse</title>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Archivo:wght@700;900&family=Inter:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500;600&display=swap');
         
         :root { 
             --rouge-sang: #BC0000; 
@@ -13,183 +13,255 @@
             --bordeaux-profond: #2A0000;
             --noir-obsidienne: #0B0505; 
             --blanc: #FFFFFF; 
-            --glass-white: rgba(255, 255, 255, 0.08);
+            --gris-metal: #F5F5F7;
             --glass-border: rgba(255, 255, 255, 0.15);
             --radius: 24px;
         }
         
         * { box-sizing: border-box; margin: 0; padding: 0; }
+        html { scroll-behavior: smooth; }
         
         body { 
             font-family: 'Inter', sans-serif; 
             color: var(--blanc); 
-            background: radial-gradient(circle at 50% 0%, #610000 0%, var(--bordeaux-profond) 70%, var(--noir-obsidienne) 100%);
+            background: radial-gradient(circle at 50% 0%, #500000 0%, var(--bordeaux-profond) 60%, var(--noir-obsidienne) 100%);
             line-height: 1.6; 
             min-height: 100vh;
+            -webkit-font-smoothing: antialiased;
         }
         
         a { color: inherit; text-decoration: none; transition: all 0.3s ease; }
+        .mono { font-family: 'IBM Plex Mono', monospace; }
+        .display { font-family: 'Archivo', sans-serif; font-weight: 900; text-transform: uppercase; letter-spacing: -0.02em; }
         
-        /* 1. Bande Défilante */
+        .cross { display: inline-block; position: relative; width: 1em; height: 1em; vertical-align: middle; }
+        .cross::before, .cross::after { content: ''; position: absolute; background: currentColor; }
+        .cross::before { left: 44%; top: 10%; width: 12%; height: 80%; }
+        .cross::after { top: 44%; left: 10%; height: 12%; width: 80%; }
+
+        /* 1. Grande Bande News Défilante Chrome */
         .news-banner { 
-            background: linear-gradient(135deg, #FF0000 0%, #990000 50%, #FF0000 100%);
+            background: linear-gradient(135deg, #FF0000 0%, var(--rouge-sang) 50%, #FF0000 100%);
             background-size: 200% auto;
             animation: shine 4s linear infinite;
             color: white; 
-            padding: 12px 0; 
+            padding: 22px 0; 
             overflow: hidden; 
             white-space: nowrap; 
-            font-weight: 700; 
-            font-size: 0.9rem; 
-            border-bottom: 1px solid rgba(255,255,255,0.3);
-            box-shadow: 0 4px 20px rgba(188, 0, 0, 0.4);
+            font-weight: 900; 
+            font-size: 1.1rem; 
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            border-bottom: 2px solid rgba(255,255,255,0.2);
+            box-shadow: 0 4px 25px rgba(188, 0, 0, 0.5);
             position: relative;
             z-index: 1000;
         }
-        .marquee { display: inline-block; animation: marquee 25s linear infinite; }
+        .marquee { display: inline-block; animation: marquee 30s linear infinite; }
         @keyframes marquee { 0% { transform: translate(0, 0); } 100% { transform: translate(-50%, 0); } }
         @keyframes shine { 0% { background-position: 0% 50%; } 50% { background-position: 100% 50%; } 100% { background-position: 0% 50%; } }
 
-        /* 2. Barre de Navigation */
+        /* 2. Barre de Navigation Vitrifiée */
         .header { 
-            background: rgba(42, 0, 0, 0.6); 
-            backdrop-filter: blur(20px); 
-            -webkit-backdrop-filter: blur(20px); 
-            position: sticky; 
-            top: 0; 
-            z-index: 999; 
+            background: rgba(11, 5, 5, 0.75); 
+            backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); 
+            position: sticky; top: 0; z-index: 999; 
             border-bottom: 1px solid var(--glass-border); 
         }
-        .nav-container { padding: 15px 20px; display: flex; justify-content: space-between; align-items: center; max-width: 1200px; margin: 0 auto; width: 100%; }
-        .brand-link { display: flex; align-items: center; gap: 12px; }
-        .logo-img { height: 50px; width: auto; object-fit: contain; filter: drop-shadow(0 0 8px rgba(255,26,26,0.6)); }
-        .logo-text { font-weight: 900; font-size: 1.5rem; letter-spacing: -0.5px; }
+        .nav-container { padding: 15px 40px; display: flex; justify-content: space-between; align-items: center; max-width: 1280px; margin: 0 auto; width: 100%; }
         
-        .nav-links { display: flex; align-items: center; }
-        .nav-links a { margin-left: 28px; font-weight: 600; font-size: 0.95rem; color: rgba(255,255,255,0.8); }
+        .brand-link { display: flex; align-items: center; gap: 12px; font-family: 'Archivo'; font-weight: 900; font-size: 20px; text-transform: uppercase; }
+        .logo-img { height: 45px; width: auto; filter: drop-shadow(0 0 8px rgba(255,26,26,0.6)); }
+        .brand-link .cross { color: var(--rouge-brillant); font-size: 14px; }
+        
+        .nav-links { display: flex; align-items: center; list-style: none; gap: 32px; }
+        .nav-links a { font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: rgba(255,255,255,0.8); }
         .nav-links a:hover { color: var(--rouge-brillant); text-shadow: 0 0 10px var(--rouge-brillant); }
-        .active-link { color: var(--rouge-brillant) !important; text-shadow: 0 0 12px var(--rouge-brillant); }
+        .nav-cta { background: var(--blanc); color: var(--noir-obsidienne) !important; padding: 10px 20px; border-radius: 4px; }
+        .nav-cta:hover { background: var(--rouge-brillant) !important; color: var(--blanc) !important; }
 
-        /* Hamburger Mobile */
+        /* Hamburger */
         .hamburger { display: none; background: none; border: none; cursor: pointer; padding: 5px; z-index: 1001; }
-        .hamburger span { display: block; width: 24px; height: 3px; background: var(--blanc); margin: 4px 0; transition: 0.3s; border-radius: 2px; }
+        .hamburger span { display: block; width: 24px; height: 2px; background: var(--blanc); margin: 5px 0; transition: 0.3s; }
 
         /* Menu Mobile */
-        .mobile-menu { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100vh; background: linear-gradient(to bottom, var(--bordeaux-profond), var(--noir-obsidienne)); z-index: 998; padding: 140px 40px; flex-direction: column; gap: 28px; opacity: 0; transform: scale(0.95); transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1); }
+        .mobile-menu { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100vh; background: linear-gradient(to bottom, var(--bordeaux-profond), var(--noir-obsidienne)); z-index: 998; padding: 140px 40px; flex-direction: column; gap: 28px; opacity: 0; transform: scale(0.95); transition: all 0.4s ease; }
         .mobile-menu.open { display: flex; opacity: 1; transform: scale(1); }
-        .mobile-menu a { font-size: 2rem; font-weight: 800; }
+        .mobile-menu a { font-size: 1.8rem; font-weight: 800; text-transform: uppercase; }
 
         .hamburger.open span:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
         .hamburger.open span:nth-child(2) { opacity: 0; }
         .hamburger.open span:nth-child(3) { transform: rotate(-45deg) translate(5px, -5px); }
         
-        /* 3. Hero Section */
-        .hero { text-align: center; padding: 100px 20px 60px 20px; max-width: 1200px; margin: 0 auto; }
-        .hero h1 { font-size: clamp(3rem, 8vw, 5.5rem); font-weight: 900; line-height: 1; letter-spacing: -2px; margin-bottom: 28px; }
-        .hero h1 span { background: linear-gradient(to bottom, #FFF, #FFAAAA); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
-        .hero p { font-size: 1.35rem; color: rgba(255,255,255,0.7); max-width: 700px; margin: 0 auto 50px auto; }
+        /* 3. Hero Section Split & Éclatant */
+        .wrap { max-width: 1280px; margin: 0 auto; padding: 0 40px; }
+        .hero { padding: 100px 0 60px 0; }
+        .hero-grid { display: grid; grid-template-columns: 1.5fr 1fr; gap: 60px; align-items: end; }
+        .eyebrow { font-family: 'IBM Plex Mono'; font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--rouge-brillant); display: flex; align-items: center; gap: 8px; margin-bottom: 20px; font-weight: 600; }
+        .hero h1 { font-size: clamp(40px, 6.5vw, 84px); line-height: 0.98; margin-bottom: 26px; }
+        .hero-lede { max-width: 540px; font-size: 18px; color: rgba(255,255,255,0.7); }
         
-        /* 4. Grille de données & d'impact */
-        .stats-main { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; max-width: 1100px; margin: 0 auto 50px auto; padding: 0 20px; }
-        .stat-card-main { 
-            background: linear-gradient(135deg, rgba(255,255,255,0.07) 0%, rgba(255,255,255,0.02) 100%);
-            border: 1px solid var(--glass-border); border-top: 1px solid rgba(255,255,255,0.4);
-            padding: 45px; border-radius: var(--radius); text-align: center; box-shadow: 0 30px 60px rgba(0,0,0,0.4);
-        }
-        .card-alert { background: linear-gradient(135deg, rgba(188,0,0,0.3) 0%, rgba(42,0,0,0.4) 100%); border-color: rgba(255,26,26,0.3); }
-        .stat-card-main h3 { font-size: 3.8rem; font-weight: 900; line-height: 1; margin-bottom: 12px; }
+        .hero-side { border-left: 1px solid rgba(255,255,255,0.15); padding-left: 40px; }
+        .stat-block { padding: 20px 0; }
+        .stat-block + .stat-block { border-top: 1px solid rgba(255,255,255,0.15); }
+        .stat-num { font-family: 'Archivo'; font-weight: 900; font-size: 48px; line-height: 1; color: var(--blanc); }
+        .stat-label { font-family: 'IBM Plex Mono'; font-size: 12px; color: rgba(255,255,255,0.5); text-transform: uppercase; margin-top: 8px; }
 
-        /* 5. NOUVELLE GRILLE SCIENTIFIQUE (Inspirée de ta capture d'écran) */
-        .data-grid-section { max-width: 1100px; margin: 0 auto 100px auto; padding: 0 20px; }
-        .data-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 24px; }
-        .data-card { 
-            background: rgba(11, 5, 5, 0.6); border: 1px solid rgba(255, 255, 255, 0.05); 
-            padding: 35px 25px; border-radius: 20px; transition: transform 0.3s ease;
-        }
-        .data-card:hover { transform: translateY(-4px); border-color: rgba(188, 0, 0, 0.3); }
-        .data-num { font-size: 4rem; font-weight: 900; color: var(--rouge-brillant); line-height: 1; margin-bottom: 15px; text-shadow: 0 0 15px rgba(255,26,26,0.3); }
-        .data-desc { font-size: 0.85rem; font-weight: 700; color: rgba(255,255,255,0.6); text-transform: uppercase; letter-spacing: 0.5px; line-height: 1.5; }
+        /* Image Hero monochrome à fort contraste */
+        .hero-media { position: relative; margin-top: 50px; }
+        .hero-media img { width: 100%; height: 500px; object-fit: cover; filter: grayscale(100%) contrast(1.15); display: block; }
+        .hero-media::after { content: ''; position: absolute; inset: 0; background: linear-gradient(180deg, transparent 40%, var(--noir-obsidienne) 100%); }
 
-        /* 6. Boutons */
-        .btn-group { display: flex; gap: 20px; justify-content: center; flex-wrap: wrap; }
-        .cta-btn { 
-            background: linear-gradient(180deg, #FF3333 0%, #BD0000 100%);
-            color: white; padding: 18px 38px; border-radius: 16px; font-weight: 700; font-size: 1.05rem;
-            box-shadow: 0 10px 30px rgba(188,0,0,0.4), inset 0 1px 1px rgba(255,255,255,0.4); border: 1px solid #990000; text-transform: uppercase;
-        }
-        .cta-btn:hover { transform: translateY(-3px); box-shadow: 0 15px 40px rgba(255,26,26,0.6); filter: brightness(1.1); }
-        .secondary-btn { background: rgba(255, 255, 255, 0.05); color: var(--blanc); padding: 18px 38px; border-radius: 16px; font-weight: 700; border: 1px solid var(--glass-border); }
-        .secondary-btn:hover { background: rgba(255,255,255,0.15); transform: translateY(-3px); }
+        /* 4. Tableau de bord Data à 4 Grilles (Ton image fétiche) */
+        .data-strip { background: rgba(11, 5, 5, 0.4); border-top: 1px solid var(--glass-border); border-bottom: 1px solid var(--glass-border); padding: 80px 0; }
+        .data-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 40px; }
+        .data-card { border-left: 1px solid rgba(255,255,255,0.15); padding-left: 30px; }
+        .data-card:first-child { border-left: none; padding-left: 0; }
+        .data-num { font-family: 'Archivo'; font-size: 4.5rem; font-weight: 900; color: var(--rouge-brillant); line-height: 1; margin-bottom: 15px; text-shadow: 0 0 20px rgba(255,26,26,0.3); }
+        .data-desc { font-size: 0.85rem; font-weight: 700; color: rgba(255,255,255,0.6); text-transform: uppercase; letter-spacing: 0.05em; }
 
-        @media (max-width: 768px) {
+        /* 5. Sections Générales Scaffolds */
+        section { padding: 120px 0; }
+        .section-head { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; margin-bottom: 64px; }
+        .section-num { font-family: 'IBM Plex Mono'; font-size: 13px; color: var(--rouge-brillant); letter-spacing: 0.08em; margin-bottom: 12px; }
+        .section-desc { color: rgba(255,255,255,0.6); max-width: 460px; }
+
+        /* Cartes Pourquoi */
+        .cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
+        .card { 
+            background: rgba(255,255,255,0.03); border: 1px solid var(--glass-border); 
+            border-top: 1px solid rgba(255,255,255,0.3); padding: 40px; border-radius: var(--radius);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.3); transition: 0.3s;
+        }
+        .card:hover { transform: translateY(-5px); border-color: var(--rouge-brillant); }
+        .card .cross { color: var(--rouge-brillant); font-size: 20px; margin-bottom: 20px; }
+        .card h3 { font-family: 'Archivo'; font-size: 20px; text-transform: uppercase; margin-bottom: 12px; }
+        .card p { color: rgba(255,255,255,0.55); font-size: 14.5px; }
+
+        /* Formations Mises en bouche structurées */
+        .formation-row { display: grid; grid-template-columns: 50px 1.5fr 120px 2fr 160px; gap: 30px; padding: 40px 0; border-top: 1px solid rgba(255,255,255,0.15); align-items: center; }
+        .formation-row:last-child { border-bottom: 1px solid rgba(255,255,255,0.15); }
+        .f-num { font-family: 'Archivo'; font-weight: 900; font-size: 24px; color: var(--rouge-brillant); }
+        .f-name { font-family: 'Archivo'; font-size: 22px; text-transform: uppercase; margin-bottom: 4px; }
+        .f-audience { font-family: 'IBM Plex Mono'; font-size: 11px; color: rgba(255,255,255,0.5); text-transform: uppercase; }
+        .f-duration { font-family: 'IBM Plex Mono'; font-size: 13px; border: 1px solid rgba(255,255,255,0.2); padding: 8px 12px; text-align: center; }
+        .f-desc { color: rgba(255,255,255,0.6); font-size: 14.5px; }
+
+        /* Matériel avec brillance */
+        .materiel-grid { display: grid; grid-template-columns: 1fr 1fr; border: 1px solid var(--glass-border); border-radius: var(--radius); overflow: hidden; background: rgba(11,5,5,0.5); }
+        .materiel-media img { width: 100%; height: 100%; object-fit: cover; filter: grayscale(100%) contrast(1.1); }
+        .materiel-copy { padding: 60px; display: flex; flex-direction: column; justify-content: center; }
+        .tag-red { display: inline-block; background: var(--rouge-sang); padding: 6px 12px; font-family: 'IBM Plex Mono'; font-size: 11px; text-transform: uppercase; margin-bottom: 20px; width: fit-content; font-weight: 600; }
+        .materiel-copy h3 { font-family: 'Archivo'; font-size: 32px; text-transform: uppercase; margin-bottom: 16px; }
+        .materiel-copy p { color: rgba(255,255,255,0.6); margin-bottom: 16px; }
+
+        /* Références Galerie */
+        .sites-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1px; background: rgba(255,255,255,0.15); border: 1px solid rgba(255,255,255,0.15); }
+        .site { background: var(--noir-obsidienne); }
+        .site-img { height: 180px; overflow: hidden; }
+        .site-img img { width: 100%; height: 100%; object-fit: cover; filter: grayscale(100%); transition: 0.5s; }
+        .site:hover .site-img img { filter: grayscale(0%); transform: scale(1.05); }
+        .site-info { padding: 20px; }
+        .site-info .place { font-family: 'Archivo'; font-weight: 700; text-transform: uppercase; }
+        .site-info .canton { font-family: 'IBM Plex Mono'; font-size: 11px; color: rgba(255,255,255,0.5); margin-top: 4px; }
+
+        /* 6. Bouton de contact Chrome */
+        .cta-band { background: linear-gradient(180deg, var(--rouge-sang) 0%, #700000 100%); padding: 100px 0; text-align: center; border-top: 1px solid rgba(255,255,255,0.3); }
+        .btn-solid { 
+            background: linear-gradient(180deg, #FF3333 0%, #BD0000 100%); color: white; padding: 16px 36px; 
+            border-radius: 8px; font-family: 'IBM Plex Mono'; font-weight: 700; text-transform: uppercase;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.4), inset 0 1px 1px rgba(255,255,255,0.4); border: 1px solid #990000;
+        }
+        .btn-solid:hover { box-shadow: 0 15px 40px rgba(255,26,26,0.6); filter: brightness(1.1); transform: translateY(-2px); }
+
+        footer { background: #050202; padding: 60px 0 30px; border-top: 1px solid var(--glass-border); color: rgba(255,255,255,0.5); font-size: 14px; }
+        .footer-grid { display: grid; grid-template-columns: 1.5fr 1fr 1fr; gap: 40px; margin-bottom: 40px; }
+        .footer-logo { font-family: 'Archivo'; font-weight: 900; text-transform: uppercase; font-size: 22px; color: white; display: flex; align-items: center; gap: 10px; }
+        .footer-col h5 { font-family: 'IBM Plex Mono'; font-size: 11px; color: var(--rouge-brillant); text-transform: uppercase; margin-bottom: 15px; }
+        .footer-col a { display: block; color: rgba(255,255,255,0.7); margin-bottom: 8px; }
+        .footer-col a:hover { color: var(--rouge-brillant); }
+
+        @media (max-width: 900px) {
+            .wrap { padding: 0 24px; }
             .nav-links { display: none; } .hamburger { display: block; }
-            .stats-main { grid-template-columns: 1fr; } .data-grid { grid-template-columns: 1fr; }
+            .hero-grid, .section-head, .formation-row, .materiel-grid, .footer-grid { grid-template-columns: 1fr; gap: 30px; }
+            .hero-side { border-left: none; padding-left: 0; border-top: 1px solid rgba(255,255,255,0.15); padding-top: 20px; }
+            .data-grid { grid-template-columns: 1fr 1fr; }
+            .data-card { border-left: none; }
         }
     </style>
 </head>
 <body>
 
+    <!-- 1. GRANDE BANDE DE NEWS AMÉRICAINE GLOSSY -->
     <div class="news-banner">
         <div class="marquee">
-            &nbsp; • &nbsp; 84 VIES SAUVÉES PAR NOS SECOURISTES EN SUISSE &nbsp; • &nbsp; PLUS DE 1'248 INTERVENTIONS D'URGENCE ENREGISTRÉES &nbsp; • &nbsp; 100% DE NOS FORMATIONS CERTIFIÉES SRC &nbsp; • &nbsp; FORMATIONS ENTREPRISES SUR-MESURE &nbsp; • &nbsp; 
+            &nbsp; • &nbsp; 84 VIES SAUVÉES PAR NOS SECOURISTES EN SUISSE &nbsp; • &nbsp; PLUS DE 1'248 INTERVENTIONS D'URGENCE ENREGISTRÉES &nbsp; • &nbsp; 100% DE NOS FORMATIONS CERTIFIÉES SRC &nbsp; • &nbsp; FORMATIONS ENTREPRISES SUR-MESURE &nbsp; • &nbsp;
         </div>
     </div>
 
+    <!-- 2. HEADER AVEC LOGO ET CROIX -->
     <header class="header">
         <div class="nav-container">
             <a href="index.html" class="brand-link">
-                <img src="logo.png" alt="Logo Almunqidh" class="logo-img">
-                <span class="logo-text">ALMUNQIDH</span>
+                <img src="logo.png" alt="Logo Al Munqidh" class="logo-img" onerror="this.style.display='none';">
+                <span class="logo-text"><span class="cross"></span>AL MUNQIDH</span>
             </a>
-            <nav class="nav-links">
-                <a href="index.html" class="active-link">Accueil</a>
-                <a href="formations.html">Formations</a>
-                <a href="materiel.html">Matériel</a>
-                <a href="contact.html">Contact</a>
-            </nav>
+            <ul class="nav-links">
+                <li><a href="#pourquoi">Pourquoi</a></li>
+                <li><a href="#formations">Formations</a></li>
+                <li><a href="#materiel">Matériel</a></li>
+                <li><a href="#sites">Références</a></li>
+                <li><a href="#contact" class="nav-cta">Nous contacter</a></li>
+            </ul>
             <button class="hamburger" id="hamburger-btn"><span></span><span></span><span></span></button>
         </div>
     </header>
 
+    <!-- MENU MOBILE -->
     <div class="mobile-menu" id="mobile-menu-container">
-        <a href="index.html" class="active-link">Accueil</a>
-        <a href="formations.html">Formations</a>
-        <a href="materiel.html">Matériel</a>
-        <a href="contact.html">Contact</a>
+        <a href="#pourquoi">Pourquoi</a>
+        <a href="#formations">Formations</a>
+        <a href="#materiel">Matériel</a>
+        <a href="#sites">Références</a>
+        <a href="#contact">Contact</a>
     </div>
 
     <main>
-        <section class="hero">
-            <h1>L'urgence exige<br><span>l'excellence.</span></h1>
-            <p>Almunqidh propulse la formation aux premiers secours et l'équipement de défibrillation dans une dimension professionnelle, digne d'une rigueur suisse absolue.</p>
-            <div class="btn-group">
-                <a href="formations.html" class="cta-btn">Découvrir les formations</a>
-                <a href="contact.html" class="secondary-btn">Demander un devis</a>
+        <!-- 3. HERO SECTION -->
+        <section class="hero wrap">
+            <div class="hero-grid">
+                <div>
+                    <div class="eyebrow"><span class="cross"></span>Formation premiers secours — Suisse romande</div>
+                    <h1 class="display">Avoir des<br>compétences,<br>c'est pouvoir <span style="color:var(--rouge-brillant)">agir</span></h1>
+                    <p class="hero-lede">Al Munqidh forme entreprises, particuliers et collectivités aux gestes qui font la différence avant l'arrivée des secours — et équipe vos locaux en défibrillateurs.</p>
+                </div>
+                <div class="hero-side">
+                    <div class="stat-block">
+                        <div class="stat-num" id="live-vies" style="color:var(--rouge-brillant)">0</div>
+                        <div class="stat-label">Vies sauvées en huit ans par nos secouristes formés</div>
+                    </div>
+                    <div class="stat-block">
+                        <div class="stat-num" id="live-urgences">0</div>
+                        <div class="stat-label">Interventions urgentes annuelles répertoriées en Suisse</div>
+                    </div>
+                </div>
+            </div>
+            <div class="hero-media">
+                <img src="http://almunqidhswiss.org/wp-content/uploads/2024/03/Default_secouriste_0-2-1024x564.jpg" alt="Formation Al Munqidh">
             </div>
         </section>
 
-        <!-- COMPTEURS DYNAMIQUE -->
-        <section class="stats-main">
-            <div class="stat-card-main">
-                <h3 id="accidents">0</h3>
-                <p style="color: rgba(255,255,255,0.6); font-size: 0.95rem; font-weight: 600; text-transform: uppercase;">Interventions annuelles</p>
-            </div>
-            <div class="stat-card-main card-alert">
-                <h3 id="vies">0</h3>
-                <p style="color: rgba(255,255,255,0.8); font-size: 0.95rem; font-weight: 600; text-transform: uppercase;">Vies sauvées (Formations & DAE)</p>
-            </div>
-        </section>
-
-        <!-- LE BLOC ISSU DE TA CAPTURE (STATISTIQUES CHOC MÉDICALES) -->
-        <section class="data-grid-section">
-            <div class="data-grid">
+        <!-- 4. STRIP SCIENTIFIQUE CHOC (Ton image) -->
+        <div class="data-strip">
+            <div class="wrap data-grid">
                 <div class="data-card">
                     <div class="data-num">5%</div>
                     <div class="data-desc">Taux de survie minimal sans intervention rapide</div>
                 </div>
                 <div class="data-card">
                     <div class="data-num">80%</div>
-                    <div class="data-desc">Des arrêts cardiaques sont dus à une fibrillation, réversible par défibrillation</div>
+                    <div class="data-desc">Des arrêts cardiaques dus à une fibrillation, réversible par défibrillation</div>
                 </div>
                 <div class="data-card">
                     <div class="data-num">3</div>
@@ -200,25 +272,164 @@
                     <div class="data-desc">Sites équipés en défibrillateurs dans le canton de Fribourg</div>
                 </div>
             </div>
+        </div>
+
+        <!-- 5. POURQUOI AL MUNQIDH -->
+        <section id="pourquoi" class="wrap">
+            <div class="section-head">
+                <div>
+                    <div class="section-num">01 — Pourquoi Al Munqidh</div>
+                    <h2 class="display">Une expertise de terrain</h2>
+                </div>
+                <p class="section-desc">Nos formateurs interviennent sur le terrain avant d'enseigner en salle. C'est cette expérience concrète qui fait la différence.</p>
+            </div>
+            <div class="cards">
+                <div class="card">
+                    <span class="cross"></span>
+                    <h3>Conformité légale</h3>
+                    <p>Les entreprises suisses sont tenues d'avoir des secouristes qualifiés disponibles. Nos formations répondent directement à cette obligation.</p>
+                </div>
+                <div class="card">
+                    <span class="cross"></span>
+                    <h3>Protocoles SRC</h3>
+                    <p>Chaîne de survie et algorithme BLS-AED enseignés selon les directives officielles du Conseil Suisse de Réanimation, à jour.</p>
+                </div>
+                <div class="card">
+                    <span class="cross"></span>
+                    <h3>Mise en situation</h3>
+                    <p>Scénarios de complexité croissante, cas vécus dans votre établissement : entraînement sur les risques réels.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 6. PROGRAMMES FORMATIONS (Aperçu complet) -->
+        <section id="formations" class="wrap" style="padding-top:0;">
+            <div class="section-head">
+                <div>
+                    <div class="section-num">02 — Nos formations</div>
+                    <h2 class="display">Trois parcours certifiés</h2>
+                </div>
+                <p class="section-desc">Du geste de base à la certification complète en entreprise — cliquez pour réserver ou en savoir plus.</p>
+            </div>
+            
+            <div>
+                <div class="formation-row">
+                    <div class="f-num">01</div>
+                    <div>
+                        <div class="f-name">BLS Compact</div>
+                        <div class="f-audience">Entreprises & particuliers</div>
+                    </div>
+                    <div class="f-duration">3–4 heures</div>
+                    <div class="f-desc">Les aptitudes de base pour agir en cas d'urgence cardiaque : reconnaissance des signes, premières actions.</div>
+                    <a href="#contact" class="btn-solid" style="padding:10px 20px; font-size:12px;">Réserver</a>
+                </div>
+                <div class="formation-row">
+                    <div class="f-num">02</div>
+                    <div>
+                        <div class="f-name">BLS-AED Generic</div>
+                        <div class="f-audience">Établissements & particuliers</div>
+                    </div>
+                    <div class="f-duration">7 heures</div>
+                    <div class="f-desc">Le contenu du BLS Compact approfondi : reconnaissance de l'infarctus, de l'AVC, PLS et aspects légaux.</div>
+                    <a href="#contact" class="btn-solid" style="padding:10px 20px; font-size:12px;">Réserver</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- 7. MATÉRIEL ZOLL AED PLUS -->
+        <section id="materiel" class="wrap">
+            <div class="materiel-grid">
+                <div class="materiel-media">
+                    <img src="https://almunqidhswiss.org/wp-content/uploads/2024/03/Capture-decran-2024-03-18-a-11.17.22-1.png" alt="Zoll AED Plus">
+                </div>
+                <div class="materiel-copy">
+                    <span class="tag-red">Matériel de pointe — Zoll AED Plus</span>
+                    <h3>Évaluation du massage en temps réel</h3>
+                    <p>Le Zoll AED Plus est le seul défibrillateur muni d'une aide vocale et visuelle pour évaluer instantanément la profondeur et le rythme de vos compressions thoraciques.</p>
+                    <p>Choisi et utilisé par la <strong>REGA</strong> pour équiper ses hélicoptères de sauvetage.</p>
+                    <a href="#contact" class="btn-solid" style="margin-top:20px; width:fit-content;">Réserver une démo gratuite (30 min)</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- 8. RÉFÉRENCES GALERIE -->
+        <section id="sites" class="wrap" style="padding-top:0;">
+            <div class="section-head">
+                <div>
+                    <div class="section-num">03 — Références</div>
+                    <h2 class="display">Défibrillateurs sur site</h2>
+                </div>
+            </div>
+            <div class="sites-grid">
+                <div class="site">
+                    <div class="site-img"><img src="http://almunqidhswiss.org/wp-content/uploads/2024/03/WhatsApp-Image-2024-03-21-at-20.05.07.jpeg" alt="Corbières"></div>
+                    <div class="site-info"><div class="place">Corbières</div><div class="canton">Fribourg</div></div>
+                </div>
+                <div class="site">
+                    <div class="site-img"><img src="http://almunqidhswiss.org/wp-content/uploads/2024/03/WhatsApp-Image-2024-03-21-at-20.03.00.jpeg" alt="Beaumont"></div>
+                    <div class="site-info"><div class="place">Beaumont</div><div class="canton">Fribourg</div></div>
+                </div>
+                <div class="site">
+                    <div class="site-img"><img src="http://almunqidhswiss.org/wp-content/uploads/2024/03/WhatsApp-Image-2024-03-18-at-11.25.57.jpeg" alt="Glion"></div>
+                    <div class="site-info"><div class="place">École Glion</div><div class="canton">Bulle</div></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 9. ZONE DE CONTACT IMPACT -->
+        <section class="cta-band" id="contact">
+            <div class="wrap">
+                <h2 class="display">Parlons de la sécurité<br>de vos équipes</h2>
+                <p style="margin-bottom:30px; opacity:0.8;">Devis de formation ou démonstration — réponse sous 48 heures.</p>
+                <a href="mailto:contact@almunqidhswiss.org" class="btn-solid" style="padding:20px 50px;">Nous écrire par e-mail</a>
+            </div>
         </section>
     </main>
 
-    <script>
-        const hamburgerBtn = document.getElementById('hamburger-btn');
-        const mobileMenu = document.getElementById('mobile-menu-container');
-        hamburgerBtn.addEventListener('click', () => {
-            hamburgerBtn.classList.toggle('open'); mobileMenu.classList.toggle('open');
-        });
+    <footer>
+        <div class="wrap footer-grid">
+            <div>
+                <div class="footer-logo"><span class="cross"></span>AL MUNQIDH</div>
+                <p style="margin-top:15px; opacity:0.6;">Formations premiers secours et matériel de pointe en Suisse romande.</p>
+            </div>
+            <div class="footer-col">
+                <h5>Navigation</h5>
+                <a href="#pourquoi">Pourquoi nous</a>
+                <a href="#formations">Formations</a>
+                <a href="#materiel">Matériel Zoll</a>
+            </div>
+            <div class="footer-col">
+                <h5>Contact direct</h5>
+                <a href="mailto:contact@almunqidhswiss.org">contact@almunqidhswiss.org</a>
+                <p style="color:white; font-weight:700; margin-top:10px;">+41 76 560 54 00</p>
+            </div>
+        </div>
+        <div class="wrap" style="text-align:center; padding-top:20px; border-top:1px solid rgba(255,255,255,0.1); font-size:12px;">
+            © 2026 Al Munqidh — Rendu Premium Suisse. All Rights Reserved.
+        </div>
+    </footer>
 
-        function animer(id, max) {
+    <script>
+        // Hamburger Menu Code
+        const hBtn = document.getElementById('hamburger-btn');
+        const mMenu = document.getElementById('mobile-menu-container');
+        hBtn.addEventListener('click', () => {
+            hBtn.classList.toggle('open'); mMenu.classList.toggle('open');
+        });
+        mMenu.querySelectorAll('a').forEach(l => l.addEventListener('click', () => {
+            hBtn.classList.remove('open'); mMenu.classList.remove('open');
+        }));
+
+        // Numbers Animation
+        function anim(id, val) {
             let n = 0; let el = document.getElementById(id);
-            let interval = setInterval(() => {
-                n += Math.max(1, Math.floor(max / 40));
-                if(n >= max) { n = max; clearInterval(interval); }
-                el.innerText = n.toLocaleString('fr-CH');
-            }, 35);
+            let itv = setInterval(() => {
+                n += Math.max(1, Math.floor(val / 30));
+                if(n >= val) { n = val; clearInterval(itv); }
+                el.innerText = n.toLocaleString('fr-CH') + (id === 'live-vies' ? '+' : '');
+            }, 40);
         }
-        window.addEventListener('load', () => { animer('accidents', 1248); animer('vies', 84); });
+        window.addEventListener('load', () => { anim('live-vies', 30); anim('live-urgences', 1248); });
     </script>
 </body>
 </html>
