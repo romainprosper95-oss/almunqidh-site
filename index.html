@@ -8,13 +8,15 @@
         @import url('https://fonts.googleapis.com/css2?family=Archivo:wght@700;900&family=Inter:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500;600&display=swap');
         
         :root { 
-            --suisse-red: #D52B1E; /* Le Rouge Officiel Suisse */
-            --dark: #151515; 
-            --bg-light: #FAFAF8; 
+            --suisse-red: #D52B1E; 
+            --dark: #1A1A1A; 
+            --bg-light: #F9F9FB; 
             --bg-card: #FFFFFF;
-            --steel: #6E6E68;
-            --line: #D9D7CE;
-            --radius: 16px;
+            --steel: #666666;
+            --line: #E5E7EB;
+            --radius: 12px;
+            --shadow-subtle: 0 4px 30px rgba(0, 0, 0, 0.03);
+            --shadow-hover: 0 10px 40px rgba(0, 0, 0, 0.06);
         }
         
         * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -25,7 +27,6 @@
             color: var(--dark); 
             background-color: var(--bg-light);
             line-height: 1.6; 
-            min-height: 100vh;
             -webkit-font-smoothing: antialiased;
         }
         
@@ -38,166 +39,164 @@
         .cross::before { left: 44%; top: 10%; width: 12%; height: 80%; }
         .cross::after { top: 44%; left: 10%; height: 12%; width: 80%; }
 
-        /* 1. BANDE DE NEWS AGRANDIE ET TEXTE BLANC SUR VRAI ROUGE SUISSE */
+        /* 1. Bande Défilante Style Studio (Fine, Rouge Suisse Officiel) */
         .news-banner { 
             background: var(--suisse-red);
-            color: var(--white); 
             color: #FFFFFF;
-            padding: 22px 0; 
+            padding: 14px 0; 
             overflow: hidden; 
             white-space: nowrap; 
-            font-weight: 900; 
-            font-size: 1.1rem; 
+            font-weight: 700; 
+            font-size: 0.9rem; 
             text-transform: uppercase;
-            letter-spacing: 2px;
-            border-bottom: 2px solid #A11F14;
+            letter-spacing: 1.5px;
             position: relative;
             z-index: 1000;
-            box-shadow: 0 4px 15px rgba(213, 43, 30, 0.25);
         }
-        .marquee { display: inline-block; animation: marquee 35s linear infinite; }
+        .marquee { display: inline-block; animation: marquee 40s linear infinite; }
         @keyframes marquee { 0% { transform: translate(0, 0); } 100% { transform: translate(-50%, 0); } }
 
-        /* 2. Barre de Navigation */
+        /* 2. Barre de Navigation Style Studio (Flottante, Épurée) */
         .header { 
-            background: rgba(250, 250, 248, 0.95); 
-            backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); 
+            background: rgba(255, 255, 255, 0.9); 
+            backdrop-filter: blur(15px); -webkit-backdrop-filter: blur(15px); 
             position: sticky; top: 0; z-index: 999; 
             border-bottom: 1px solid var(--line); 
         }
-        .nav-container { padding: 18px 40px; display: flex; justify-content: space-between; align-items: center; max-width: 1280px; margin: 0 auto; width: 100%; }
+        .nav-container { padding: 16px 40px; display: flex; justify-content: space-between; align-items: center; max-width: 1280px; margin: 0 auto; width: 100%; }
         
-        .brand-link { display: flex; align-items: center; gap: 12px; font-family: 'Archivo'; font-weight: 900; font-size: 20px; text-transform: uppercase; }
-        .logo-img { height: 40px; width: auto; }
-        .brand-link .cross { color: var(--suisse-red); font-size: 14px; }
+        .brand-link { display: flex; align-items: center; gap: 10px; font-family: 'Archivo'; font-weight: 900; font-size: 20px; text-transform: uppercase; }
+        .logo-img { height: 38px; width: auto; }
+        .brand-link .cross { color: var(--suisse-red); font-size: 13px; }
         
         .nav-links { display: flex; align-items: center; list-style: none; gap: 32px; }
-        .nav-links a { font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: var(--dark); }
+        .nav-links a { font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: var(--dark); }
         .nav-links a:hover { color: var(--suisse-red); }
-        .nav-cta { background: var(--dark); color: var(--bg-light) !important; padding: 10px 20px; border-radius: 4px; }
-        .nav-cta:hover { background: var(--suisse-red) !important; color: white !important; }
+        .nav-cta { background: var(--dark); color: white !important; padding: 10px 20px; border-radius: 6px; font-size: 11px !important; }
+        .nav-cta:hover { background: var(--suisse-red) !important; }
 
         /* Hamburger Mobile */
         .hamburger { display: none; background: none; border: none; cursor: pointer; padding: 5px; z-index: 1001; }
-        .hamburger span { display: block; width: 24px; height: 2px; background: var(--dark); margin: 5px 0; transition: 0.3s; }
+        .hamburger span { display: block; width: 22px; height: 2px; background: var(--dark); margin: 5px 0; transition: 0.3s; }
 
         /* Menu Mobile */
-        .mobile-menu { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100vh; background: var(--bg-light); z-index: 998; padding: 140px 40px; flex-direction: column; gap: 28px; opacity: 0; transform: scale(0.95); transition: all 0.3s ease; }
+        .mobile-menu { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100vh; background: var(--bg-card); z-index: 998; padding: 140px 40px; flex-direction: column; gap: 24px; opacity: 0; transform: scale(0.98); transition: all 0.3s ease; }
         .mobile-menu.open { display: flex; opacity: 1; transform: scale(1); }
-        .mobile-menu a { font-size: 1.8rem; font-weight: 800; text-transform: uppercase; color: var(--dark); }
+        .mobile-menu a { font-size: 1.6rem; font-weight: 800; text-transform: uppercase; color: var(--dark); }
 
         .hamburger.open span:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
         .hamburger.open span:nth-child(2) { opacity: 0; }
         .hamburger.open span:nth-child(3) { transform: rotate(-45deg) translate(5px, -5px); }
         
-        /* 3. Hero Section */
+        /* 3. Hero Section Studio Style */
         .wrap { max-width: 1280px; margin: 0 auto; padding: 0 40px; }
-        .hero { padding: 80px 0 60px 0; }
-        .hero-grid { display: grid; grid-template-columns: 1.5fr 1fr; gap: 60px; align-items: end; }
-        .eyebrow { font-family: 'IBM Plex Mono'; font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--suisse-red); display: flex; align-items: center; gap: 8px; margin-bottom: 20px; font-weight: 600; }
-        .hero h1 { font-size: clamp(40px, 6.5vw, 84px); line-height: 0.98; margin-bottom: 26px; color: var(--dark); }
-        .hero-lede { max-width: 540px; font-size: 18px; color: var(--steel); }
+        .hero { padding: 100px 0 60px 0; }
+        .hero-grid { display: grid; grid-template-columns: 1.4fr 1fr; gap: 80px; align-items: center; }
+        .eyebrow { font-family: 'IBM Plex Mono'; font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--suisse-red); display: flex; align-items: center; gap: 8px; margin-bottom: 24px; font-weight: 600; }
+        .hero h1 { font-size: clamp(38px, 6vw, 76px); line-height: 1.02; margin-bottom: 28px; color: var(--dark); font-weight: 900; }
+        .hero-lede { max-width: 520px; font-size: 18px; color: var(--steel); margin-bottom: 35px; }
         
-        .hero-side { border-left: 1px solid var(--line); padding-left: 40px; }
-        .stat-block { padding: 20px 0; }
+        .hero-side { background: var(--bg-card); padding: 40px; border-radius: var(--radius); border: 1px solid var(--line); box-shadow: var(--shadow-subtle); }
+        .stat-block { padding: 16px 0; }
+        .stat-block:first-child { padding-top: 0; }
         .stat-block + .stat-block { border-top: 1px solid var(--line); }
-        .stat-num { font-family: 'Archivo'; font-weight: 900; font-size: 48px; line-height: 1; color: var(--dark); }
-        .stat-label { font-family: 'IBM Plex Mono'; font-size: 12px; color: var(--steel); text-transform: uppercase; margin-top: 8px; }
+        .stat-num { font-family: 'Archivo'; font-weight: 900; font-size: 44px; line-height: 1; color: var(--dark); }
+        .stat-label { font-family: 'IBM Plex Mono'; font-size: 11px; color: var(--steel); text-transform: uppercase; margin-top: 6px; }
 
-        /* Images en vraies couleurs */
-        .hero-media { position: relative; margin-top: 50px; border-radius: var(--radius); overflow: hidden; }
-        .hero-media img { width: 100%; height: 500px; object-fit: cover; display: block; }
+        .hero-media { position: relative; margin-top: 60px; border-radius: var(--radius); overflow: hidden; box-shadow: var(--shadow-subtle); }
+        .hero-media img { width: 100%; height: 480px; object-fit: cover; display: block; }
 
-        /* 4. Strip des 4 statistiques clés */
-        .data-strip { background: #F1F0EA; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); padding: 60px 0; }
+        /* 4. Strip Statistique Minimaliste Blanc/Gris */
+        .data-strip { background: var(--bg-card); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); padding: 70px 0; }
         .data-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 40px; }
         .data-card { border-left: 1px solid var(--line); padding-left: 30px; }
         .data-card:first-child { border-left: none; padding-left: 0; }
-        .data-num { font-family: 'Archivo'; font-size: 4rem; font-weight: 900; color: var(--suisse-red); line-height: 1; margin-bottom: 10px; }
-        .data-desc { font-size: 0.85rem; font-weight: 700; color: var(--steel); text-transform: uppercase; letter-spacing: 0.05em; }
+        .data-num { font-family: 'Archivo'; font-size: 3.8rem; font-weight: 900; color: var(--suisse-red); line-height: 1; margin-bottom: 10px; }
+        .data-desc { font-size: 0.85rem; font-weight: 600; color: var(--steel); text-transform: uppercase; letter-spacing: 0.05em; line-height: 1.4; }
 
-        /* 5. Sections Générales */
+        /* 5. Sections Générales (Inspiration Studio Épuré) */
         section { padding: 100px 0; }
-        .section-head { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; margin-bottom: 64px; }
-        .section-num { font-family: 'IBM Plex Mono'; font-size: 13px; color: var(--suisse-red); letter-spacing: 0.08em; margin-bottom: 12px; }
-        .section-desc { color: var(--steel); max-width: 460px; }
+        .section-head { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; margin-bottom: 64px; align-items: end; }
+        .section-num { font-family: 'IBM Plex Mono'; font-size: 12px; color: var(--suisse-red); letter-spacing: 0.08em; margin-bottom: 12px; font-weight: 600; }
+        .section-desc { color: var(--steel); max-width: 460px; font-size: 15px; }
 
         /* Cartes Pourquoi */
         .cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
         .card { 
             background: var(--bg-card); border: 1px solid var(--line); 
-            padding: 40px; border-radius: var(--radius);
-            box-shadow: 0 4px 20px rgba(0,0,0,0.02); transition: 0.3s;
+            padding: 45px 40px; border-radius: var(--radius);
+            box-shadow: var(--shadow-subtle); transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
         }
-        .card:hover { transform: translateY(-5px); border-color: var(--suisse-red); }
-        .card .cross { color: var(--suisse-red); font-size: 20px; margin-bottom: 20px; }
-        .card h3 { font-family: 'Archivo'; font-size: 20px; text-transform: uppercase; margin-bottom: 12px; }
+        .card:hover { transform: translateY(-5px); border-color: var(--suisse-red); box-shadow: var(--shadow-hover); }
+        .card .cross { color: var(--suisse-red); font-size: 18px; margin-bottom: 20px; }
+        .card h3 { font-family: 'Archivo'; font-size: 19px; text-transform: uppercase; margin-bottom: 12px; font-weight: 700; }
         .card p { color: var(--steel); font-size: 14.5px; }
 
         /* Formations */
-        .formation-row { display: grid; grid-template-columns: 50px 1.5fr 120px 2fr 160px; gap: 30px; padding: 40px 0; border-top: 1px solid var(--line); align-items: center; }
+        .formation-row { display: grid; grid-template-columns: 50px 1.5fr 120px 2fr 160px; gap: 40px; padding: 40px 0; border-top: 1px solid var(--line); align-items: center; }
         .formation-row:last-child { border-bottom: 1px solid var(--line); }
-        .f-num { font-family: 'Archivo'; font-weight: 900; font-size: 24px; color: var(--suisse-red); }
-        .f-name { font-family: 'Archivo'; font-size: 22px; text-transform: uppercase; margin-bottom: 4px; }
+        .f-num { font-family: 'Archivo'; font-weight: 900; font-size: 22px; color: var(--suisse-red); }
+        .f-name { font-family: 'Archivo'; font-size: 20px; text-transform: uppercase; margin-bottom: 4px; font-weight: 700; }
         .f-audience { font-family: 'IBM Plex Mono'; font-size: 11px; color: var(--steel); text-transform: uppercase; }
-        .f-duration { font-family: 'IBM Plex Mono'; font-size: 13px; border: 1px solid var(--line); padding: 8px 12px; text-align: center; background: white; }
+        .f-duration { font-family: 'IBM Plex Mono'; font-size: 12px; border: 1px solid var(--line); padding: 6px 12px; text-align: center; background: #F9F9FB; font-weight: 600; }
         .f-desc { color: var(--steel); font-size: 14.5px; }
 
-        /* Matériel */
-        .materiel-grid { display: grid; grid-template-columns: 1fr 1fr; border: 1px solid var(--line); border-radius: var(--radius); overflow: hidden; background: var(--bg-card); }
-        .materiel-media img { width: 100%; height: 100%; object-fit: cover; display: block; }
-        .materiel-copy { padding: 60px; display: flex; flex-direction: column; justify-content: center; }
-        .tag-red { display: inline-block; background: var(--suisse-red); color: white; padding: 6px 12px; font-family: 'IBM Plex Mono'; font-size: 11px; text-transform: uppercase; margin-bottom: 20px; width: fit-content; font-weight: 600; }
-        .materiel-copy h3 { font-family: 'Archivo'; font-size: 32px; text-transform: uppercase; margin-bottom: 16px; }
-        .materiel-copy p { color: var(--steel); margin-bottom: 16px; }
+        /* Matériel Grid */
+        .materiel-grid { display: grid; grid-template-columns: 1fr 1fr; border: 1px solid var(--line); border-radius: var(--radius); overflow: hidden; background: var(--bg-card); box-shadow: var(--shadow-subtle); }
+        .materiel-media img { width: 100%; height: 100%; max-height: 440px; object-fit: cover; display: block; }
+        .materiel-copy { padding: 50px; display: flex; flex-direction: column; justify-content: center; }
+        .tag-red { display: inline-block; background: var(--suisse-red); color: white; padding: 4px 10px; font-family: 'IBM Plex Mono'; font-size: 10px; text-transform: uppercase; margin-bottom: 20px; width: fit-content; font-weight: 600; border-radius: 4px; }
+        .materiel-copy h3 { font-family: 'Archivo'; font-size: 28px; text-transform: uppercase; margin-bottom: 16px; font-weight: 700; }
+        .materiel-copy p { color: var(--steel); margin-bottom: 16px; font-size: 15px; }
 
         /* Références Galerie */
-        .sites-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 16px; margin-top: 20px; }
-        .site { background: var(--bg-card); border: 1px solid var(--line); border-radius: 12px; overflow: hidden; }
-        .site-img { height: 180px; overflow: hidden; }
-        .site-img img { width: 100%; height: 100%; object-fit: cover; transition: 0.3s; }
-        .site:hover .site-img img { transform: scale(1.05); }
-        .site-info { padding: 20px; }
-        .site-info .place { font-family: 'Archivo'; font-weight: 700; text-transform: uppercase; }
+        .sites-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 24px; margin-top: 20px; }
+        .site { background: var(--bg-card); border: 1px solid var(--line); border-radius: var(--radius); overflow: hidden; box-shadow: var(--shadow-subtle); transition: all 0.3s ease; }
+        .site:hover { box-shadow: var(--shadow-hover); transform: translateY(-3px); }
+        .site-img { height: 190px; overflow: hidden; }
+        .site-img img { width: 100%; height: 100%; object-fit: cover; }
+        .site-info { padding: 20px; border-top: 1px solid var(--line); }
+        .site-info .place { font-family: 'Archivo'; font-weight: 700; text-transform: uppercase; font-size: 15px; }
         .site-info .canton { font-family: 'IBM Plex Mono'; font-size: 11px; color: var(--steel); margin-top: 4px; }
 
-        /* Section de contact */
+        /* 6. Section de contact épurée Studio */
         .cta-band { background: var(--suisse-red); color: white; padding: 100px 0; text-align: center; }
+        .cta-band h2 { font-size: clamp(30px, 4vw, 52px); font-weight: 900; margin-bottom: 20px; }
         .btn-solid { 
             background: var(--dark); color: white; padding: 16px 36px; 
             border-radius: 6px; font-family: 'IBM Plex Mono'; font-weight: 700; text-transform: uppercase;
-            border: none; cursor: pointer; transition: 0.2s;
+            border: none; cursor: pointer; transition: 0.2s; font-size: 13px; letter-spacing: 0.05em;
         }
         .btn-solid:hover { background: #333; transform: translateY(-2px); }
 
-        footer { background: var(--dark); padding: 60px 0 30px; color: rgba(255,255,255,0.5); font-size: 14px; }
-        .footer-grid { display: grid; grid-template-columns: 1.5fr 1fr 1fr; gap: 40px; margin-bottom: 40px; }
+        footer { background: var(--dark); padding: 70px 0 40px; color: rgba(255,255,255,0.4); font-size: 14px; border-top: 1px solid #2d2d2d; }
+        .footer-grid { display: grid; grid-template-columns: 1.4fr 1fr 1fr; gap: 60px; margin-bottom: 50px; }
         .footer-logo { font-family: 'Archivo'; font-weight: 900; text-transform: uppercase; font-size: 22px; color: white; display: flex; align-items: center; gap: 10px; }
         .footer-logo .cross { color: var(--suisse-red); }
-        .footer-col h5 { font-family: 'IBM Plex Mono'; font-size: 11px; color: #7B7A72; text-transform: uppercase; margin-bottom: 15px; }
-        .footer-col a { display: block; color: rgba(255,255,255,0.7); margin-bottom: 8px; }
+        .footer-col h5 { font-family: 'IBM Plex Mono'; font-size: 11px; color: #888; text-transform: uppercase; margin-bottom: 18px; font-weight: 600; }
+        .footer-col a { display: block; color: rgba(255,255,255,0.7); margin-bottom: 10px; }
         .footer-col a:hover { color: var(--suisse-red); }
 
         @media (max-width: 900px) {
             .wrap { padding: 0 24px; }
             .nav-links { display: none; } .hamburger { display: block; }
-            .hero-grid, .section-head, .formation-row, .materiel-grid, .footer-grid { grid-template-columns: 1fr; gap: 30px; }
-            .hero-side { border-left: none; padding-left: 0; border-top: 1px solid var(--line); padding-top: 20px; }
-            .data-grid { grid-template-columns: 1fr 1fr; }
+            .hero-grid, .section-head, .formation-row, .materiel-grid, .footer-grid { grid-template-columns: 1fr; gap: 35px; }
+            .hero-side { border-left: none; padding-left: 0; }
+            .data-grid { grid-template-columns: 1fr 1fr; gap: 30px; }
             .data-card { border-left: none; padding-left: 0; }
         }
     </style>
 </head>
 <body>
 
-    <!-- 1. BANDE DE NEWS PROPRE SUR COMPOSANTE ROUGE INTERNATIONALE SUISSE -->
+    <!-- 1. BANDE DE NEWS PROPRE STYLE STUDIO -->
     <div class="news-banner">
         <div class="marquee">
             &nbsp; • &nbsp; 84 VIES SAUVÉES PAR NOS SECOURISTES EN SUISSE &nbsp; • &nbsp; PLUS DE 1'248 INTERVENTIONS D'URGENCE ENREGISTRÉES &nbsp; • &nbsp; 100% DE NOS FORMATIONS CERTIFIÉES SRC &nbsp; • &nbsp; FORMATIONS ENTREPRISES SUR-MESURE &nbsp; • &nbsp;
         </div>
     </div>
 
-    <!-- 2. HEADER -->
+    <!-- 2. NAVIGATION DISCRÈTE -->
     <header class="header">
         <div class="nav-container">
             <a href="index.html" class="brand-link">
@@ -225,7 +224,7 @@
     </div>
 
     <main>
-        <!-- 3. HERO SECTION -->
+        <!-- 3. HERO SECTION AERÉE -->
         <section class="hero wrap">
             <div class="hero-grid">
                 <div>
@@ -249,7 +248,7 @@
             </div>
         </section>
 
-        <!-- 4. STRIP SCIENTIFIQUE -->
+        <!-- 4. STRIP SCIENTIFIQUE ÉPURÉ -->
         <div class="data-strip">
             <div class="wrap data-grid">
                 <div class="data-card">
@@ -278,7 +277,7 @@
                     <div class="section-num">01 — Pourquoi Al Munqidh</div>
                     <h2 class="display">Une expertise de terrain</h2>
                 </div>
-                <p class="section-desc">Nos formateurs interviennent sur le terrain avant d'enseigner en salle. C'est cette expérience concrète qui fait la différence.</p>
+                <p class="section-desc">Nos formateurs interviennent sur le terrain avant d'enseigner en salle. C'est cette expérience concrète qui fait la différence le jour où elle compte.</p>
             </div>
             <div class="cards">
                 <div class="card">
@@ -306,7 +305,7 @@
                     <div class="section-num">02 — Nos formations</div>
                     <h2 class="display">Trois parcours certifiés</h2>
                 </div>
-                <p class="section-desc">Du geste de base à la certification complète en entreprise — contactez-nous pour réserver ou en savoir plus.</p>
+                <p class="section-desc">Du geste de base à la certification complète en entreprise — chaque niveau intègre le précédent et va plus loin.</p>
             </div>
             
             <div>
@@ -318,7 +317,7 @@
                     </div>
                     <div class="f-duration">3–4 heures</div>
                     <div class="f-desc">Les aptitudes de base pour agir en cas d'urgence cardiaque : reconnaissance des signes, premières actions.</div>
-                    <a href="#contact" class="btn-solid" style="padding:10px 20px; font-size:12px; background: var(--suisse-red);">Réserver</a>
+                    <a href="#contact" class="btn-solid" style="padding:12px 24px; font-size:11px; background: var(--suisse-red);">Réserver</a>
                 </div>
                 <div class="formation-row">
                     <div class="f-num">02</div>
@@ -328,23 +327,23 @@
                     </div>
                     <div class="f-duration">7 heures</div>
                     <div class="f-desc">Le contenu du BLS Compact approfondi : reconnaissance de l'infarctus, de l'AVC, PLS et aspects légaux.</div>
-                    <a href="#contact" class="btn-solid" style="padding:10px 20px; font-size:12px; background: var(--suisse-red);">Réserver</a>
+                    <a href="#contact" class="btn-solid" style="padding:12px 24px; font-size:11px; background: var(--suisse-red);">Réserver</a>
                 </div>
             </div>
         </section>
 
-        <!-- 7. MATÉRIEL -->
+        <!-- 7. MATÉRIEL PROFESSIONNEL -->
         <section id="materiel" class="wrap">
             <div class="materiel-grid">
                 <div class="materiel-media">
                     <img src="https://almunqidhswiss.org/wp-content/uploads/2024/03/Capture-decran-2024-03-18-a-11.17.22-1.png" alt="Zoll AED Plus">
                 </div>
                 <div class="materiel-copy">
-                    <span class="tag-red">Matériel de pointe — Zoll AED Plus</span>
+                    <span class="tag-red">Zoll AED Plus</span>
                     <h3>Évaluation du massage en temps réel</h3>
                     <p>Le Zoll AED Plus est le seul défibrillateur muni d'une aide vocale et visuelle pour évaluer instantanément la profondeur et le rythme de vos compressions thoraciques.</p>
-                    <p>Choisi et utilisé par la <strong>REGA</strong> pour équiper ses hélicoptères de sauvetage.</p>
-                    <a href="#contact" class="btn-solid" style="margin-top:20px; width:fit-content; background:var(--suisse-red);">Réserver une démo gratuite</a>
+                    <p>Choisi et utilisé par la <strong>REGA</strong> pour équiper ses hélicoptères de sauvetage — une référence absolue.</p>
+                    <a href="#contact" class="btn-solid" style="margin-top:20px; width:fit-content; background:var(--suisse-red);">Demander une démo</a>
                 </div>
             </div>
         </section>
@@ -356,6 +355,7 @@
                     <div class="section-num">03 — Références</div>
                     <h2 class="display">Défibrillateurs sur site</h2>
                 </div>
+                <p class="section-desc">Déploiements et suivi technique dans les communes et infrastructures romandes.</p>
             </div>
             <div class="sites-grid">
                 <div class="site">
@@ -373,12 +373,12 @@
             </div>
         </section>
 
-        <!-- 9. CONTACT -->
+        <!-- 9. SECTION CONTACT REPOSANTE -->
         <section class="cta-band" id="contact">
             <div class="wrap">
-                <h2 class="display">Parlons de la sécurité de vos équipes</h2>
-                <p style="margin-bottom:30px; opacity:0.9;">Devis de formation ou démonstration — réponse sous 48 heures.</p>
-                <a href="mailto:contact@almunqidhswiss.org" class="btn-solid" style="padding:20px 50px;">Nous écrire par e-mail</a>
+                <h2>Planifions la sécurité de votre structure.</h2>
+                <p style="margin-bottom:35px; opacity:0.8; font-size:17px; max-width:600px; margin-left:auto; margin-right:auto;">Devis de formation certifiée, audit ou démonstration de matériel — réponse assurée sous 48 heures.</p>
+                <a href="mailto:contact@almunqidhswiss.org" class="btn-solid">Prendre contact</a>
             </div>
         </section>
     </main>
@@ -387,7 +387,7 @@
         <div class="wrap footer-grid">
             <div>
                 <div class="footer-logo"><span class="cross"></span>AL MUNQIDH</div>
-                <p style="margin-top:15px; opacity:0.6;">Formations premiers secours et matériel de pointe en Suisse romande.</p>
+                <p style="margin-top:15px; opacity:0.6; max-width:280px;">Formations premiers secours et matériel de pointe en Suisse romande.</p>
             </div>
             <div class="footer-col">
                 <h5>Navigation</h5>
@@ -398,28 +398,33 @@
             <div class="footer-col">
                 <h5>Contact direct</h5>
                 <a href="mailto:contact@almunqidhswiss.org">contact@almunqidhswiss.org</a>
-                <p style="color:white; font-weight:700; margin-top:10px;">+41 76 560 54 00</p>
+                <p style="color:white; font-weight:700; margin-top:10px; font-size:15px;">+41 76 560 54 00</p>
             </div>
         </div>
-        <div class="wrap" style="text-align:center; padding-top:20px; border-top:1px solid rgba(255,255,255,0.1); font-size:12px;">
-            © 2026 Al Munqidh — Alignement Suisse Édition Premium.
+        <div class="wrap" style="text-align:center; padding-top:20px; border-top:1px solid rgba(255,255,255,0.08); font-size:12px;">
+            © 2026 Al Munqidh — Architecture et design d'inspiration Studio Pro.
         </div>
     </footer>
 
     <script>
+        // Hamburger Mobile Toggle
         const hBtn = document.getElementById('hamburger-btn');
         const mMenu = document.getElementById('mobile-menu-container');
         hBtn.addEventListener('click', () => {
             hBtn.classList.toggle('open'); mMenu.classList.toggle('open');
         });
+        mMenu.querySelectorAll('a').forEach(l => l.addEventListener('click', () => {
+            hBtn.classList.remove('open'); mMenu.classList.remove('open');
+        }));
 
+        // Script d'animation des compteurs
         function anim(id, val) {
             let n = 0; let el = document.getElementById(id);
             let itv = setInterval(() => {
-                n += Math.max(1, Math.floor(val / 30));
+                n += Math.max(1, Math.floor(val / 35));
                 if(n >= val) { n = val; clearInterval(itv); }
                 el.innerText = n.toLocaleString('fr-CH') + (id === 'live-vies' ? '+' : '');
-            }, 40);
+            }, 35);
         }
         window.addEventListener('load', () => { anim('live-vies', 30); anim('live-urgences', 1248); });
     </script>
