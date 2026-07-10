@@ -1,180 +1,232 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="fr" class="scroll-smooth">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Almunqidh | Premiers secours en Suisse</title>
-  <link rel="stylesheet" href="styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Almunqidh | Premiers secours en Suisse</title>
+    <!-- On injecte Tailwind CSS pour un rendu premium immédiat -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        suisse: {
+                            red: '#D52B1E', // Le rouge officiel suisse, mais utilisé avec parcimonie
+                            dark: '#1A1A1A',
+                            light: '#F9F9F9'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
 </head>
-<body>
-  <header class="header">
-    <div class="container nav-wrap">
-      <a href="index.html" class="brand" aria-label="Accueil">
-        <img src="logo.png" alt="Almunqidh" class="brand-logo">
-        <div class="brand-text">
-          <span class="brand-name">Almunqidh</span>
-          <span class="brand-tag">Premiers secours en Suisse</span>
+<body class="bg-suisse-light text-suisse-dark font-sans antialiased">
+
+  <!-- HEADER PREMIUM -->
+  <header class="sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b border-gray-100 backdrop-saturate-150">
+    <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+      <a aria-label="Accueil" href="index.html" class="flex items-center gap-3 group">
+        <!-- Logo temporaire ou icône si pas de logo.png -->
+        <div class="w-10 h-10 bg-suisse-red text-white flex items-center justify-center rounded-lg font-bold shadow-sm group-hover:scale-105 transition-transform">A</div>
+        <div class="flex flex-col">
+          <span class="font-bold text-lg tracking-tight text-suisse-dark">Almunqidh</span>
+          <span class="text-xs text-gray-500 tracking-wider uppercase">Premiers secours en Suisse</span>
         </div>
       </a>
 
-      <button class="menu-toggle" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="mobileNav">
-        <span></span><span></span><span></span>
-      </button>
-
-      <nav class="nav desktop-nav" aria-label="Navigation principale">
-        <a href="index.html">Accueil</a>
-        <a href="formations.html">Formations</a>
-        <a href="materiel.html">Matériel</a>
-        <a href="defibrillateurs.html">Défibrillateurs</a>
-        <a href="galerie.html">Galerie</a>
-        <a href="contact.html">Contact</a>
+      <nav aria-label="Navigation principale" class="hidden md:flex items-center gap-8 font-medium text-sm text-gray-600">
+        <a href="index.html" class="text-suisse-red transition-colors">Accueil</a>
+        <a href="formations.html" class="hover:text-suisse-dark transition-colors">Formations</a>
+        <a href="materiel.html" class="hover:text-suisse-dark transition-colors">Matériel</a>
+        <a href="defibrillateurs.html" class="hover:text-suisse-dark transition-colors">Défibrillateurs</a>
+        <a href="galerie.html" class="hover:text-suisse-dark transition-colors">Galerie</a>
+        <a href="contact.html" class="bg-suisse-dark text-white px-4 py-2 rounded-full hover:bg-suisse-red transition-all shadow-sm">Contact</a>
       </nav>
-    </div>
-
-    <div class="mobile-panel" id="mobileNav" aria-hidden="true">
-      <a href="index.html">Accueil</a>
-      <a href="formations.html">Formations</a>
-      <a href="materiel.html">Matériel</a>
-      <a href="defibrillateurs.html">Défibrillateurs</a>
-      <a href="galerie.html">Galerie</a>
-      <a href="contact.html">Contact</a>
     </div>
   </header>
 
   <main>
-    <section class="hero">
-      <div class="container hero-grid">
-        <div class="hero-copy">
-          <p class="eyebrow">Premiers secours en Suisse</p>
-          <h1>
-            Des formations <span class="highlight">claires</span>, une présence
-            <span class="highlight">sérieuse</span>, une identité qui inspire confiance.
+    <!-- HERO SECTION (Premium & Épuré) -->
+    <section class="relative min-h-[80vh] flex items-center bg-white overflow-hidden py-20">
+      <div class="max-w-7xl mx-auto px-6 w-full grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        <div class="space-y-8">
+          <div class="inline-flex items-center gap-2 bg-red-50 text-suisse-red px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-wider">
+            <span class="w-2 h-2 rounded-full bg-suisse-red animate-pulse"></span> Premiers secours en Suisse
+          </div>
+          <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-suisse-dark leading-none">
+            Des formations <span class="text-suisse-red">claires</span>,<br>une présence <span class="border-b-4 border-suisse-red/20">sérieuse</span>.
           </h1>
-          <p class="hero-text">
-            Almunqidh accompagne entreprises, particuliers et collectivités avec une approche sobre, moderne et professionnelle.
+          <p class="text-lg text-gray-600 max-w-xl leading-relaxed">
+            Almunqidh accompagne entreprises, particuliers et collectivités avec une approche sobre, moderne et professionnelle. Une identité qui inspire confiance.
           </p>
-          <div class="hero-actions">
-            <a href="formations.html" class="btn btn-primary">Voir les formations</a>
-            <a href="materiel.html" class="btn btn-ghost">Découvrir le matériel</a>
+          <div class="flex flex-wrap gap-4 pt-2">
+            <a href="formations.html" class="bg-suisse-red text-white font-medium px-8 py-4 rounded-xl hover:bg-red-700 hover:shadow-lg hover:shadow-red-500/20 transition-all">Voir les formations</a>
+            <a href="materiel.html" class="bg-gray-100 text-suisse-dark font-medium px-8 py-4 rounded-xl hover:bg-gray-200 transition-all">Découvrir le matériel</a>
           </div>
         </div>
 
-        <div class="hero-visual">
-          <div class="logo-stage">
-            <img src="logo.png" alt="Logo Almunqidh" class="logo-animated">
+        <div class="relative flex justify-center lg:justify-end">
+          <!-- Un carré moderne minimaliste en attendant de vraies images -->
+          <div class="w-full max-w-md aspect-square bg-gradient-to-tr from-gray-50 to-gray-100 rounded-3xl border border-gray-100 shadow-2xl flex items-center justify-center p-8 relative">
+            <div class="absolute -top-4 -left-4 w-24 h-24 bg-red-500/5 rounded-full blur-xl"></div>
+            <span class="text-xs text-gray-400 font-mono tracking-widest uppercase">[ Espace Visuel / Logo Premium ]</span>
           </div>
         </div>
       </div>
     </section>
 
-    <section class="trust-band">
-      <div class="container trust-band-inner">
-        <p>En Suisse, chaque heure compte. Agir vite change tout.</p>
-        <strong>Un taux de survie qui peut être amélioré par la formation et le matériel adapté.</strong>
+    <!-- SECTION CHIFFRES / IMPACT -->
+    <section class="bg-suisse-dark text-white py-16">
+      <div class="max-w-4xl mx-auto px-6 text-center space-y-4">
+        <p class="text-suisse-red font-semibold uppercase tracking-wider text-sm">En Suisse, chaque heure compte.</p>
+        <h2 class="text-2xl sm:text-3xl font-bold tracking-tight">Agir vite change tout.</h2>
+        <p class="text-gray-400 text-lg max-w-2xl mx-auto">
+          Un taux de survie qui peut être considérablement amélioré par la formation et le matériel adapté.
+        </p>
       </div>
     </section>
 
-    <section class="section">
-      <div class="container">
-        <div class="section-head">
-          <p class="eyebrow">Ils nous font confiance</p>
-          <h2>Des partenaires, des clients et des organisations qui nous ont choisis.</h2>
-        </div>
-        <div class="client-grid">
-          <div class="client-card">Entreprise A</div>
-          <div class="client-card">Client institutionnel</div>
-          <div class="client-card">Partenaire local</div>
-          <div class="client-card">Collectivité</div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section section-alt">
-      <div class="container">
-        <div class="section-head">
-          <p class="eyebrow">Avis clients</p>
-          <h2>Ce que disent ceux qui nous ont déjà fait confiance.</h2>
-        </div>
-        <div class="testimonial-grid">
-          <article class="testimonial-card">
-            <p>“Une approche très professionnelle, claire et rassurante.”</p>
-            <span>— Entreprise partenaire</span>
-          </article>
-          <article class="testimonial-card">
-            <p>“Le site donne envie d’aller plus loin et de découvrir les formations.”</p>
-            <span>— Client particulier</span>
-          </article>
-          <article class="testimonial-card">
-            <p>“Un service sérieux, avec une vraie image de confiance.”</p>
-            <span>— Organisation locale</span>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section class="section">
-      <div class="container">
-        <div class="section-head">
-          <p class="eyebrow">Explorer le site</p>
-          <h2>Chaque page vous guide vers un besoin précis.</h2>
-        </div>
-
-        <div class="feature-grid">
-          <a href="formations.html" class="feature-card link-card">
-            <h3>Formations</h3>
-            <p>Gestes utiles, pédagogie claire et contenus pensés pour entreprises, particuliers et groupes.</p>
-          </a>
-
-          <a href="materiel.html" class="feature-card link-card">
-            <h3>Matériel</h3>
-            <p>Sacs, accessoires, supports et solutions de terrain pour compléter l’intervention.</p>
-          </a>
-
-          <a href="defibrillateurs.html" class="feature-card link-card">
-            <h3>Défibrillateurs</h3>
-            <p>DAE, accompagnement, installation et éléments essentiels pour agir vite.</p>
-          </a>
-
-          <a href="contact.html" class="feature-card link-card">
-            <h3>Contact</h3>
-            <p>Une prise de contact simple pour obtenir des informations ou préparer un projet.</p>
-          </a>
-        </div>
-      </div>
-    </section>
-
-    <section class="section section-alt">
-      <div class="container">
-        <div class="section-head">
-          <p class="eyebrow">Présentation</p>
-          <h2>Une identité sobre, premium et tournée vers la confiance.</h2>
-        </div>
-        <div class="gallery-empty">
-          <p>Cette zone pourra accueillir plus tard une galerie, des visuels ou des partenaires.</p>
-        </div>
-      </div>
-    </section>
-
-    <section class="section contact">
-      <div class="container contact-layout">
+    <!-- PARTENAIRES -->
+    <section class="py-20 bg-white border-b border-gray-100">
+      <div class="max-w-7xl mx-auto px-6 text-center space-y-12">
         <div>
-          <p class="eyebrow">Contact</p>
-          <h2>Parlons de votre besoin.</h2>
-          <p class="contact-text">
-            Pour une demande de formation, une question ou un projet, voici les coordonnées du site.
+          <p class="text-xs font-bold text-gray-400 uppercase tracking-widest">Ils nous font confiance</p>
+          <h2 class="text-2xl font-bold text-suisse-dark mt-2">Des organisations qui nous ont choisis</h2>
+        </div>
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-6 opacity-60">
+          <div class="p-6 bg-suisse-light rounded-xl font-medium text-gray-500 text-sm flex items-center justify-center border border-gray-100">Entreprise A</div>
+          <div class="p-6 bg-suisse-light rounded-xl font-medium text-gray-500 text-sm flex items-center justify-center border border-gray-100">Client institutionnel</div>
+          <div class="p-6 bg-suisse-light rounded-xl font-medium text-gray-500 text-sm flex items-center justify-center border border-gray-100">Partenaire local</div>
+          <div class="p-6 bg-suisse-light rounded-xl font-medium text-gray-500 text-sm flex items-center justify-center border border-gray-100">Collectivité</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TEMOIGNAGES -->
+    <section class="py-24 bg-suisse-light">
+      <div class="max-w-7xl mx-auto px-6 space-y-16">
+        <div class="text-center space-y-2">
+          <p class="text-xs font-bold text-suisse-red uppercase tracking-widest">Avis clients</p>
+          <h2 class="text-3xl font-bold text-suisse-dark tracking-tight">Ce que disent nos partenaires</h2>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <article class="bg-white p-8 rounded-2xl shadow-sm border border-gray-100 flex flex-col justify-between">
+            <p class="text-gray-600 italic">“Une approche très professionnelle, claire et rassurante.”</p>
+            <span class="block text-sm font-bold text-suisse-dark mt-6 border-t pt-4 border-gray-50">— Entreprise partenaire</span>
+          </article>
+          <article class="bg-white p-8 rounded-2xl shadow-sm border border-gray-100 flex flex-col justify-between">
+            <p class="text-gray-600 italic">“Le site donne envie d’aller plus loin et de découvrir les formations.”</p>
+            <span class="block text-sm font-bold text-suisse-dark mt-6 border-t pt-4 border-gray-50">— Client particulier</span>
+          </article>
+          <article class="bg-white p-8 rounded-2xl shadow-sm border border-gray-100 flex flex-col justify-between">
+            <p class="text-gray-600 italic">“Un service sérieux, avec une vraie image de confiance.”</p>
+            <span class="block text-sm font-bold text-suisse-dark mt-6 border-t pt-4 border-gray-50">— Organisation locale</span>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- NAVIGATION PAR BLOCS -->
+    <section class="py-24 bg-white">
+      <div class="max-w-7xl mx-auto px-6 space-y-16">
+        <div class="text-center space-y-2">
+          <p class="text-xs font-bold text-gray-400 uppercase tracking-widest">Explorer le site</p>
+          <h2 class="text-3xl font-bold text-suisse-dark tracking-tight">Chaque page vous guide vers un besoin précis.</h2>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          <a href="formations.html" class="group bg-suisse-light p-8 rounded-2xl border border-gray-100 hover:bg-suisse-dark hover:text-white transition-all hover:-translate-y-1 duration-300 block">
+            <div class="w-10 h-10 bg-white group-hover:bg-suisse-red rounded-lg flex items-center justify-center text-suisse-red group-hover:text-white mb-6 font-bold shadow-sm transition-colors">01</div>
+            <h3 class="text-xl font-bold mb-2">Formations</h3>
+            <p class="text-sm text-gray-500 group-hover:text-gray-300 transition-colors leading-relaxed">Gestes utiles, pédagogie claire et contenus pensés pour entreprises et particuliers.</p>
+          </a>
+
+          <a href="materiel.html" class="group bg-suisse-light p-8 rounded-2xl border border-gray-100 hover:bg-suisse-dark hover:text-white transition-all hover:-translate-y-1 duration-300 block">
+            <div class="w-10 h-10 bg-white group-hover:bg-suisse-red rounded-lg flex items-center justify-center text-suisse-red group-hover:text-white mb-6 font-bold shadow-sm transition-colors">02</div>
+            <h3 class="text-xl font-bold mb-2">Matériel</h3>
+            <p class="text-sm text-gray-500 group-hover:text-gray-300 transition-colors leading-relaxed">Sacs, accessoires, supports et solutions de terrain pour compléter l’intervention.</p>
+          </a>
+
+          <a href="defibrillateurs.html" class="group bg-suisse-light p-8 rounded-2xl border border-gray-100 hover:bg-suisse-dark hover:text-white transition-all hover:-translate-y-1 duration-300 block">
+            <div class="w-10 h-10 bg-white group-hover:bg-suisse-red rounded-lg flex items-center justify-center text-suisse-red group-hover:text-white mb-6 font-bold shadow-sm transition-colors">03</div>
+            <h3 class="text-xl font-bold mb-2">Défibrillateurs</h3>
+            <p class="text-sm text-gray-500 group-hover:text-gray-300 transition-colors leading-relaxed">DAE, accompagnement, installation et éléments essentiels pour agir vite.</p>
+          </a>
+
+          <a href="contact.html" class="group bg-suisse-light p-8 rounded-2xl border border-gray-100 hover:bg-suisse-dark hover:text-white transition-all hover:-translate-y-1 duration-300 block">
+            <div class="w-10 h-10 bg-white group-hover:bg-suisse-red rounded-lg flex items-center justify-center text-suisse-red group-hover:text-white mb-6 font-bold shadow-sm transition-colors">04</div>
+            <h3 class="text-xl font-bold mb-2">Contact</h3>
+            <p class="text-sm text-gray-500 group-hover:text-gray-300 transition-colors leading-relaxed">Une prise de contact simple pour obtenir des informations ou préparer un projet.</p>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION GALERIE PRÉVUE (#galerie) -->
+    <section id="galerie" class="py-24 bg-suisse-light border-t border-b border-gray-100">
+      <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-3 gap-12 items-center">
+        <div class="space-y-4">
+          <p class="text-xs font-bold text-suisse-red uppercase tracking-widest">Présentation</p>
+          <h2 class="text-3xl font-bold text-suisse-dark tracking-tight">Une identité moderne tournée vers l'action.</h2>
+          <p class="text-gray-600 leading-relaxed">
+            Découvrez nos sessions de formation, notre matériel certifié et nos interventions en image à travers la Suisse.
+          </p>
+        </div>
+        <!-- Ici, on crée une fausse grille de galerie ultra propre avec 2 blocs images fictifs -->
+        <div class="lg:col-span-2 grid grid-cols-1 sm:grid-cols-2 gap-6">
+          <div class="aspect-video bg-white rounded-2xl border border-gray-200 shadow-sm flex items-center justify-center text-xs text-gray-400 uppercase font-mono">[ Photo Formation Secourisme ]</div>
+          <div class="aspect-video bg-white rounded-2xl border border-gray-200 shadow-sm flex items-center justify-center text-xs text-gray-400 uppercase font-mono">[ Photo Défibrillateur DAE ]</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT & INFOS -->
+    <section class="py-24 bg-white">
+      <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-12">
+        <div class="space-y-4">
+          <p class="text-xs font-bold text-suisse-red uppercase tracking-widest">Contact</p>
+          <h2 class="text-4xl font-bold text-suisse-dark tracking-tight">Parlons de votre besoin.</h2>
+          <p class="text-gray-600 max-w-md leading-relaxed">
+            Pour une demande de formation en entreprise, une question sur un DAE ou un projet sur-mesure, notre équipe en Gruyère vous répond rapidement.
           </p>
         </div>
 
-        <div class="contact-card">
-          <p><strong>Email</strong><span>OVDS@almunqidhswiss.org</span></p>
-          <p><strong>Téléphone</strong><span>+41 76 560 54 00</span></p>
-          <p><strong>Adresse</strong><span>Route du lynx numéro 33, 1663 Gruyère, Suisse</span></p>
+        <div class="bg-suisse-light p-8 sm:p-10 rounded-3xl border border-gray-100 space-y-6">
+          <div class="flex items-start gap-4">
+            <div class="w-10 h-10 bg-white rounded-xl flex items-center justify-center text-suisse-red shadow-sm font-bold">@</div>
+            <div>
+              <p class="text-xs text-gray-400 font-bold uppercase tracking-wider">Email</p>
+              <a href="mailto:OVDS@almunqidhswiss.org" class="text-lg font-semibold text-suisse-dark hover:text-suisse-red transition-colors">OVDS@almunqidhswiss.org</a>
+            </div>
+          </div>
+          <div class="flex items-start gap-4">
+            <div class="w-10 h-10 bg-white rounded-xl flex items-center justify-center text-suisse-red shadow-sm font-bold">T</div>
+            <div>
+              <p class="text-xs text-gray-400 font-bold uppercase tracking-wider">Téléphone</p>
+              <a href="tel:+41765605400" class="text-lg font-semibold text-suisse-dark hover:text-suisse-red transition-colors">+41 76 560 54 00</a>
+            </div>
+          </div>
+          <div class="flex items-start gap-4">
+            <div class="w-10 h-10 bg-white rounded-xl flex items-center justify-center text-suisse-red shadow-sm font-bold">A</div>
+            <div>
+              <p class="text-xs text-gray-400 font-bold uppercase tracking-wider">Adresse</p>
+              <p class="text-base font-semibold text-suisse-dark">Route du lynx numéro 33, 1663 Gruyère, Suisse</p>
+            </div>
+          </div>
         </div>
       </div>
     </section>
   </main>
 
-  <a href="#top" class="to-top" aria-label="Remonter en haut">↑</a>
-  <script src="script.js"></script>
+  <footer class="bg-suisse-dark text-gray-500 py-8 border-t border-gray-800 text-center text-xs">
+    <div class="max-w-7xl mx-auto px-6">
+      &copy; 2026 Almunqidh - Tous droits réservés.
+    </div>
+  </footer>
+
+  <a aria-label="Remonter en haut" href="#top" class="fixed bottom-6 right-6 w-12 h-12 bg-suisse-dark hover:bg-suisse-red text-white flex items-center justify-center rounded-full shadow-lg transition-all hover:-translate-y-1 z-50 text-xl">↑</a>
+  
 </body>
 </html>
