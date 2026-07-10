@@ -3,77 +3,127 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Almunqidh | Premiers Secours Suisse</title>
+    <title>Almunqidh | Urgences & Premiers Secours Suisse</title>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap');
         
         :root { 
-            --rouge: #D52B1E; 
-            --noir: #0A0A0B; 
+            --rouge-sang: #BC0000; 
+            --rouge-brillant: #FF1A1A;
+            --bordeaux-profond: #2A0000;
+            --noir-obsidienne: #0B0505; 
             --blanc: #FFFFFF; 
-            --gris-clair: #F5F5F7;
+            --glass-white: rgba(255, 255, 255, 0.08);
+            --glass-border: rgba(255, 255, 255, 0.15);
             --radius: 24px;
         }
         
         * { box-sizing: border-box; margin: 0; padding: 0; }
-        body { font-family: 'Inter', sans-serif; background: var(--blanc); color: var(--noir); line-height: 1.6; }
-
-        /* 1. Bande News Défilante */
-        .news-banner { background: var(--rouge); color: white; padding: 12px 0; overflow: hidden; white-space: nowrap; font-weight: 700; font-size: 0.9rem; border-bottom: 2px solid #a12217; position: relative; z-index: 1000; }
+        
+        body { 
+            font-family: 'Inter', sans-serif; 
+            color: var(--blanc); 
+            background: radial-gradient(circle at 50% 0%, #610000 0%, var(--bordeaux-profond) 70%, var(--noir-obsidienne) 100%);
+            line-height: 1.6; 
+            min-height: 100vh;
+        }
+        
+        a { color: inherit; text-decoration: none; transition: all 0.3s ease; }
+        
+        /* 1. Bande Défilante */
+        .news-banner { 
+            background: linear-gradient(135deg, #FF0000 0%, #990000 50%, #FF0000 100%);
+            background-size: 200% auto;
+            animation: shine 4s linear infinite;
+            color: white; 
+            padding: 12px 0; 
+            overflow: hidden; 
+            white-space: nowrap; 
+            font-weight: 700; 
+            font-size: 0.9rem; 
+            border-bottom: 1px solid rgba(255,255,255,0.3);
+            box-shadow: 0 4px 20px rgba(188, 0, 0, 0.4);
+            position: relative;
+            z-index: 1000;
+        }
         .marquee { display: inline-block; animation: marquee 25s linear infinite; }
         @keyframes marquee { 0% { transform: translate(0, 0); } 100% { transform: translate(-50%, 0); } }
+        @keyframes shine { 0% { background-position: 0% 50%; } 50% { background-position: 100% 50%; } 100% { background-position: 0% 50%; } }
 
-        /* 2. Barre de Navigation Premium */
-        .header { background: rgba(255, 255, 255, 0.85); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); position: sticky; top: 0; z-index: 999; border-bottom: 1px solid rgba(10,10,11,0.06); }
-        .nav-container { padding: 20px; display: flex; justify-content: space-between; align-items: center; max-width: 1200px; margin: 0 auto; width: 100%; }
-        .logo { font-weight: 900; font-size: 1.5rem; letter-spacing: -1px; text-decoration: none; color: var(--noir); }
+        /* 2. Barre de Navigation */
+        .header { 
+            background: rgba(42, 0, 0, 0.6); 
+            backdrop-filter: blur(20px); 
+            -webkit-backdrop-filter: blur(20px); 
+            position: sticky; 
+            top: 0; 
+            z-index: 999; 
+            border-bottom: 1px solid var(--glass-border); 
+        }
+        .nav-container { padding: 15px 20px; display: flex; justify-content: space-between; align-items: center; max-width: 1200px; margin: 0 auto; width: 100%; }
+        .brand-link { display: flex; align-items: center; gap: 12px; }
+        .logo-img { height: 50px; width: auto; object-fit: contain; filter: drop-shadow(0 0 8px rgba(255,26,26,0.6)); }
+        .logo-text { font-weight: 900; font-size: 1.5rem; letter-spacing: -0.5px; }
         
-        /* Onglets version Ordinateur */
         .nav-links { display: flex; align-items: center; }
-        .nav-links a { margin-left: 28px; font-weight: 600; font-size: 0.95rem; text-decoration: none; color: var(--noir); transition: color 0.3s; }
-        .nav-links a:hover { color: var(--rouge); }
-        .active-link { color: var(--rouge) !important; }
+        .nav-links a { margin-left: 28px; font-weight: 600; font-size: 0.95rem; color: rgba(255,255,255,0.8); }
+        .nav-links a:hover { color: var(--rouge-brillant); text-shadow: 0 0 10px var(--rouge-brillant); }
+        .active-link { color: var(--rouge-brillant) !important; text-shadow: 0 0 12px var(--rouge-brillant); }
 
-        /* Bouton Menu Hamburger (Caché sur PC) */
+        /* Hamburger Mobile */
         .hamburger { display: none; background: none; border: none; cursor: pointer; padding: 5px; z-index: 1001; }
-        .hamburger span { display: block; width: 24px; height: 3px; background: var(--noir); margin: 4px 0; transition: 0.3s; border-radius: 2px; }
+        .hamburger span { display: block; width: 24px; height: 3px; background: var(--blanc); margin: 4px 0; transition: 0.3s; border-radius: 2px; }
 
-        /* Menu Mobile Éroulable */
-        .mobile-menu { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100vh; background: white; z-index: 998; padding: 120px 40px; flex-direction: column; gap: 24px; opacity: 0; transform: translateY(-20px); transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1); }
-        .mobile-menu.open { display: flex; opacity: 1; transform: translateY(0); }
-        .mobile-menu a { font-size: 1.8rem; font-weight: 700; text-decoration: none; color: var(--noir); }
-        .mobile-menu a:hover { color: var(--rouge); }
+        /* Menu Mobile */
+        .mobile-menu { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100vh; background: linear-gradient(to bottom, var(--bordeaux-profond), var(--noir-obsidienne)); z-index: 998; padding: 140px 40px; flex-direction: column; gap: 28px; opacity: 0; transform: scale(0.95); transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1); }
+        .mobile-menu.open { display: flex; opacity: 1; transform: scale(1); }
+        .mobile-menu a { font-size: 2rem; font-weight: 800; }
 
-        /* Animations pour le bouton Hamburger quand ouvert */
         .hamburger.open span:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
         .hamburger.open span:nth-child(2) { opacity: 0; }
-        .hamburger.open span:nth-child(3) { transform: rotate(-4 angle) rotate(-45deg) translate(5px, -5px); }
+        .hamburger.open span:nth-child(3) { transform: rotate(-45deg) translate(5px, -5px); }
         
-        /* 3. Section Principale (Hero) */
+        /* 3. Hero Section */
         .hero { text-align: center; padding: 100px 20px 60px 20px; max-width: 1200px; margin: 0 auto; }
-        .hero h1 { font-size: clamp(2.8rem, 7vw, 4.8rem); font-weight: 900; line-height: 1.05; letter-spacing: -2px; margin-bottom: 24px; }
-        .hero p { font-size: 1.25rem; color: #555; max-width: 650px; margin: 0 auto 40px auto; }
+        .hero h1 { font-size: clamp(3rem, 8vw, 5.5rem); font-weight: 900; line-height: 1; letter-spacing: -2px; margin-bottom: 28px; }
+        .hero h1 span { background: linear-gradient(to bottom, #FFF, #FFAAAA); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .hero p { font-size: 1.35rem; color: rgba(255,255,255,0.7); max-width: 700px; margin: 0 auto 50px auto; }
         
-        /* 4. Tableau de bord des statistiques */
-        .stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px; max-width: 1100px; margin: 0 auto 80px auto; padding: 0 20px; }
-        .stat-card { background: var(--gris-clair); padding: 40px; border-radius: var(--radius); text-align: center; border: 1px solid rgba(10,10,11,0.04); display: flex; flex-direction: column; justify-content: center; min-height: 160px; transition: transform 0.3s ease; }
-        .stat-card:hover { transform: translateY(-4px); }
-        .stat-card h3 { font-size: 3.2rem; color: var(--rouge); font-weight: 900; line-height: 1; margin-bottom: 8px; }
-        .stat-card p { font-weight: 600; color: #444; }
+        /* 4. Grille de données & d'impact */
+        .stats-main { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; max-width: 1100px; margin: 0 auto 50px auto; padding: 0 20px; }
+        .stat-card-main { 
+            background: linear-gradient(135deg, rgba(255,255,255,0.07) 0%, rgba(255,255,255,0.02) 100%);
+            border: 1px solid var(--glass-border); border-top: 1px solid rgba(255,255,255,0.4);
+            padding: 45px; border-radius: var(--radius); text-align: center; box-shadow: 0 30px 60px rgba(0,0,0,0.4);
+        }
+        .card-alert { background: linear-gradient(135deg, rgba(188,0,0,0.3) 0%, rgba(42,0,0,0.4) 100%); border-color: rgba(255,26,26,0.3); }
+        .stat-card-main h3 { font-size: 3.8rem; font-weight: 900; line-height: 1; margin-bottom: 12px; }
 
-        /* 5. Boutons d'action */
-        .btn-group { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
-        .cta-btn { background: var(--noir); color: white; padding: 16px 32px; border-radius: 14px; font-weight: 700; display: inline-block; transition: 0.3s; text-decoration: none; box-shadow: 0 4px 12px rgba(0,0,0,0.05); }
-        .cta-btn:hover { background: var(--rouge); transform: translateY(-2px); box-shadow: 0 8px 20px rgba(213,43,30,0.2); }
-        .secondary-btn { background: var(--blanc); color: var(--noir); padding: 16px 32px; border-radius: 14px; font-weight: 700; display: inline-block; transition: 0.3s; text-decoration: none; border: 1px solid rgba(10,10,11,0.15); }
-        .secondary-btn:hover { background: var(--gris-clair); transform: translateY(-2px); }
+        /* 5. NOUVELLE GRILLE SCIENTIFIQUE (Inspirée de ta capture d'écran) */
+        .data-grid-section { max-width: 1100px; margin: 0 auto 100px auto; padding: 0 20px; }
+        .data-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 24px; }
+        .data-card { 
+            background: rgba(11, 5, 5, 0.6); border: 1px solid rgba(255, 255, 255, 0.05); 
+            padding: 35px 25px; border-radius: 20px; transition: transform 0.3s ease;
+        }
+        .data-card:hover { transform: translateY(-4px); border-color: rgba(188, 0, 0, 0.3); }
+        .data-num { font-size: 4rem; font-weight: 900; color: var(--rouge-brillant); line-height: 1; margin-bottom: 15px; text-shadow: 0 0 15px rgba(255,26,26,0.3); }
+        .data-desc { font-size: 0.85rem; font-weight: 700; color: rgba(255,255,255,0.6); text-transform: uppercase; letter-spacing: 0.5px; line-height: 1.5; }
 
-        /* RESPONSIVE DESIGN (Gestion du Mobile) */
+        /* 6. Boutons */
+        .btn-group { display: flex; gap: 20px; justify-content: center; flex-wrap: wrap; }
+        .cta-btn { 
+            background: linear-gradient(180deg, #FF3333 0%, #BD0000 100%);
+            color: white; padding: 18px 38px; border-radius: 16px; font-weight: 700; font-size: 1.05rem;
+            box-shadow: 0 10px 30px rgba(188,0,0,0.4), inset 0 1px 1px rgba(255,255,255,0.4); border: 1px solid #990000; text-transform: uppercase;
+        }
+        .cta-btn:hover { transform: translateY(-3px); box-shadow: 0 15px 40px rgba(255,26,26,0.6); filter: brightness(1.1); }
+        .secondary-btn { background: rgba(255, 255, 255, 0.05); color: var(--blanc); padding: 18px 38px; border-radius: 16px; font-weight: 700; border: 1px solid var(--glass-border); }
+        .secondary-btn:hover { background: rgba(255,255,255,0.15); transform: translateY(-3px); }
+
         @media (max-width: 768px) {
-            .nav-links { display: none; } /* On cache les liens normaux */
-            .hamburger { display: block; } /* On montre le bouton hamburger */
-            .hero { padding: 60px 20px 40px 20px; }
-            .stats { grid-template-columns: 1fr; }
+            .nav-links { display: none; } .hamburger { display: block; }
+            .stats-main { grid-template-columns: 1fr; } .data-grid { grid-template-columns: 1fr; }
         }
     </style>
 </head>
@@ -81,32 +131,28 @@
 
     <div class="news-banner">
         <div class="marquee">
-            &nbsp; • &nbsp; 84 vies sauvées par nos secouristes en Suisse &nbsp; • &nbsp; Plus de 1'248 interventions d'urgence enregistrées &nbsp; • &nbsp; 100% de nos formations certifiées SRC &nbsp; • &nbsp; Formations entreprises sur-mesure disponibles &nbsp; • &nbsp; 
-            &nbsp; • &nbsp; 84 vies sauvées par nos secouristes en Suisse &nbsp; • &nbsp; Plus de 1'248 interventions d'urgence enregistrées &nbsp; • &nbsp; 100% de nos formations certifiées SRC &nbsp; • &nbsp; Formations entreprises sur-mesure disponibles &nbsp; • &nbsp; 
+            &nbsp; • &nbsp; 84 VIES SAUVÉES PAR NOS SECOURISTES EN SUISSE &nbsp; • &nbsp; PLUS DE 1'248 INTERVENTIONS D'URGENCE ENREGISTRÉES &nbsp; • &nbsp; 100% DE NOS FORMATIONS CERTIFIÉES SRC &nbsp; • &nbsp; FORMATIONS ENTREPRISES SUR-MESURE &nbsp; • &nbsp; 
         </div>
     </div>
 
     <header class="header">
         <div class="nav-container">
-            <a href="index.html" class="logo">ALMUNQIDH</a>
-            
+            <a href="index.html" class="brand-link">
+                <img src="logo.png" alt="Logo Almunqidh" class="logo-img">
+                <span class="logo-text">ALMUNQIDH</span>
+            </a>
             <nav class="nav-links">
                 <a href="index.html" class="active-link">Accueil</a>
                 <a href="formations.html">Formations</a>
                 <a href="materiel.html">Matériel</a>
                 <a href="contact.html">Contact</a>
             </nav>
-
-            <button class="hamburger" id="hamburger-btn">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
+            <button class="hamburger" id="hamburger-btn"><span></span><span></span><span></span></button>
         </div>
     </header>
 
     <div class="mobile-menu" id="mobile-menu-container">
-        <a href="index.html" style="color: var(--rouge);">Accueil</a>
+        <a href="index.html" class="active-link">Accueil</a>
         <a href="formations.html">Formations</a>
         <a href="materiel.html">Matériel</a>
         <a href="contact.html">Contact</a>
@@ -114,51 +160,65 @@
 
     <main>
         <section class="hero">
-            <h1>L'excellence du<br><span style="color:var(--rouge)">secourisme Suisse.</span></h1>
-            <p>Almunqidh transforme la formation aux premiers secours en une expérience professionnelle, moderne et vitale pour votre sécurité.</p>
+            <h1>L'urgence exige<br><span>l'excellence.</span></h1>
+            <p>Almunqidh propulse la formation aux premiers secours et l'équipement de défibrillation dans une dimension professionnelle, digne d'une rigueur suisse absolue.</p>
             <div class="btn-group">
-                <a href="formations.html" class="cta-btn">Découvrir nos formations</a>
-                <a href="contact.html" class="secondary-btn">Nous contacter</a>
+                <a href="formations.html" class="cta-btn">Découvrir les formations</a>
+                <a href="contact.html" class="secondary-btn">Demander un devis</a>
             </div>
         </section>
 
-        <section class="stats">
-            <div class="stat-card">
+        <!-- COMPTEURS DYNAMIQUE -->
+        <section class="stats-main">
+            <div class="stat-card-main">
                 <h3 id="accidents">0</h3>
-                <p>Interventions urgentes répertoriées</p>
+                <p style="color: rgba(255,255,255,0.6); font-size: 0.95rem; font-weight: 600; text-transform: uppercase;">Interventions annuelles</p>
             </div>
-            <div class="stat-card" style="background: #FFF5F5; border-color: rgba(213,43,30,0.1);">
-                <h3 id="vies" style="color: var(--rouge);">0</h3>
-                <p>Vies sauvées grâce aux DAE et formations</p>
+            <div class="stat-card-main card-alert">
+                <h3 id="vies">0</h3>
+                <p style="color: rgba(255,255,255,0.8); font-size: 0.95rem; font-weight: 600; text-transform: uppercase;">Vies sauvées (Formations & DAE)</p>
+            </div>
+        </section>
+
+        <!-- LE BLOC ISSU DE TA CAPTURE (STATISTIQUES CHOC MÉDICALES) -->
+        <section class="data-grid-section">
+            <div class="data-grid">
+                <div class="data-card">
+                    <div class="data-num">5%</div>
+                    <div class="data-desc">Taux de survie minimal sans intervention rapide</div>
+                </div>
+                <div class="data-card">
+                    <div class="data-num">80%</div>
+                    <div class="data-desc">Des arrêts cardiaques sont dus à une fibrillation, réversible par défibrillation</div>
+                </div>
+                <div class="data-card">
+                    <div class="data-num">3</div>
+                    <div class="data-desc">Parcours de formation, du geste de base à la certification entreprise</div>
+                </div>
+                <div class="data-card">
+                    <div class="data-num">4</div>
+                    <div class="data-desc">Sites équipés en défibrillateurs dans le canton de Fribourg</div>
+                </div>
             </div>
         </section>
     </main>
 
     <script>
-        // Gestion du Menu Hamburger Mobile
         const hamburgerBtn = document.getElementById('hamburger-btn');
         const mobileMenu = document.getElementById('mobile-menu-container');
-
         hamburgerBtn.addEventListener('click', () => {
-            hamburgerBtn.classList.toggle('open');
-            mobileMenu.classList.toggle('open');
+            hamburgerBtn.classList.toggle('open'); mobileMenu.classList.toggle('open');
         });
 
-        // Animation des compteurs fluides
         function animer(id, max) {
-            let n = 0;
-            let el = document.getElementById(id);
+            let n = 0; let el = document.getElementById(id);
             let interval = setInterval(() => {
-                n += Math.floor(max / 50);
+                n += Math.max(1, Math.floor(max / 40));
                 if(n >= max) { n = max; clearInterval(interval); }
                 el.innerText = n.toLocaleString('fr-CH');
-            }, 40);
+            }, 35);
         }
-
-        window.addEventListener('load', () => { 
-            animer('accidents', 1248); 
-            animer('vies', 84); 
-        });
+        window.addEventListener('load', () => { animer('accidents', 1248); animer('vies', 84); });
     </script>
 </body>
 </html>
