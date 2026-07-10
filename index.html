@@ -27,6 +27,7 @@
     font-size:16px;
     line-height:1.5;
     -webkit-font-smoothing:antialiased;
+    padding-top: 120px; /* CORRECTION : Évite que le contenu du site passe sous le menu fixe au chargement */
   }
   /* grain fin tactile pour un effet papier premium */
   body::before{
@@ -35,27 +36,37 @@
     background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
   }
 
-  /* ===== BANDE DE NEWS DÉFILANTE SUISSE ===== */
+  /* CORRECTION FLUIDITÉ DE DEFILEMENT : Le conteneur global du Header qui englobe la News-Banner + le Menu */
+  .fixed-top-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s ease;
+  }
+
+  /* BANDE DE NEWS DÉFILANTE SUISSE */
   .news-banner { 
     background: var(--red);
     color: var(--white); 
-    padding: 14px 0; 
+    padding: 12px 0; 
     overflow: hidden; 
     white-space: nowrap; 
     font-weight: 900; 
-    font-size: 0.95rem; 
+    font-size: 0.85rem; 
     text-transform: uppercase;
     letter-spacing: 1.5px;
-    position: relative;
-    z-index: 1000;
     border-bottom: 1px solid var(--red-deep);
   }
   .marquee { display: inline-block; animation: marquee 35s linear infinite; }
   @keyframes marquee { 0% { transform: translate(0, 0); } 100% { transform: translate(-50%, 0); } }
 
-  /* ===== INTRO CURTAIN ===== */
+  /* INTRO CURTAIN */
   .intro-curtain{
-    position:fixed; inset:0; z-index:500; background:var(--ink);
+    position:fixed; inset:0; z-index:1500; background:var(--ink);
     display:flex; align-items:center; justify-content:center;
     transition:opacity .9s cubic-bezier(.6,0,.2,1), visibility .9s;
   }
@@ -63,34 +74,33 @@
   .intro-curtain.ready .crest{opacity:1; transform:scale(1);}
   .intro-curtain.gone{opacity:0; visibility:hidden;}
 
-  /* ===== SCROLL PROGRESS ===== */
-  .scroll-progress{position:fixed; top:0; left:0; height:2px; background:var(--red); z-index:150; width:0%; transition:width .1s linear;}
+  /* SCROLL PROGRESS */
+  .scroll-progress{position:absolute; bottom:0; left:0; height:2px; background:var(--red); z-index:150; width:0%; transition:width .1s linear;}
 
-  /* ===== CREST EMBLEM ===== */
+  /* CREST EMBLEM */
   .crest{display:inline-block; vertical-align:middle;}
 
-  /* AJUSTEMENT : On remet les vraies couleurs vibrantes sur les images */
   .duo{position:relative; overflow:hidden;}
   .duo img{transition:transform 6s cubic-bezier(.2,.6,.2,1);}
   .duo.kenburns img{transform:scale(1.08);}
   
-  /* LES CROIX EN FILIGRANE (Plus présentes et teintées en rouge suisse) */
-  .big-cross{position:absolute; pointer-events:none;}
+  /* CORRECTION ARTISTIQUE : Les grandes croix suisses en arrière-plan sont plus prononcées et teintées */
+  .big-cross{position:absolute; pointer-events:none; z-index: 1;}
   .big-cross::before,.big-cross::after{content:''; position:absolute; background:currentColor;}
-  .big-cross::before{left:40%; top:0; width:20%; height:100%;}
-  .big-cross::after{top:40%; left:0; height:20%; width:100%;}
+  .big-cross::before{left:42%; top:0; width:16%; height:100%;}
+  .big-cross::after{top:42%; left:0; height:16%; width:100%;}
   
   .mono{font-family:'IBM Plex Mono',monospace;}
   .display{font-family:'Archivo',sans-serif; font-weight:900; letter-spacing:-0.02em; text-transform:uppercase;}
   a{color:inherit; text-decoration:none;}
-  .wrap{max-width:1280px; margin:0 auto; padding:0 40px;}
+  .wrap{max-width:1280px; margin:0 auto; padding:0 40px; position: relative; z-index: 5;}
   .cross{display:inline-block; position:relative; width:1em; height:1em;}
   .cross::before,.cross::after{content:''; position:absolute; background:currentColor;}
   .cross::before{left:44%; top:6%; width:12%; height:88%;}
   .cross::after{top:44%; left:6%; height:12%; width:88%;}
 
   .lift{transition:transform .45s cubic-bezier(.2,.7,.2,1), box-shadow .45s ease, border-color .3s ease;}
-  .lift:hover{transform:translateY(-6px); box-shadow:0 26px 50px -20px rgba(213,43,30,0.15); border-color: var(--red);}
+  .lift:hover{transform:translateY(-6px); box-shadow:0 26px 50px -20px rgba(213,43,30,0.18); border-color: var(--red);}
 
   .magnetic{will-change:transform; transition:transform .25s cubic-bezier(.2,.7,.2,1);}
 
@@ -100,14 +110,15 @@
     .intro-curtain{display:none!important;}
   }
 
-  /* ===== HEADER ===== */
+  /* HEADER */
   header{
-    position:fixed; top:49px; left:0; right:0; z-index:100;
-    background:rgba(252,252,251,0.92); backdrop-filter:blur(10px); -webkit-backdrop-filter:blur(10px);
+    background:rgba(252,252,251,0.94); backdrop-filter:blur(12px); -webkit-backdrop-filter:blur(12px);
     border-bottom:1px solid transparent;
-    transition:border-color .3s ease, box-shadow .3s ease, top .3s ease;
+    transition:border-color .3s ease, box-shadow .3s ease, background-color .3s ease;
+    position: relative;
+    width: 100%;
   }
-  header.scrolled{border-bottom:1px solid var(--line); box-shadow:0 12px 30px -22px rgba(17,17,16,0.15);}
+  header.scrolled{border-bottom:1px solid var(--line); box-shadow:0 12px 30px -22px rgba(17,17,16,0.15); background:rgba(252,252,251,0.98);}
   .nav-inner{display:flex; align-items:center; justify-content:space-between; height:72px;}
   .logo{display:flex; align-items:center; gap:10px; font-family:'Archivo'; font-weight:800; font-size:18px; letter-spacing:0.01em; text-transform:uppercase;}
   .logo .crest{color:var(--red); width:22px; height:22px;}
@@ -118,13 +129,16 @@
   .nav-cta{background:var(--ink); color:var(--white)!important; padding:10px 20px; font-size:12px; border-radius: 4px;}
   .nav-cta::after{display:none;}
   .nav-cta:hover{background:var(--red);}
+  
   .burger{display:none; flex-direction:column; gap:5px; background:none; border:none; cursor:pointer; z-index:110;}
   .burger span{width:24px; height:2px; background:var(--ink); transition:transform .3s ease, opacity .3s ease;}
   .burger.open span:nth-child(1){transform:translateY(7px) rotate(45deg);}
   .burger.open span:nth-child(2){opacity:0;}
   .burger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg);}
+  
+  /* MOBILE NAV CORRECTION : S'aligne parfaitement sous le nouveau menu conteneur */
   .mobile-nav{
-    position:fixed; inset:121px 0 0 0; z-index:95; background:var(--paper);
+    position:fixed; inset:118px 0 0 0; z-index:95; background:var(--paper);
     display:flex; flex-direction:column; padding:40px; gap:6px;
     transform:translateY(-12px); opacity:0; visibility:hidden;
     transition:opacity .3s ease, transform .3s ease, visibility .3s;
@@ -132,8 +146,8 @@
   .mobile-nav.open{opacity:1; transform:translateY(0); visibility:visible;}
   .mobile-nav a{font-family:'Archivo'; font-weight:800; font-size:28px; text-transform:uppercase; padding:16px 0; border-bottom:1px solid var(--line);}
 
-  /* ===== HERO ===== */
-  .hero{padding:140px 0 0 0; position:relative; overflow:hidden;}
+  /* HERO */
+  .hero{padding:80px 0 0 0; position:relative; overflow:hidden;}
   .hero-grid{display:grid; grid-template-columns:1.6fr 1fr; gap:60px; align-items:end; padding-bottom:70px; border-bottom:1px solid var(--line);}
   .eyebrow{font-family:'IBM Plex Mono'; font-size:12px; letter-spacing:0.12em; text-transform:uppercase; color:var(--red); display:flex; align-items:center; gap:8px; margin-bottom:22px;}
   .eyebrow .cross{font-size:11px;}
@@ -152,12 +166,12 @@
   .hero-media-caption .cross{color:var(--red);}
   .hero-media::after{content:''; position:absolute; inset:0; z-index:1; background:linear-gradient(180deg, rgba(15,15,12,0) 50%, rgba(15,15,12,0.5) 100%);}
 
-  /* ===== MANIFESTO / FLAG SIGNATURE ===== */
+  /* MANIFESTO / FLAG SIGNATURE */
   .manifesto{position:relative; background:var(--red); overflow:hidden; padding:0;}
   .manifesto-inner{position:relative; z-index:2; padding:65px 40px; text-align:center;}
   .manifesto-line{font-family:'Archivo'; font-weight:800; font-size:clamp(19px,2vw,26px); letter-spacing:0.01em; color:var(--white); line-height:1.5;}
 
-  /* ===== SECTION SCAFFOLD ===== */
+  /* SECTION SCAFFOLD */
   section{padding:120px 0;}
   .section-head{display:grid; grid-template-columns:1fr 1fr; gap:60px; margin-bottom:64px; align-items:end;}
   .section-num{font-family:'IBM Plex Mono'; font-size:13px; color:var(--red); letter-spacing:0.08em; margin-bottom:14px;}
@@ -261,10 +275,11 @@
 
   @media (max-width:900px){
     .wrap{padding:0 22px;}
+    body { padding-top: 110px; } /* Ajustement tablette */
     nav ul{display:none;}
-    header{top: 47px;}
     .burger{display:flex;}
-    .hero{padding-top:110px;}
+    .mobile-nav { inset: 110px 0 0 0; }
+    .hero{padding-top:40px;}
     .hero-grid{grid-template-columns:1fr; gap:36px;}
     .hero-side{border-left:none; padding-left:0; border-top:1px solid var(--line); padding-top:28px;}
     .section-head{grid-template-columns:1fr; gap:20px;}
@@ -292,37 +307,36 @@
   </svg>
 </div>
 
-<!-- 1. GRANDE BANDE DE NEWS DÉFILANTE SUISSE -->
-<div class="news-banner">
-    <div class="marquee">
-        &nbsp; • &nbsp; 84 VIES SAUVÉES PAR NOS SECOURISTES EN SUISSE &nbsp; • &nbsp; PLUS DE 1'248 INTERVENTIONS D'URGENCE ENREGISTRÉES &nbsp; • &nbsp; 100% DE NOS FORMATIONS CERTIFIÉES SRC &nbsp; • &nbsp; FORMATIONS ENTREPRISES SUR-MESURE &nbsp; • &nbsp;
-    </div>
-</div>
-
-<div class="scroll-progress" id="scrollProgress"></div>
-
-<header id="siteHeader">
-  <div class="wrap nav-inner">
-    <a href="#" class="logo">
-      <img src="logo.png" alt="" style="height: 32px; width: auto;" onerror="this.style.display='none';">
-      <svg class="crest" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="3.5">
-        <circle cx="24" cy="24" r="20"/>
-        <line x1="24" y1="13" x2="24" y2="35"/>
-        <line x1="13" y1="24" x2="35" y2="24"/>
-      </svg>
-      Al Munqidh
-    </a>
-    <nav>
-      <ul>
-        <li><a href="#formations">Formations</a></li>
-        <li><a href="#materiel">Matériel</a></li>
-        <li><a href="#sites">Références</a></li>
-        <li><a href="#contact" class="nav-cta">Nous contacter</a></li>
-      </ul>
-    </nav>
-    <button class="burger" id="burgerBtn" aria-label="Menu"><span></span><span></span><span></span></button>
+<div class="fixed-top-container" id="topContainer">
+  <div class="news-banner">
+      <div class="marquee">
+          &nbsp; • &nbsp; 84 VIES SAUVÉES PAR NOS SECOURISTES EN SUISSE &nbsp; • &nbsp; PLUS DE 1'248 INTERVENTIONS D'URGENCE ENREGISTRÉES &nbsp; • &nbsp; 100% DE NOS FORMATIONS CERTIFIÉES SRC &nbsp; • &nbsp; FORMATIONS ENTREPRISES SUR-MESURE &nbsp; • &nbsp;
+      </div>
   </div>
-</header>
+
+  <header id="siteHeader">
+    <div class="wrap nav-inner">
+      <a href="#" class="logo">
+        <svg class="crest" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="3.5">
+          <circle cx="24" cy="24" r="20"/>
+          <line x1="24" y1="13" x2="24" y2="35"/>
+          <line x1="13" y1="24" x2="35" y2="24"/>
+        </svg>
+        Al Munqidh
+      </a>
+      <nav>
+        <ul>
+          <li><a href="#formations">Formations</a></li>
+          <li><a href="#materiel">Matériel</a></li>
+          <li><a href="#sites">Références</a></li>
+          <li><a href="#contact" class="nav-cta">Nous contacter</a></li>
+        </ul>
+      </nav>
+      <button class="burger" id="burgerBtn" aria-label="Menu"><span></span><span></span><span></span></button>
+    </div>
+    <div class="scroll-progress" id="scrollProgress"></div>
+  </header>
+</div>
 
 <div class="mobile-nav" id="mobileNav">
   <a href="#formations">Formations</a>
@@ -333,9 +347,8 @@
 
 <main>
 
-  <!-- HERO (Ajusté avec la croix rouge en arrière-plan) -->
   <section class="hero">
-    <div class="big-cross" style="top:-20px; right:-120px; width:480px; height:480px; color:var(--red); opacity:0.07;"></div>
+    <div class="big-cross" style="top:20px; right:-60px; width:440px; height:440px; color:var(--red); opacity:0.12;"></div>
     <div class="wrap">
       <div class="hero-grid">
         <div>
@@ -361,7 +374,6 @@
     </div>
   </section>
 
-  <!-- STAT STRIP -->
   <div class="stat-strip">
     <div class="wrap strip-grid">
       <div class="strip-item">
@@ -383,15 +395,13 @@
     </div>
   </div>
 
-  <!-- SIGNATURE / MANIFESTO -->
   <section class="manifesto">
-    <div class="big-cross" style="top:50%; left:50%; width:340px; height:340px; margin:-170px 0 0 -170px; color:var(--white); opacity:0.18;"></div>
+    <div class="big-cross" style="top:50%; left:50%; width:340px; height:340px; margin:-170px 0 0 -170px; color:var(--white); opacity:0.22;"></div>
     <div class="wrap manifesto-inner">
       <p class="manifesto-line">Rouge d'alerte. Blanc de rigueur.<br>Entre les deux, la compétence qui sauve.</p>
     </div>
   </section>
 
-  <!-- POURQUOI -->
   <section id="pourquoi">
     <div class="wrap">
       <div class="section-head reveal">
@@ -421,7 +431,6 @@
     </div>
   </section>
 
-  <!-- FORMATIONS -->
   <section id="formations" style="padding-top:0;">
     <div class="wrap">
       <div class="section-head reveal">
@@ -469,7 +478,6 @@
     </div>
   </section>
 
-  <!-- MATERIEL -->
   <section id="materiel">
     <div class="wrap">
       <div class="section-head reveal">
@@ -487,7 +495,7 @@
         <div class="materiel-copy">
           <span class="tag-red">Zoll AED Plus</span>
           <h3>Le seul DEA qui note votre massage cardiaque</h3>
-          <p>La défibrillation reste l'<strong>unique moyen de faire repartir un cœur</strong> en fibrillation — la cause de 80% des arrêts cardiaques. Le Zoll AED Plus est le seul défibrillateur muni d'une aide en temps réel pour évaluer la qualité des compressions thoraciques.</p>
+          <p>La défibrillation reste l'<strong>unique moyen de faire repartir un cœur</strong> en fibrillation — la cause de 80% des arrêts cardiaques. Le Zoll AED Plus est le seul défibrillateur muni d'une aide en temps réel pour évaluer la quality des compressions thoraciques.</p>
           <p>Choisi par la <strong>REGA</strong> pour équiper ses hélicoptères — une référence dans l'exigence suisse en matière de secours.</p>
           <div class="demo-line"><span class="cross"></span>Démonstration gratuite de 30 minutes, sans engagement, dans vos locaux</div>
         </div>
@@ -512,7 +520,6 @@
     </div>
   </section>
 
-  <!-- SITES -->
   <section id="sites" style="padding-top:0;">
     <div class="wrap">
       <div class="section-head reveal">
@@ -543,9 +550,8 @@
     </div>
   </section>
 
-  <!-- CTA -->
   <section class="cta-band" id="contact" style="padding-top:100px;">
-    <div class="big-cross" style="top:50%; left:50%; width:640px; height:640px; margin:-320px 0 0 -320px; color:var(--white); opacity:0.12;"></div>
+    <div class="big-cross" style="top:50%; left:50%; width:640px; height:640px; margin:-320px 0 0 -320px; color:var(--white); opacity:0.15;"></div>
     <div class="wrap" style="position:relative; z-index:2;">
       <div class="eyebrow"><span class="cross"></span>Un geste peut tout changer</div>
       <h2 class="display">Parlons de la sécurité<br>de vos équipes</h2>
@@ -606,7 +612,7 @@
     setTimeout(()=> curtain.classList.add('gone'), 650);
   });
 
-  // scroll progress + header state
+  // CORRECTION DEFILEMENT : Fixation stable du bloc au scroll
   const progress = document.getElementById('scrollProgress');
   const header = document.getElementById('siteHeader');
   window.addEventListener('scroll', ()=>{
@@ -669,7 +675,7 @@
 
   window.addEventListener('load', () => {
     animerCompteur('live-vies', 30);
-    animerCompteur('live-urgences', 10000); // 8-10K d'après la statistique
+    animerCompteur('live-urgences', 10000);
   });
 </script>
 
