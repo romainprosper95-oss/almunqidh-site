@@ -1,120 +1,52 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="fr" class="scroll-smooth">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Formations | Almunqidh</title>
-  <link rel="stylesheet" href="styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nos Formations | Almunqidh</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 </head>
-<body>
-  <header class="header">
-    <div class="container nav-wrap">
-      <a href="index.html" class="brand" aria-label="Accueil">
-        <img src="logo.png" alt="Almunqidh" class="brand-logo">
-        <div class="brand-text">
-          <span class="brand-name">Almunqidh</span>
-          <span class="brand-tag">Premiers secours en Suisse</span>
-        </div>
-      </a>
+<body class="bg-gray-50 text-gray-900 font-sans">
 
-      <button class="menu-toggle" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="mobileNav">
-        <span></span><span></span><span></span>
-      </button>
+  <main class="max-w-6xl mx-auto px-6 py-20">
+    <h1 class="text-5xl font-extrabold text-center mb-16 tracking-tight" data-aos="fade-up">Nos Formations</h1>
 
-      <nav class="nav desktop-nav" aria-label="Navigation principale">
-        <a href="index.html">Accueil</a>
-        <a href="formations.html">Formations</a>
-        <a href="materiel.html">Matériel</a>
-        <a href="defibrillateurs.html">Défibrillateurs</a>
-        <a href="galerie.html">Galerie</a>
-        <a href="contact.html">Contact</a>
-      </nav>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        
+        <!-- Formation 1 -->
+        <article class="bg-white rounded-3xl shadow-sm border border-gray-100 overflow-hidden" data-aos="fade-up" data-aos-delay="100">
+            <img src="images/bls-compact.jpg" alt="Formation BLS Compact" class="w-full h-48 object-cover bg-gray-200">
+            <div class="p-8">
+                <h2 class="text-2xl font-bold mb-4">BLS Compact</h2>
+                <p class="text-gray-600 mb-6">3 à 4 heures pour maîtriser l'essentiel : alerte, massage cardiaque et défibrillation.</p>
+                <span class="inline-block bg-red-100 text-red-700 px-3 py-1 rounded-lg text-sm font-bold">4 heures</span>
+            </div>
+        </article>
+
+        <!-- Formation 2 -->
+        <article class="bg-white rounded-3xl shadow-sm border border-gray-100 overflow-hidden" data-aos="fade-up" data-aos-delay="200">
+            <img src="images/bls-generic.jpg" alt="Formation Generic Provider" class="w-full h-48 object-cover bg-gray-200">
+            <div class="p-8">
+                <h2 class="text-2xl font-bold mb-4">BLS-AED Provider</h2>
+                <p class="text-gray-600 mb-6">La référence pour une maîtrise complète des scénarios d'urgence complexes.</p>
+                <span class="inline-block bg-red-100 text-red-700 px-3 py-1 rounded-lg text-sm font-bold">7 heures</span>
+            </div>
+        </article>
+
+        <!-- Formation 3 -->
+        <article class="bg-white rounded-3xl shadow-sm border border-gray-100 overflow-hidden" data-aos="fade-up" data-aos-delay="300">
+            <img src="images/entreprise.jpg" alt="Formation Entreprise" class="w-full h-48 object-cover bg-gray-200">
+            <div class="p-8">
+                <h2 class="text-2xl font-bold mb-4">Secouriste Entreprise</h2>
+                <p class="text-gray-600 mb-6">Formation complète sur 2 jours pour gérer tous types d'accidents en milieu pro.</p>
+                <span class="inline-block bg-red-100 text-red-700 px-3 py-1 rounded-lg text-sm font-bold">2 jours</span>
+            </div>
+        </article>
     </div>
+  </main>
 
-    <div class="mobile-panel" id="mobileNav" aria-hidden="true">
-      <a href="index.html">Accueil</a>
-      <a href="formations.html">Formations</a>
-      <a href="materiel.html">Matériel</a>
-      <a href="defibrillateurs.html">Défibrillateurs</a>
-      <a href="galerie.html">Galerie</a>
-      <a href="contact.html">Contact</a>
-    </div>
-  </header>
-
-  <main>
-    <section class="page-hero">
-      <div class="container">
-        <p class="eyebrow">Formations</p>
-        <h1>Des formations qui donnent les bons réflexes au bon moment.</h1>
-        <p class="hero-text">
-          Nous proposons des formations en premiers secours pour entreprises, particuliers et collectivités, avec une pédagogie claire, concrète et rassurante.
-        </p>
-      </div>
-    </section>
-
-    <section class="trust-band">
-      <div class="container trust-band-inner">
-        <p>En Suisse, chaque minute compte lorsqu’une urgence survient.</p>
-        <strong>Se former, c’est augmenter les chances d’agir efficacement avant l’arrivée des secours.</strong>
-      </div>
-    </section>
-
-    <section class="section">
-      <div class="container">
-        <div class="section-head">
-          <p class="eyebrow">Ce que vous trouverez</p>
-          <h2>Une approche simple, utile et immédiatement applicable.</h2>
-        </div>
-
-        <div class="feature-grid">
-          <article class="feature-card">
-            <h3>Gestes essentiels</h3>
-            <p>Les bases du secourisme expliquées clairement pour agir sans hésiter face à une urgence.</p>
-          </article>
-
-          <article class="feature-card">
-            <h3>Situation réelle</h3>
-            <p>Des cas concrets pour comprendre comment réagir avec calme et méthode.</p>
-          </article>
-
-          <article class="feature-card">
-            <h3>Public varié</h3>
-            <p>Des contenus pensés pour les entreprises, les familles, les associations et les collectivités.</p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section class="section section-alt">
-      <div class="container">
-        <div class="section-head">
-          <p class="eyebrow">Pourquoi se former</p>
-          <h2>Parce qu’une bonne réaction peut tout changer.</h2>
-        </div>
-
-        <div class="testimonial-grid">
-          <article class="testimonial-card">
-            <p>Formation claire et rassurante, avec un vrai souci du terrain.</p>
-            <span>Réaction, analyse, efficacité</span>
-          </article>
-
-          <article class="testimonial-card">
-            <p>Une pédagogie adaptée aux débutants comme aux structures plus exigeantes.</p>
-            <span>Entreprises et particuliers</span>
-          </article>
-
-          <article class="testimonial-card">
-            <p>Des gestes concrets pour intervenir avant l’arrivée des secours.</p>
-            <span>Prévention et sécurité</span>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section class="section">
-      <div class="container contact-layout">
-        <div>
-          <p class="eyebrow">Objectif</p>
-          <h2>Former pour agir, rassurer et protéger.</h2>
-          <p class="contact-text">
-            La page formations met en avant une transmission simple des bons réflexes, afin que chaque partici
+  <script>AOS.init({ once: true });</script>
+</body>
+</html>
