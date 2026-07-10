@@ -3,230 +3,239 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Almunqidh | Premiers secours en Suisse</title>
-    <!-- On injecte Tailwind CSS pour un rendu premium immédiat -->
+    <title>Almunqidh | Premiers Secours Suisse</title>
+    
+    <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Bibliothèque d'Animation AOS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+    <!-- Police d'écriture Premium (Inter) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
     <script>
         tailwind.config = {
             theme: {
                 extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
                     colors: {
                         suisse: {
-                            red: '#D52B1E', // Le rouge officiel suisse, mais utilisé avec parcimonie
-                            dark: '#1A1A1A',
-                            light: '#F9F9F9'
+                            red: '#D52B1E',
+                            dark: '#0A0A0B', // Noir plus profond, style Apple
+                            slate: '#636366',
+                            light: '#F5F5F7' // Gris très clair et doux
                         }
                     }
                 }
             }
         }
     </script>
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+    </style>
 </head>
-<body class="bg-suisse-light text-suisse-dark font-sans antialiased">
+<body class="bg-suisse-light text-suisse-dark font-sans antialiased overflow-x-hidden">
 
-  <!-- HEADER PREMIUM -->
-  <header class="sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b border-gray-100 backdrop-saturate-150">
-    <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
-      <a aria-label="Accueil" href="index.html" class="flex items-center gap-3 group">
-        <!-- Logo temporaire ou icône si pas de logo.png -->
-        <div class="w-10 h-10 bg-suisse-red text-white flex items-center justify-center rounded-lg font-bold shadow-sm group-hover:scale-105 transition-transform">A</div>
+  <!-- HEADER TEXTURÉ PREMIUM -->
+  <header class="sticky top-0 z-50 bg-white/70 backdrop-blur-md border-b border-gray-200/50">
+    <div class="max-w-7xl mx-auto px-6 h-24 flex items-center justify-between">
+      <a aria-label="Accueil" href="index.html" class="flex items-center gap-4 group">
+        <div class="w-12 h-12 bg-suisse-red text-white flex items-center justify-center rounded-xl font-bold shadow-md shadow-red-600/10 group-hover:scale-105 transition-all duration-300">A</div>
         <div class="flex flex-col">
-          <span class="font-bold text-lg tracking-tight text-suisse-dark">Almunqidh</span>
-          <span class="text-xs text-gray-500 tracking-wider uppercase">Premiers secours en Suisse</span>
+          <span class="font-extrabold text-xl tracking-tight uppercase text-suisse-dark">Almunqidh</span>
+          <span class="text-[10px] text-suisse-red font-semibold tracking-widest uppercase">Premiers secours suisse</span>
         </div>
       </a>
 
-      <nav aria-label="Navigation principale" class="hidden md:flex items-center gap-8 font-medium text-sm text-gray-600">
-        <a href="index.html" class="text-suisse-red transition-colors">Accueil</a>
+      <nav aria-label="Navigation principale" class="hidden md:flex items-center gap-10 font-medium text-sm tracking-wide text-gray-600">
+        <a href="index.html" class="text-suisse-red transition-colors font-semibold">Accueil</a>
         <a href="formations.html" class="hover:text-suisse-dark transition-colors">Formations</a>
         <a href="materiel.html" class="hover:text-suisse-dark transition-colors">Matériel</a>
         <a href="defibrillateurs.html" class="hover:text-suisse-dark transition-colors">Défibrillateurs</a>
         <a href="galerie.html" class="hover:text-suisse-dark transition-colors">Galerie</a>
-        <a href="contact.html" class="bg-suisse-dark text-white px-4 py-2 rounded-full hover:bg-suisse-red transition-all shadow-sm">Contact</a>
+        <a href="contact.html" class="bg-suisse-dark text-white px-5 py-2.5 rounded-xl hover:bg-suisse-red transition-all duration-300 shadow-sm font-semibold tracking-tight">Contact</a>
       </nav>
     </div>
   </header>
 
   <main>
-    <!-- HERO SECTION (Premium & Épuré) -->
-    <section class="relative min-h-[80vh] flex items-center bg-white overflow-hidden py-20">
-      <div class="max-w-7xl mx-auto px-6 w-full grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-        <div class="space-y-8">
-          <div class="inline-flex items-center gap-2 bg-red-50 text-suisse-red px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-wider">
-            <span class="w-2 h-2 rounded-full bg-suisse-red animate-pulse"></span> Premiers secours en Suisse
+    <!-- HERO SECTION (Minimaliste et Impactante) -->
+    <section class="relative min-h-[85vh] flex items-center bg-white overflow-hidden py-16">
+      <div class="max-w-7xl mx-auto px-6 w-full grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
+        
+        <div class="space-y-8 lg:col-span-7" data-aos="fade-right" data-aos-duration="1000">
+          <div class="inline-flex items-center gap-2 bg-gray-100 text-gray-800 px-4 py-1.5 rounded-full text-xs font-semibold uppercase tracking-wider border border-gray-200">
+            <span class="w-2 h-2 rounded-full bg-suisse-red"></span> Standard National Suisse
           </div>
-          <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-suisse-dark leading-none">
-            Des formations <span class="text-suisse-red">claires</span>,<br>une présence <span class="border-b-4 border-suisse-red/20">sérieuse</span>.
+          <h1 class="text-4xl sm:text-6xl font-extrabold tracking-tighter text-suisse-dark leading-[1.05]">
+            Des formations <span class="text-suisse-red">claires</span>.<br>Une présence rigoureuse.
           </h1>
-          <p class="text-lg text-gray-600 max-w-xl leading-relaxed">
-            Almunqidh accompagne entreprises, particuliers et collectivités avec une approche sobre, moderne et professionnelle. Une identité qui inspire confiance.
+          <p class="text-lg sm:text-xl text-gray-500 max-w-xl font-normal leading-relaxed">
+            Almunqidh accompagne entreprises, particuliers et collectivités avec une approche sobre, moderne et professionnelle. L'excellence au service de la vie.
           </p>
-          <div class="flex flex-wrap gap-4 pt-2">
-            <a href="formations.html" class="bg-suisse-red text-white font-medium px-8 py-4 rounded-xl hover:bg-red-700 hover:shadow-lg hover:shadow-red-500/20 transition-all">Voir les formations</a>
-            <a href="materiel.html" class="bg-gray-100 text-suisse-dark font-medium px-8 py-4 rounded-xl hover:bg-gray-200 transition-all">Découvrir le matériel</a>
+          <div class="flex flex-wrap gap-4 pt-4">
+            <a href="formations.html" class="bg-suisse-red text-white font-semibold px-8 py-4 rounded-xl hover:bg-red-700 hover:shadow-xl hover:shadow-red-600/20 transition-all duration-300">S'inscrire aux formations</a>
+            <a href="materiel.html" class="bg-suisse-light text-suisse-dark font-semibold px-8 py-4 rounded-xl hover:bg-gray-200/70 transition-all duration-300 border border-gray-200/50">Découvrir le matériel</a>
           </div>
         </div>
 
-        <div class="relative flex justify-center lg:justify-end">
-          <!-- Un carré moderne minimaliste en attendant de vraies images -->
-          <div class="w-full max-w-md aspect-square bg-gradient-to-tr from-gray-50 to-gray-100 rounded-3xl border border-gray-100 shadow-2xl flex items-center justify-center p-8 relative">
-            <div class="absolute -top-4 -left-4 w-24 h-24 bg-red-500/5 rounded-full blur-xl"></div>
-            <span class="text-xs text-gray-400 font-mono tracking-widest uppercase">[ Espace Visuel / Logo Premium ]</span>
+        <div class="lg:col-span-5 flex justify-center lg:justify-end" data-aos="fade-left" data-aos-duration="1200" data-aos-delay="200">
+          <!-- Carte "Glassmorphism" ultra-pro -->
+          <div class="w-full max-w-md aspect-[4/5] bg-gradient-to-b from-gray-50 to-gray-100/50 rounded-3xl border border-gray-200/60 shadow-2xl shadow-gray-200 flex flex-col justify-between p-10 relative">
+            <div class="w-12 h-12 bg-white rounded-xl border border-gray-200/80 shadow-sm flex items-center justify-center font-bold text-suisse-red text-xl">+</div>
+            <div class="space-y-2">
+              <p class="text-xs font-bold text-suisse-red tracking-widest uppercase">Garantie Confiance</p>
+              <h3 class="text-2xl font-bold tracking-tight text-suisse-dark">Matériel & Pédagogie Homologués</h3>
+            </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- SECTION CHIFFRES / IMPACT -->
-    <section class="bg-suisse-dark text-white py-16">
-      <div class="max-w-4xl mx-auto px-6 text-center space-y-4">
-        <p class="text-suisse-red font-semibold uppercase tracking-wider text-sm">En Suisse, chaque heure compte.</p>
-        <h2 class="text-2xl sm:text-3xl font-bold tracking-tight">Agir vite change tout.</h2>
-        <p class="text-gray-400 text-lg max-w-2xl mx-auto">
-          Un taux de survie qui peut être considérablement amélioré par la formation et le matériel adapté.
-        </p>
+    <!-- BANDEAU D'IMPACT CORPORATE -->
+    <section class="bg-suisse-dark text-white py-20 relative overflow-hidden">
+      <div class="max-w-5xl mx-auto px-6 text-center space-y-6 relative z-10" data-aos="fade-up" data-aos-duration="1000">
+        <p class="text-suisse-red font-bold uppercase tracking-widest text-xs">En Suisse, chaque minute compte.</p>
+        <h2 class="text-3xl sm:text-4xl font-extrabold tracking-tight max-w-3xl mx-auto leading-snug">
+          « Agir vite et correctement augmente le taux de survie de plus de 70%. »
+        </h2>
+        <div class="w-12 h-1 bg-suisse-red mx-auto rounded-full mt-4"></div>
       </div>
     </section>
 
-    <!-- PARTENAIRES -->
-    <section class="py-20 bg-white border-b border-gray-100">
-      <div class="max-w-7xl mx-auto px-6 text-center space-y-12">
+    <!-- PARTENAIRES SÉRIEUX -->
+    <section class="py-24 bg-white border-b border-gray-100">
+      <div class="max-w-7xl mx-auto px-6 text-center space-y-16" data-aos="fade-up" data-aos-duration="1000">
         <div>
-          <p class="text-xs font-bold text-gray-400 uppercase tracking-widest">Ils nous font confiance</p>
-          <h2 class="text-2xl font-bold text-suisse-dark mt-2">Des organisations qui nous ont choisis</h2>
+          <p class="text-[11px] font-bold text-gray-400 uppercase tracking-widest">Confiance & Rigueur</p>
+          <h2 class="text-3xl font-extrabold text-suisse-dark tracking-tight mt-2">Ils collaborent avec nous</h2>
         </div>
-        <div class="grid grid-cols-2 md:grid-cols-4 gap-6 opacity-60">
-          <div class="p-6 bg-suisse-light rounded-xl font-medium text-gray-500 text-sm flex items-center justify-center border border-gray-100">Entreprise A</div>
-          <div class="p-6 bg-suisse-light rounded-xl font-medium text-gray-500 text-sm flex items-center justify-center border border-gray-100">Client institutionnel</div>
-          <div class="p-6 bg-suisse-light rounded-xl font-medium text-gray-500 text-sm flex items-center justify-center border border-gray-100">Partenaire local</div>
-          <div class="p-6 bg-suisse-light rounded-xl font-medium text-gray-500 text-sm flex items-center justify-center border border-gray-100">Collectivité</div>
-        </div>
-      </div>
-    </section>
-
-    <!-- TEMOIGNAGES -->
-    <section class="py-24 bg-suisse-light">
-      <div class="max-w-7xl mx-auto px-6 space-y-16">
-        <div class="text-center space-y-2">
-          <p class="text-xs font-bold text-suisse-red uppercase tracking-widest">Avis clients</p>
-          <h2 class="text-3xl font-bold text-suisse-dark tracking-tight">Ce que disent nos partenaires</h2>
-        </div>
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-          <article class="bg-white p-8 rounded-2xl shadow-sm border border-gray-100 flex flex-col justify-between">
-            <p class="text-gray-600 italic">“Une approche très professionnelle, claire et rassurante.”</p>
-            <span class="block text-sm font-bold text-suisse-dark mt-6 border-t pt-4 border-gray-50">— Entreprise partenaire</span>
-          </article>
-          <article class="bg-white p-8 rounded-2xl shadow-sm border border-gray-100 flex flex-col justify-between">
-            <p class="text-gray-600 italic">“Le site donne envie d’aller plus loin et de découvrir les formations.”</p>
-            <span class="block text-sm font-bold text-suisse-dark mt-6 border-t pt-4 border-gray-50">— Client particulier</span>
-          </article>
-          <article class="bg-white p-8 rounded-2xl shadow-sm border border-gray-100 flex flex-col justify-between">
-            <p class="text-gray-600 italic">“Un service sérieux, avec une vraie image de confiance.”</p>
-            <span class="block text-sm font-bold text-suisse-dark mt-6 border-t pt-4 border-gray-50">— Organisation locale</span>
-          </article>
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+          <div class="p-8 bg-suisse-light/60 rounded-2xl font-semibold text-gray-400 text-sm tracking-wider flex items-center justify-center border border-gray-200/40 hover:bg-white hover:shadow-xl hover:shadow-gray-100 transition-all duration-300">ENTREPRISE A</div>
+          <div class="p-8 bg-suisse-light/60 rounded-2xl font-semibold text-gray-400 text-sm tracking-wider flex items-center justify-center border border-gray-200/40 hover:bg-white hover:shadow-xl hover:shadow-gray-100 transition-all duration-300">INSTITUTION PUBLIC</div>
+          <div class="p-8 bg-suisse-light/60 rounded-2xl font-semibold text-gray-400 text-sm tracking-wider flex items-center justify-center border border-gray-200/40 hover:bg-white hover:shadow-xl hover:shadow-gray-100 transition-all duration-300">PARTENAIRE LOCAL</div>
+          <div class="p-8 bg-suisse-light/60 rounded-2xl font-semibold text-gray-400 text-sm tracking-wider flex items-center justify-center border border-gray-200/40 hover:bg-white hover:shadow-xl hover:shadow-gray-100 transition-all duration-300">COLLECTIVITÉ SUISSE</div>
         </div>
       </div>
     </section>
 
-    <!-- NAVIGATION PAR BLOCS -->
-    <section class="py-24 bg-white">
-      <div class="max-w-7xl mx-auto px-6 space-y-16">
-        <div class="text-center space-y-2">
-          <p class="text-xs font-bold text-gray-400 uppercase tracking-widest">Explorer le site</p>
-          <h2 class="text-3xl font-bold text-suisse-dark tracking-tight">Chaque page vous guide vers un besoin précis.</h2>
+    <!-- EXPLORATION / GRILLE DE SERVICES PREMIUM -->
+    <section class="py-28 bg-suisse-light">
+      <div class="max-w-7xl mx-auto px-6 space-y-20">
+        <div class="text-center space-y-3" data-aos="fade-up" data-aos-duration="1000">
+          <p class="text-[11px] font-bold text-suisse-red uppercase tracking-widest">Prestations</p>
+          <h2 class="text-4xl font-extrabold text-suisse-dark tracking-tight">Une structure orientée vers l'excellence</h2>
         </div>
 
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-          <a href="formations.html" class="group bg-suisse-light p-8 rounded-2xl border border-gray-100 hover:bg-suisse-dark hover:text-white transition-all hover:-translate-y-1 duration-300 block">
-            <div class="w-10 h-10 bg-white group-hover:bg-suisse-red rounded-lg flex items-center justify-center text-suisse-red group-hover:text-white mb-6 font-bold shadow-sm transition-colors">01</div>
-            <h3 class="text-xl font-bold mb-2">Formations</h3>
-            <p class="text-sm text-gray-500 group-hover:text-gray-300 transition-colors leading-relaxed">Gestes utiles, pédagogie claire et contenus pensés pour entreprises et particuliers.</p>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+          
+          <!-- Bloc 1 -->
+          <a href="formations.html" class="group bg-white p-8 rounded-3xl border border-gray-200/60 shadow-sm hover:shadow-2xl hover:shadow-gray-300/60 transition-all hover:-translate-y-2 duration-300 flex flex-col justify-between min-h-[300px]" data-aos="fade-up" data-aos-delay="100">
+            <div>
+              <div class="w-12 h-12 bg-suisse-light group-hover:bg-suisse-red group-hover:text-white rounded-xl flex items-center justify-center text-suisse-red font-bold transition-all duration-300 text-sm">01</div>
+              <h3 class="text-xl font-bold mt-8 mb-3 text-suisse-dark">Formations</h3>
+              <p class="text-sm text-gray-500 leading-relaxed">Pédagogie claire, mises en situation réelles pour entreprises et particuliers.</p>
+            </div>
+            <span class="text-xs font-bold text-suisse-red group-hover:translate-x-2 transition-transform inline-flex items-center gap-2 mt-6">En savoir plus &rarr;</span>
           </a>
 
-          <a href="materiel.html" class="group bg-suisse-light p-8 rounded-2xl border border-gray-100 hover:bg-suisse-dark hover:text-white transition-all hover:-translate-y-1 duration-300 block">
-            <div class="w-10 h-10 bg-white group-hover:bg-suisse-red rounded-lg flex items-center justify-center text-suisse-red group-hover:text-white mb-6 font-bold shadow-sm transition-colors">02</div>
-            <h3 class="text-xl font-bold mb-2">Matériel</h3>
-            <p class="text-sm text-gray-500 group-hover:text-gray-300 transition-colors leading-relaxed">Sacs, accessoires, supports et solutions de terrain pour compléter l’intervention.</p>
+          <!-- Bloc 2 -->
+          <a href="materiel.html" class="group bg-white p-8 rounded-3xl border border-gray-200/60 shadow-sm hover:shadow-2xl hover:shadow-gray-300/60 transition-all hover:-translate-y-2 duration-300 flex flex-col justify-between min-h-[300px]" data-aos="fade-up" data-aos-delay="200">
+            <div>
+              <div class="w-12 h-12 bg-suisse-light group-hover:bg-suisse-red group-hover:text-white rounded-xl flex items-center justify-center text-suisse-red font-bold transition-all duration-300 text-sm">02</div>
+              <h3 class="text-xl font-bold mt-8 mb-3 text-suisse-dark">Matériel</h3>
+              <p class="text-sm text-gray-500 leading-relaxed">Équipement de secours professionnel certifié, sacs d'intervention complets.</p>
+            </div>
+            <span class="text-xs font-bold text-suisse-red group-hover:translate-x-2 transition-transform inline-flex items-center gap-2 mt-6">En savoir plus &rarr;</span>
           </a>
 
-          <a href="defibrillateurs.html" class="group bg-suisse-light p-8 rounded-2xl border border-gray-100 hover:bg-suisse-dark hover:text-white transition-all hover:-translate-y-1 duration-300 block">
-            <div class="w-10 h-10 bg-white group-hover:bg-suisse-red rounded-lg flex items-center justify-center text-suisse-red group-hover:text-white mb-6 font-bold shadow-sm transition-colors">03</div>
-            <h3 class="text-xl font-bold mb-2">Défibrillateurs</h3>
-            <p class="text-sm text-gray-500 group-hover:text-gray-300 transition-colors leading-relaxed">DAE, accompagnement, installation et éléments essentiels pour agir vite.</p>
+          <!-- Bloc 3 -->
+          <a href="defibrillateurs.html" class="group bg-white p-8 rounded-3xl border border-gray-200/60 shadow-sm hover:shadow-2xl hover:shadow-gray-300/60 transition-all hover:-translate-y-2 duration-300 flex flex-col justify-between min-h-[300px]" data-aos="fade-up" data-aos-delay="300">
+            <div>
+              <div class="w-12 h-12 bg-suisse-light group-hover:bg-suisse-red group-hover:text-white rounded-xl flex items-center justify-center text-suisse-red font-bold transition-all duration-300 text-sm">03</div>
+              <h3 class="text-xl font-bold mt-8 mb-3 text-suisse-dark">Défibrillateurs</h3>
+              <p class="text-sm text-gray-500 leading-relaxed">Installation de DAE automatiques, maintenance suisse et accompagnement.</p>
+            </div>
+            <span class="text-xs font-bold text-suisse-red group-hover:translate-x-2 transition-transform inline-flex items-center gap-2 mt-6">En savoir plus &rarr;</span>
           </a>
 
-          <a href="contact.html" class="group bg-suisse-light p-8 rounded-2xl border border-gray-100 hover:bg-suisse-dark hover:text-white transition-all hover:-translate-y-1 duration-300 block">
-            <div class="w-10 h-10 bg-white group-hover:bg-suisse-red rounded-lg flex items-center justify-center text-suisse-red group-hover:text-white mb-6 font-bold shadow-sm transition-colors">04</div>
-            <h3 class="text-xl font-bold mb-2">Contact</h3>
-            <p class="text-sm text-gray-500 group-hover:text-gray-300 transition-colors leading-relaxed">Une prise de contact simple pour obtenir des informations ou préparer un projet.</p>
+          <!-- Bloc 4 -->
+          <a href="contact.html" class="group bg-white p-8 rounded-3xl border border-gray-200/60 shadow-sm hover:shadow-2xl hover:shadow-gray-300/60 transition-all hover:-translate-y-2 duration-300 flex flex-col justify-between min-h-[300px]" data-aos="fade-up" data-aos-delay="400">
+            <div>
+              <div class="w-12 h-12 bg-suisse-light group-hover:bg-suisse-red group-hover:text-white rounded-xl flex items-center justify-center text-suisse-red font-bold transition-all duration-300 text-sm">04</div>
+              <h3 class="text-xl font-bold mt-8 mb-3 text-suisse-dark">Contact</h3>
+              <p class="text-sm text-gray-500 leading-relaxed">Une infrastructure à votre écoute pour un devis ou une question.</p>
+            </div>
+            <span class="text-xs font-bold text-suisse-red group-hover:translate-x-2 transition-transform inline-flex items-center gap-2 mt-6">Nous contacter &rarr;</span>
           </a>
+
         </div>
       </div>
     </section>
 
-    <!-- SECTION GALERIE PRÉVUE (#galerie) -->
-    <section id="galerie" class="py-24 bg-suisse-light border-t border-b border-gray-100">
-      <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-3 gap-12 items-center">
-        <div class="space-y-4">
-          <p class="text-xs font-bold text-suisse-red uppercase tracking-widest">Présentation</p>
-          <h2 class="text-3xl font-bold text-suisse-dark tracking-tight">Une identité moderne tournée vers l'action.</h2>
-          <p class="text-gray-600 leading-relaxed">
-            Découvrez nos sessions de formation, notre matériel certifié et nos interventions en image à travers la Suisse.
+    <!-- SECTION PRÉSENTATION / GALERIE -->
+    <section id="galerie" class="py-28 bg-white" data-aos="fade-up" data-aos-duration="1000">
+      <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
+        <div class="space-y-6 lg:col-span-4">
+          <p class="text-[11px] font-bold text-suisse-red uppercase tracking-widest">En images</p>
+          <h2 class="text-3xl font-extrabold text-suisse-dark tracking-tight">Une identité moderne ancrée sur le terrain.</h2>
+          <p class="text-gray-500 leading-relaxed">
+            Aperçus de nos sessions de formation interactives et du matériel de réanimation déployé à travers les cantons.
           </p>
         </div>
-        <!-- Ici, on crée une fausse grille de galerie ultra propre avec 2 blocs images fictifs -->
-        <div class="lg:col-span-2 grid grid-cols-1 sm:grid-cols-2 gap-6">
-          <div class="aspect-video bg-white rounded-2xl border border-gray-200 shadow-sm flex items-center justify-center text-xs text-gray-400 uppercase font-mono">[ Photo Formation Secourisme ]</div>
-          <div class="aspect-video bg-white rounded-2xl border border-gray-200 shadow-sm flex items-center justify-center text-xs text-gray-400 uppercase font-mono">[ Photo Défibrillateur DAE ]</div>
+        <div class="lg:col-span-8 grid grid-cols-1 sm:grid-cols-2 gap-8">
+          <div class="aspect-video bg-suisse-light rounded-2xl border border-gray-200 flex items-center justify-center text-[10px] text-gray-400 uppercase font-mono tracking-widest hover:scale-[1.02] transition-transform duration-300 shadow-inner">[ Photo Formation Secourisme ]</div>
+          <div class="aspect-video bg-suisse-light rounded-2xl border border-gray-200 flex items-center justify-center text-[10px] text-gray-400 uppercase font-mono tracking-widest hover:scale-[1.02] transition-transform duration-300 shadow-inner">[ Photo Défibrillateur DAE ]</div>
         </div>
       </div>
     </section>
 
-    <!-- CONTACT & INFOS -->
-    <section class="py-24 bg-white">
-      <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-12">
-        <div class="space-y-4">
-          <p class="text-xs font-bold text-suisse-red uppercase tracking-widest">Contact</p>
-          <h2 class="text-4xl font-bold text-suisse-dark tracking-tight">Parlons de votre besoin.</h2>
-          <p class="text-gray-600 max-w-md leading-relaxed">
-            Pour une demande de formation en entreprise, une question sur un DAE ou un projet sur-mesure, notre équipe en Gruyère vous répond rapidement.
+    <!-- BLOC CONTACT FIN DE PAGE -->
+    <section class="py-28 bg-white border-t border-gray-100">
+      <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-12 gap-16">
+        <div class="space-y-6 lg:col-span-5" data-aos="fade-right" data-aos-duration="1000">
+          <p class="text-[11px] font-bold text-suisse-red uppercase tracking-widest">Une question ?</p>
+          <h2 class="text-4xl font-extrabold text-suisse-dark tracking-tight">Planifions votre projet de sécurité.</h2>
+          <p class="text-gray-500 leading-relaxed max-w-sm">
+            Qu'il s'agisse de former vos collaborateurs en Gruyère ou d'équiper une collectivité, notre équipe vous répond sous 24h.
           </p>
         </div>
 
-        <div class="bg-suisse-light p-8 sm:p-10 rounded-3xl border border-gray-100 space-y-6">
-          <div class="flex items-start gap-4">
-            <div class="w-10 h-10 bg-white rounded-xl flex items-center justify-center text-suisse-red shadow-sm font-bold">@</div>
-            <div>
-              <p class="text-xs text-gray-400 font-bold uppercase tracking-wider">Email</p>
-              <a href="mailto:OVDS@almunqidhswiss.org" class="text-lg font-semibold text-suisse-dark hover:text-suisse-red transition-colors">OVDS@almunqidhswiss.org</a>
-            </div>
+        <div class="lg:col-span-7 bg-suisse-light p-10 sm:p-12 rounded-[2rem] border border-gray-200/60 grid grid-cols-1 sm:grid-cols-2 gap-8 shadow-sm" data-aos="fade-left" data-aos-duration="1000">
+          <div class="space-y-2">
+            <p class="text-[10px] text-gray-400 font-bold uppercase tracking-widest">Email professionnel</p>
+            <a href="mailto:OVDS@almunqidhswiss.org" class="text-lg font-bold text-suisse-dark hover:text-suisse-red transition-colors block break-all">OVDS@almunqidhswiss.org</a>
           </div>
-          <div class="flex items-start gap-4">
-            <div class="w-10 h-10 bg-white rounded-xl flex items-center justify-center text-suisse-red shadow-sm font-bold">T</div>
-            <div>
-              <p class="text-xs text-gray-400 font-bold uppercase tracking-wider">Téléphone</p>
-              <a href="tel:+41765605400" class="text-lg font-semibold text-suisse-dark hover:text-suisse-red transition-colors">+41 76 560 54 00</a>
-            </div>
+          <div class="space-y-2">
+            <p class="text-[10px] text-gray-400 font-bold uppercase tracking-widest">Téléphone Direct</p>
+            <a href="tel:+41765605400" class="text-lg font-bold text-suisse-dark hover:text-suisse-red transition-colors block">+41 76 560 54 00</a>
           </div>
-          <div class="flex items-start gap-4">
-            <div class="w-10 h-10 bg-white rounded-xl flex items-center justify-center text-suisse-red shadow-sm font-bold">A</div>
-            <div>
-              <p class="text-xs text-gray-400 font-bold uppercase tracking-wider">Adresse</p>
-              <p class="text-base font-semibold text-suisse-dark">Route du lynx numéro 33, 1663 Gruyère, Suisse</p>
-            </div>
+          <div class="space-y-2 sm:col-span-2 border-t border-gray-200/60 pt-6">
+            <p class="text-[10px] text-gray-400 font-bold uppercase tracking-widest">Siège social</p>
+            <p class="text-base font-semibold text-gray-700">Route du lynx numéro 33, 1663 Gruyère, Suisse</p>
           </div>
         </div>
       </div>
     </section>
   </main>
 
-  <footer class="bg-suisse-dark text-gray-500 py-8 border-t border-gray-800 text-center text-xs">
+  <footer class="bg-suisse-dark text-gray-600 py-12 text-center text-xs tracking-wider uppercase font-medium">
     <div class="max-w-7xl mx-auto px-6">
-      &copy; 2026 Almunqidh - Tous droits réservés.
+      &copy; 2026 Almunqidh. Conçu avec rigueur en Suisse.
     </div>
   </footer>
 
-  <a aria-label="Remonter en haut" href="#top" class="fixed bottom-6 right-6 w-12 h-12 bg-suisse-dark hover:bg-suisse-red text-white flex items-center justify-center rounded-full shadow-lg transition-all hover:-translate-y-1 z-50 text-xl">↑</a>
-  
+  <!-- Script d'Initialisation des Animations -->
+  <script>
+    AOS.init({
+      once: true, // L'animation ne se déclenche qu'une seule fois au scroll
+    });
+  </script>
 </body>
 </html>
