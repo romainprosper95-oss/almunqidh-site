@@ -1,53 +1,60 @@
 <!DOCTYPE html>
-<html lang="fr" class="scroll-smooth">
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Matériel Médical | Almunqidh</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <title>Matériel & DAE | Almunqidh</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .grid-products { display: grid; grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); gap: 32px; margin-top: 60px; }
+        .nav-header { display: flex; justify-content: space-between; align-items: center; padding: 24px 0; border-bottom: 1px solid var(--line); }
+        .nav-links a { margin-left: 24px; font-weight: 500; transition: color 0.3s; }
+        .nav-links a:hover { color: var(--suisse-red); }
+        @media (max-width: 500px) { .grid-products { grid-template-columns: 1fr; } }
+    </style>
 </head>
-<body class="bg-gray-50 text-gray-900 font-sans">
+<body>
 
-  <main class="max-w-7xl mx-auto px-6 py-20">
-    <div class="text-center mb-20" data-aos="fade-up">
-        <h1 class="text-5xl font-extrabold tracking-tight mb-6">Équipement Professionnel</h1>
-        <p class="text-xl text-gray-500 max-w-2xl mx-auto">Solutions de terrain conçues pour l'efficacité. Tout est fixé, accessible en un instant.</p>
-    </div>
+    <header class="container">
+        <div class="nav-header">
+            <a href="index.html" style="font-weight: 800; font-size: 1.3rem;">ALMUNQIDH</a>
+            <nav class="nav-links">
+                <a href="index.html">Accueil</a>
+                <a href="formations.html">Formations</a>
+                <a href="materiel.html" style="color: var(--suisse-red);">Matériel</a>
+                <a href="contact.html">Contact</a>
+            </nav>
+        </div>
+    </header>
 
-    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
-        
-        <!-- Produit 1 : Sacs d'urgence -->
-        <article class="bg-white p-2 rounded-3xl shadow-sm border border-gray-100" data-aos="fade-right">
-            <img src="images/sac-urgence.jpg" alt="Sac d'urgence professionnel" class="w-full h-80 object-cover rounded-2xl bg-gray-200">
-            <div class="p-8">
-                <h2 class="text-3xl font-bold mb-4">Sacs d'intervention Med4care</h2>
-                <p class="text-gray-600 mb-6 leading-relaxed">Notre gamme de sacs pensée pour le terrain. Une visibilité à 90% du contenu pour ne jamais perdre une seconde. Conception modulaire robuste.</p>
-                <a href="contact.html" class="inline-block bg-black text-white px-8 py-3 rounded-xl hover:bg-red-600 transition-all font-semibold">Demander un devis</a>
+    <main class="container" style="padding: 60px 0;">
+        <div style="text-align: center;">
+            <p style="color: var(--suisse-red); font-weight: 700; font-size: 0.8rem; text-transform: uppercase; tracking: 1px;">Équipement Homologué</p>
+            <h1 style="font-size: 3rem; font-weight: 800; margin-top: 10px;">Solutions de Sauvetage</h1>
+        </div>
+
+        <div class="grid-products">
+            <!-- Sacs d'urgence -->
+            <div class="card-premium">
+                <div style="font-size: 2.5rem; margin-bottom: 20px;">🎒</div>
+                <h2 style="font-size: 1.8rem; font-weight: 700; margin-bottom: 14px;">Sacs d'intervention Almunqidh</h2>
+                <p style="color: #666; line-height: 1.7; margin-bottom: 24px;">
+                    Une visibilité immédiate à 90% du contenu. Pas de temps perdu à chercher : chaque outil, compresse et accessoire est solidement fixé à sa place pour une réactivité maximale sur le terrain.
+                </p>
+                <a href="contact.html" class="btn btn-ghost">Demander la brochure</a>
             </div>
-        </article>
 
-        <!-- Produit 2 : Défibrillateurs -->
-        <article class="bg-white p-2 rounded-3xl shadow-sm border border-gray-100" data-aos="fade-left">
-            <img src="images/defibrillateur.jpg" alt="Défibrillateur DAE" class="w-full h-80 object-cover rounded-2xl bg-gray-200">
-            <div class="p-8">
-                <h2 class="text-3xl font-bold mb-4">Défibrillateurs (DAE)</h2>
-                <p class="text-gray-600 mb-6 leading-relaxed">Solutions de défibrillation automatique, fiables et simples d'utilisation. Nous gérons l'installation, la maintenance et le suivi réglementaire.</p>
-                <a href="contact.html" class="inline-block bg-black text-white px-8 py-3 rounded-xl hover:bg-red-600 transition-all font-semibold">Voir les modèles</a>
+            <!-- Défibrillateurs -->
+            <div class="card-premium">
+                <div style="font-size: 2.5rem; margin-bottom: 20px;">⚡</div>
+                <h2 style="font-size: 1.8rem; font-weight: 700; margin-bottom: 14px;">Défibrillateurs Externe (DAE)</h2>
+                <p style="color: #666; line-height: 1.7; margin-bottom: 24px;">
+                    Vente, conseils et installation de solutions DAE fiables à travers la Suisse. Nous proposons également des démonstrations gratuites de 30 minutes sans engagement directement au sein de vos infrastructures.
+                </p>
+                <a href="contact.html" class="btn btn-primary">Réserver une démo gratuite</a>
             </div>
-        </article>
+        </div>
+    </main>
 
-    </div>
-
-    <!-- Section Démo -->
-    <div class="mt-20 bg-white border border-gray-200 rounded-3xl p-12 text-center" data-aos="fade-up">
-        <h3 class="text-2xl font-bold mb-4">Besoin d'une démonstration ?</h3>
-        <p class="text-gray-600 mb-8">Nous nous déplaçons gratuitement dans vos locaux (30 min) pour vous montrer le matériel en action.</p>
-        <a href="contact.html" class="bg-red-600 text-white px-10 py-4 rounded-xl font-bold hover:bg-red-700 transition-all">Réserver une démo</a>
-    </div>
-  </main>
-
-  <script>AOS.init({ once: true });</script>
 </body>
 </html>
